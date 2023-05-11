@@ -1,4 +1,4 @@
-import styles from "./Contact.module.scss"
+// import styles from "./Contact.module.scss"
 import React from 'react';
 
 const Contact: React.FC = () => {
