@@ -1,0 +1,13 @@
+@use '../../sass/utils/variables';
+
+@mixin largeScreen {
+    max-width: variables.$maxWidth;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+@mixin smallscreen {
+    max-width: variables.$minWidth;
+    margin: 0 auto 40px auto;
+    padding: 0;
+}
