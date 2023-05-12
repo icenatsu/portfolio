@@ -1,9 +1,9 @@
-// import styles from "./Experience.module.scss";
+import styles from "./Experience.module.scss";
 
 
 const Experience = (): JSX.Element => {
     return (
-        <div>
+        <div className={styles.test}>
             Experience
         </div>
     );

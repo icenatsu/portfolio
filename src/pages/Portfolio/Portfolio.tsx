@@ -1,9 +1,9 @@
-// import styles from "./Portfolio.module.scss"
+import styles from "./Portfolio.module.scss"
 
 
 const Portfolio = (): JSX.Element => {
     return (
-        <div>
+        <div className={styles.test}>
             Portfolio
         </div>
     );
