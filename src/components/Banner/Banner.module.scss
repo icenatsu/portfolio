@@ -9,7 +9,9 @@
     &__bg{
         position: absolute;
         top:0;
-        left:-30px;
+        left:-20px;
+        animation: wind 700ms ease-in-out forwards;
+  
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             width: 150px;
@@ -25,5 +27,14 @@
             width: 100px;
             height: 550px;
         }
+    }
+}
+
+@keyframes wind{
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }

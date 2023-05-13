@@ -19,12 +19,21 @@ header{
     }
     
     .logo{  
-        flex: 0.2;
+        transform: rotate(0deg);
+        z-index: 111111;
+        animation: rotate 500ms;
+
+        &:hover{
+            transform-origin: center;
+            transform: rotate(360deg);
+            transition: 500ms;
+        }
         img{
             border: 3px solid variables.$secondary-color;
             border-radius: 50%;
             width: 70px;
             height: 70px;
+
 
             @media screen and (max-width: variables.$breakpoint-tablette) {
                 width: 60px;
@@ -138,5 +147,14 @@ header{
     }
     50% {
         border-color: variables.$secondary-color;
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }
