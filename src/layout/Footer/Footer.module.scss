@@ -1,34 +1,41 @@
-// @use "../../sass/utils/variables";
+@use "../../sass/utils/variables";
 @use "../../sass/utils/mixins";
 
 footer{
     @include mixins.largeScreen;
     display: flex;
-    // justify-content: space-between;
+    justify-content: space-between;
     // align-items: center;
-    border: 1px solid red;
+    border: 3px solid white;
+    border-radius: 15px;
     color: white;
-
-    .container{
-        display: flex;
-        justify-content: space-between;
-        flex-basis: 100%;
-
+    padding: 0;
+    // background-image: url("../../assets/img/panneau.png");
+    // background-repeat: no-repeat;
+    // background-size: 300px 200px;
+    position: relative;
+            
         .infos{
+            // margin-left:110px;
+            // margin-top: 35px;
+            background-color: transparent;
             &__item{
-                margin-bottom: 10px;
+                background-color: transparent;
+                margin-bottom: 5px;
             }
         }
 
         .reseaux{
             display: flex;
+            align-items: center;
+            justify-content: right;
             font-size: 50px;
-            color: violet;
+            color: variables.$secondary-color;
+            background-color: transparent;
 
             &__item{
                 margin-right: 10px;
             }
 
         }
-    }
 }

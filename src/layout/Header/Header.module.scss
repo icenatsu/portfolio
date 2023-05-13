@@ -1,31 +1,74 @@
-// @use "../../sass/utils/variables";
+@use "../../sass/utils/variables";
 @use "../../sass/utils/mixins";
 
 header{
     @include mixins.largeScreen;
     margin-top: 50px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    // border: 1px solid blue;
     color: white;
-    
+    background-image: url(../../assets/img/header_bg.png);
+    background-size: 1240px 70px;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        background-size: cover;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        justify-content: left;
+    }
     
     .logo{  
+        flex: 0.2;
         img{
-            border: 4px solid violet;
+            border: 3px solid variables.$secondary-color;
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
+
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                width: 60px;
+                height: 60px;
+            }
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                width: 50px;
+                height: 50px;
+            }
         }    
     }
     
     .list{
+        flex: 1.2;
         display: flex;
+        justify-content: right;
         font-size: 20px;
+        background-color: transparent;
+        
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            justify-content: left;
+            margin-left: 7px;
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            margin-left: 7px;
+        }
         
         &__item{
-            margin-left: 20px;
+            background-color: transparent;
+            margin-left: 5px;
+
+            & a{
+                margin-left: 5px;
+            }
+            
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                font-size: 18px
+            }
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                font-size: 16px
+            }
             
             a:hover{
                 padding-bottom: 4px;
@@ -35,11 +78,21 @@ header{
     }
 
     #autotext{
-
-        border-right: 0.15em solid violet;
+        display: flex;
+        flex: 1;
+        justify-content: right;
+        border-right: 0.15em solid variables.$secondary-color;
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
-    
+        font-size: 17px;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            font-size: 14px
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            display: none;
+        }
     
         &::after{
         content: '';
@@ -84,6 +137,6 @@ header{
        border-color: transparent; 
     }
     50% {
-        border-color: violet;
+        border-color: variables.$secondary-color;
     }
 }
