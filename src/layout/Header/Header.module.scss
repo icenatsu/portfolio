@@ -1,0 +1,142 @@
+@use "../../sass/utils/variables";
+@use "../../sass/utils/mixins";
+
+header{
+    @include mixins.largeScreen;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-image: url(../../assets/img/header_bg.png);
+    background-size: 1240px 70px;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        background-size: cover;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        justify-content: left;
+    }
+    
+    .logo{  
+        flex: 0.2;
+        img{
+            border: 3px solid variables.$secondary-color;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                width: 60px;
+                height: 60px;
+            }
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                width: 50px;
+                height: 50px;
+            }
+        }    
+    }
+    
+    .list{
+        flex: 1.2;
+        display: flex;
+        justify-content: right;
+        font-size: 20px;
+        background-color: transparent;
+        
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            justify-content: left;
+            margin-left: 7px;
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            margin-left: 7px;
+        }
+        
+        &__item{
+            background-color: transparent;
+            margin-left: 5px;
+
+            & a{
+                margin-left: 5px;
+            }
+            
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                font-size: 18px
+            }
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                font-size: 16px
+            }
+            
+            a:hover{
+                padding-bottom: 4px;
+                border-bottom: 2px solid violet;
+            }
+        }
+    }
+
+    #autotext{
+        display: flex;
+        flex: 1;
+        justify-content: right;
+        border-right: 0.15em solid variables.$secondary-color;
+        letter-spacing: 0.10em;
+        animation: blink 0.75s step-end infinite;
+        font-size: 17px;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            font-size: 14px
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            display: none;
+        }
+    
+        &::after{
+        content: '';
+        animation: change-text 10s forwards;
+        }
+
+    }
+    
+}
+
+@keyframes change-text {
+    from   { content: 'D'; }
+    1%  { content: 'Dé'; }
+    2%  { content: 'Dév'; }
+    3%  { content: 'Déve'; }
+    4% { content: 'Dével'; }
+    5% { content: 'Dévelop'; }
+    6% { content: 'Développ'; }
+    7% { content: 'Développe'; }
+    8% { content: 'Développeu'; }
+    9% { content: 'Développeus'; }
+    10% { content: 'Développeuse'; }
+    11% { content: 'Développeuse '; }
+    12% { content: 'Développeuse W'; }
+    13% { content: 'Développeuse We'; }
+    14% { content: 'Développeuse Web'; }
+    15% { content: 'Développeuse Web '; }
+    16% { content: 'Développeuse Web F'; }
+    17% { content: 'Développeuse Web Fr'; }
+    18% { content: 'Développeuse Web Fro'; }
+    19% { content: 'Développeuse Web Fron'; }
+    20% { content: 'Développeuse Web Front'; }
+    21% { content: 'Développeuse Web Front-e'; }
+    22% { content: 'Développeuse Web Front-en'; }
+    23% { content: 'Développeuse Web Front-end'; } 
+    100%   { content: 'Développeuse Web Front-end'; }
+}
+
+@keyframes blink{
+    from,
+    to{
+       border-color: transparent; 
+    }
+    50% {
+        border-color: variables.$secondary-color;
+    }
+}

@@ -1,10 +1,10 @@
-// import styles from "./Home.module.scss"
-
+import styles from "./Home.module.scss"
+import Banner from "../../components/Banner/Banner"
 
 const Home = (): JSX.Element => {
     return (
-        <div>
-            Home
+        <div className={styles.container}>
+            <Banner></Banner>
         </div>
     );
 };

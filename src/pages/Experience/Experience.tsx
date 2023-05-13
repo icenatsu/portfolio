@@ -1,10 +1,10 @@
-// import styles from "./Experience.module.scss";
-
+import styles from "./Experience.module.scss";
+import Banner from "../../components/Banner/Banner"
 
 const Experience = (): JSX.Element => {
     return (
-        <div>
-            Experience
+        <div className={styles.container}>
+            <Banner></Banner>
         </div>
     );
 };
