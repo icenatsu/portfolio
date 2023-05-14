@@ -1,6 +1,7 @@
 import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png"
+import Logo2 from "../../assets/img/logo2.png"
 
 
 

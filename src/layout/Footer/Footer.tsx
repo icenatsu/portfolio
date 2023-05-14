@@ -4,7 +4,6 @@ import styles from "./Footer.module.scss"
 const Footer = (): JSX.Element => {
     return (
         <footer>
-            {/* <div className={styles.container}> */}
             <ul className={styles.infos}>
                 <li className={styles['infos__item']}>Gaëlle Blanchard</li>
                 <li className={styles['infos__item']}>Marseille 13013</li>
@@ -14,8 +13,6 @@ const Footer = (): JSX.Element => {
                 <li className={styles['reseaux__item']}><a href="https://www.linkedin.com/in/icenatsu/"><i className="fa-brands fa-linkedin" aria-label="Linkedin"></i></a></li>
                 <li className={styles['reseaux__item']}><a href="https://github.com/icenatsu"><i className="fa-brands fa-github" aria-label="GitHub"></i></a></li>
             </ul>
-            {/* <div className={styles.background}></div> */}
-            {/* </div> */}
         </footer>
     );
 };

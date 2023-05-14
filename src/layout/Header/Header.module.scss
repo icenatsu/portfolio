@@ -8,10 +8,11 @@ header{
     align-items: center;
     color: white;
     background-image: url(../../assets/img/header_bg.png);
+    background-repeat: no-repeat;
     background-size: 1240px 70px;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        background-size: cover;
+        background-size: cover
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -19,20 +20,21 @@ header{
     }
     
     .logo{  
-        transform: rotate(0deg);
+        transform: rotate(60deg);
         z-index: 111111;
-        animation: rotate 500ms;
+        animation: rotate 1.5s ease-in-out forwards;
+    
+        
 
         &:hover{
-            transform-origin: center;
             transform: rotate(360deg);
             transition: 500ms;
         }
         img{
-            border: 3px solid variables.$secondary-color;
             border-radius: 50%;
             width: 70px;
             height: 70px;
+            margin-left: 0px;
 
 
             @media screen and (max-width: variables.$breakpoint-tablette) {
@@ -46,7 +48,25 @@ header{
             }
         }    
     }
+
+    .logo2{
+        position: absolute;
+        // margin-left: -35px;
+        // margin-top: 30px;
+        opacity: 0;
+        animation: appair 1.3s 500ms ease-in-out;
+        z-index: 111;
+        top:25px;
+        left: 15px;
+
+        & img{
     
+            width: 100px;
+            height: 100px;
+            
+        }
+    }    
+
     .list{
         flex: 1.2;
         display: flex;
@@ -94,6 +114,7 @@ header{
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
         font-size: 17px;
+        background-color: transparent;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             font-size: 14px
@@ -154,7 +175,25 @@ header{
     0%{
         transform: rotate(0);
     }
+    80%{
+        transform: rotate(60deg);
+    }
     100%{
-        transform: rotate(360deg);
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes appair{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50%{
+        opacity: 100%;
+    }
+
+    100%{
+        transform: translateY(40px);
+        opacity: 0;  
     }
 }

@@ -9,18 +9,19 @@
     &__bg{
         position: absolute;
         top:0;
-        left:-20px;
-        animation: wind 700ms ease-in-out forwards;
+        left:0px;
+        opacity: 0;
+        animation: wind 1.5s 600ms ease-in forwards;
   
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            width: 150px;
-            left:-20px;
+            width: 130px;
+            // left:-20px;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            width: 100px;
-            left:-20px;
+            width: 80px;
+            // left:-20px;
         }
         
         & img{
@@ -32,9 +33,13 @@
 
 @keyframes wind{
     0%{
-        transform: translateY(-100px);
+        opacity: 0;
+        transform: translateY(-250px);
+        z-index: 999;
     }
     100%{
+        z-index: 999;
+        opacity: 1;
         transform: translateY(0px);
     }
 }
