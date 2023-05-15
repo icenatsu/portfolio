@@ -21,7 +21,7 @@ header{
     
     .logo{  
         transform: rotate(60deg);
-        z-index: 111111;
+        z-index: 3;
         animation: rotate 1.5s ease-in-out forwards;
     
         
@@ -49,30 +49,13 @@ header{
         }    
     }
 
-    .logo2{
-        position: absolute;
-        // margin-left: -35px;
-        // margin-top: 30px;
-        opacity: 0;
-        animation: appair 1.3s 500ms ease-in-out;
-        z-index: 111;
-        top:25px;
-        left: 15px;
-
-        & img{
-    
-            width: 100px;
-            height: 100px;
-            
-        }
-    }    
-
     .list{
         flex: 1.2;
         display: flex;
         justify-content: right;
         font-size: 20px;
         background-color: transparent;
+        z-index: 2;
         
         @media screen and (max-width: variables.$breakpoint-tablette) {
             justify-content: left;
@@ -180,20 +163,5 @@ header{
     }
     100%{
         transform: rotate(30deg);
-    }
-}
-
-@keyframes appair{
-    0%{
-        opacity: 0;
-        transform: translateY(0);
-    }
-    50%{
-        opacity: 100%;
-    }
-
-    100%{
-        transform: translateY(40px);
-        opacity: 0;  
     }
 }
