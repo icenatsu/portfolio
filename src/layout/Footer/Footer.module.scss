@@ -5,17 +5,25 @@ footer{
     @include mixins.largeScreen;
     display: flex;
     justify-content: space-between;
-    // align-items: center;
     border: 1px solid variables.$primary-color;
     border-radius: 15px;
     color: white;
     padding: 0;
     background-image: url("../../assets/img/footer_bg.png");
     background-size: 1280px 200px;
+    background-repeat: no-repeat;
     position: relative;
     height: 130px;
     z-index: 11;
     padding: 30px;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        background-size: 992px 200px
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        background-size: 768px 200px
+    }
             
     .infos{
         background-color: transparent;

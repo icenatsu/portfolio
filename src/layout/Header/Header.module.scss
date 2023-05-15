@@ -22,15 +22,14 @@ header{
     .logo{  
         transform: rotate(60deg);
         z-index: 3;
-        animation: rotate 1.5s ease-in-out forwards;
+        animation: jug 1.5s ease-in-out forwards;
     
-        
-
         &:hover{
             transform: rotate(360deg);
             transition: 500ms;
         }
-        img{
+        
+        & img{
             border-radius: 50%;
             width: 70px;
             height: 70px;
@@ -100,7 +99,7 @@ header{
         background-color: transparent;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            font-size: 14px
+            font-size: 14px;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -108,8 +107,9 @@ header{
         }
     
         &::after{
-        content: '';
-        animation: change-text 10s forwards;
+            content: '';
+            background-color: transparent;
+            animation: change-text 10s forwards;
         }
 
     }
@@ -154,7 +154,7 @@ header{
     }
 }
 
-@keyframes rotate{
+@keyframes jug{
     0%{
         transform: rotate(0);
     }
