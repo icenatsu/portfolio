@@ -12,16 +12,18 @@
         left:0px;
         opacity: 0;
         animation: rain 1.5s 600ms ease-in forwards;
+
+        // & img{
+        //     filter:brightness()
+        // }
   
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             width: 130px;
-            // left:-20px;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
             width: 80px;
-            // left:-20px;
         }
         
         & img{
