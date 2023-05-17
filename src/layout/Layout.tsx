@@ -27,7 +27,7 @@ const Layout = (): JSX.Element => {
 
     return (
         < ThemeContext.Provider value={{ theme, toggleTheme, checked }}>
-            <div className="App" id={styles[theme]}>
+            <div className={styles[theme]}>
                 <Header />
                 <main>
                     <Outlet />

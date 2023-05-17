@@ -1,19 +1,19 @@
 
 
-#light{
+.light{
     background-color: #fff;
 }
 
-#dark{
+.dark{
     background-color: black;
 }
 
-body:has(#light) {
-    background: white;
-}
-body:has(#dark) {
-    background: black;
-}
-// body{
-//     background-color: violet;
+// body:has(#light) {
+//     background: white;
 // }
+// body:has(#dark) {
+//     background: black;
+// }
+// // body{
+// //     background-color: violet;
+// // }
