@@ -44,15 +44,15 @@ const Header = (): JSX.Element => {
 
         const checkAndChangeDimensions = () => {
             if (windowSize.width < 993 && windowSize.width > 768) {
-                setWidth(curr => curr = 50)
-                setHeight(curr => curr = 25)
+                setWidth(50)
+                setHeight(25)
             }
             else if (windowSize.width < 770) {
-                setWidth(curr => curr = 45)
-                setHeight(curr => curr = 20)
+                setWidth(45)
+                setHeight(20)
             } else {
-                setWidth(curr => curr = 55)
-                setHeight(curr => curr = 30)
+                setWidth(55)
+                setHeight(30)
             }
         }
         checkAndChangeDimensions();
