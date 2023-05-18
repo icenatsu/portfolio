@@ -119,13 +119,13 @@ header{
 
     .switch{
         display: flex;
-        flex: 0.2;
-        // margin-right: 30px;
+        flex: 0.15;
         justify-content: right;
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
             margin-right: 0px;
         }
+
     }
 }
 

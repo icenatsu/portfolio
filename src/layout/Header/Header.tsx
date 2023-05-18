@@ -1,13 +1,12 @@
 import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png"
-import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Layout";
-import Switch from "react-switch"
+import { useContext, useState, useEffect } from "react";
+import Switch from "../../components/Switch/Switch";
+
 
 const Header = (): JSX.Element => {
-
-    const themeContext = useContext(ThemeContext);
 
     function useWindowSize() {
 
@@ -36,7 +35,7 @@ const Header = (): JSX.Element => {
 
     const windowSize = useWindowSize()
 
-    const [width, setWidth] = useState<number>(55);
+    const [width, setWidth] = useState<number>(60);
     const [height, setHeight] = useState<number>(30);
 
 
@@ -44,14 +43,14 @@ const Header = (): JSX.Element => {
 
         const checkAndChangeDimensions = () => {
             if (windowSize.width < 993 && windowSize.width > 768) {
-                setWidth(50)
-                setHeight(25)
+                setWidth(53)
+                setHeight(27)
             }
             else if (windowSize.width < 770) {
-                setWidth(45)
-                setHeight(20)
+                setWidth(44)
+                setHeight(22)
             } else {
-                setWidth(55)
+                setWidth(60)
                 setHeight(30)
             }
         }
@@ -59,6 +58,10 @@ const Header = (): JSX.Element => {
 
     }, [windowSize]);
 
+
+
+
+    const themeContext = useContext(ThemeContext);
     return (
         <header>
             <div className={styles.logo}><img src={Logo} alt="logo" /></div>
@@ -70,10 +73,11 @@ const Header = (): JSX.Element => {
             </ul>
             <div id={styles.autotext}></div>
             <div className={styles.switch}>
-                <Switch className={styles.switchtwo} onChange={themeContext!.toggleTheme} checked={themeContext!.checked} offColor='#FFF' onColor='#FFF' offHandleColor="#444" onHandleColor="#890" activeBoxShadow="0 0 2px 3px #3bf" height={height} width={width} />
+                <Switch toggleTheme={themeContext!.toggleTheme} width={width} height={height} />
             </div>
         </header>
     );
 };
 
 export default Header;
+
