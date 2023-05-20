@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
-import { createContext } from "react";
-import { useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import styles from "./Layout.module.scss"
 
 export interface IThemeContext {
@@ -13,17 +12,29 @@ export interface IThemeContext {
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
-
-
 const Layout = (): JSX.Element => {
 
     const [theme, setTheme] = useState<"light" | "dark">("dark")
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState<boolean>(false)
 
     const toggleTheme = () => {
         setTheme((curr) => (curr === 'light' ? 'dark' : 'light'));
         setChecked((curr) => !curr)
     }
+
+    useEffect(() => {
+        const test = () => {
+            if (theme === 'dark') {
+                document.body.classList.add("dark");
+                document.body.classList.remove("light")
+            } else if (theme === 'light') {
+                document.body.classList.add("light");
+                document.body.classList.remove("dark")
+            }
+        }
+        test();
+    }, [theme]);
+
 
     return (
         < ThemeContext.Provider value={{ theme, toggleTheme, checked }}>
