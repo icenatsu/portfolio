@@ -25,9 +25,11 @@ const Layout = (): JSX.Element => {
     useEffect(() => {
         const test = () => {
             if (theme === 'dark') {
-                document.body.style.backgroundColor = "black"
+                document.body.classList.add("dark");
+                document.body.classList.remove("light")
             } else if (theme === 'light') {
-                document.body.style.backgroundColor = "white"
+                document.body.classList.add("light");
+                document.body.classList.remove("dark")
             }
         }
         test();
