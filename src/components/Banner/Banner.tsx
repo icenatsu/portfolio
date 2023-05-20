@@ -9,27 +9,20 @@ const Banner = (): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
-    const useBgBanner = () => {
+    let [BannerSrc, SetBannerSrc] = useState<string>(BannerBgDark)
 
-        let [BannerSrc, SetBannerSrc] = useState<string>(BannerBgDark)
+    useEffect(() => {
 
-        useEffect(() => {
+        const checkTheme = () => {
 
-            const checkTheme = () => {
-
-                if (document.body.classList.value === "dark") {
-                    SetBannerSrc(BannerBgLight)
-                } else if (document.body.classList.value === "light") {
-                    SetBannerSrc(BannerBgDark)
-                }
+            if (document.body.classList.value === "dark") {
+                SetBannerSrc(BannerBgLight)
+            } else if (document.body.classList.value === "light") {
+                SetBannerSrc(BannerBgDark)
             }
-            checkTheme()
-        }, [themeContext!.theme])
-
-        return BannerSrc
-    }
-
-    const BannerSrc = useBgBanner()
+        }
+        checkTheme()
+    }, [themeContext!.theme])
 
     return (
         <div className={styles.banner}>
