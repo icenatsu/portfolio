@@ -1,8 +1,6 @@
 import styles from "./Switch.module.scss";
 
 interface ISwitch {
-    // width: number;
-    // height: number;
     toggleTheme: () => void;
 }
 
@@ -10,7 +8,7 @@ const Switch = ({ toggleTheme }: ISwitch): JSX.Element => {
     return (
         <label className={styles.switch} >
             <input type="checkbox" onChange={toggleTheme} />
-            <span className={styles.slider} />
+            <span className={styles.slider}><i className="fa-solid fa-circle-half-stroke"></i></span>
         </label>
     );
 }

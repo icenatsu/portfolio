@@ -2,12 +2,21 @@
 
 @mixin largeScreen {
     max-width: variables.$maxWidth;
-    margin: 0 auto 40px auto;
+    margin: 50px auto 40px auto;
     padding: 0 20px;
+    width: 100%;
 }
 
-@mixin smallscreen {
+@mixin mediumScreen {
+    max-width: variables.$mediumWidth;
+    margin: 20px auto 20px auto;
+    padding: 0 20px;
+    width: 97%;
+}
+
+@mixin smallScreen {
     max-width: variables.$minWidth;
-    margin: 0 auto 40px auto;
-    padding: 0;
+    margin: 20px auto 20px auto;
+    padding: 0px 20px;
+    width: 98%;
 }

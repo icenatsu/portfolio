@@ -12,8 +12,8 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 44px;
-        height: 22px;
+        width: 38px;
+        height: 18px;
     }
 }
 
@@ -23,22 +23,36 @@ input{
     height: 0;
 
     &:checked {
-        &+ .slider::before{
-            transform: translateX(25px);
-            background-color: rgb(7, 69, 193);
-
-            @media screen and (max-width: variables.$breakpoint-tablette) {
-                transform: translateX(23px);
-            }
         
-            @media screen and (max-width: variables.$breakpoint-mobile) {
-                justify-content: left;
-                transform: translateX(20px);
-            }
-        }
-
         &+ .slider{
             transition: 0.4s;
+
+            &::before{
+                transform: translateX(25px);
+                background-color: rgb(7, 69, 193);
+    
+                @media screen and (max-width: variables.$breakpoint-tablette) {
+                    transform: translateX(23px);
+                }
+            
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    justify-content: left;
+                    transform: translateX(18px);
+                }
+            }
+
+            & i{
+                transform: translateX(25px);
+    
+                @media screen and (max-width: variables.$breakpoint-tablette) {
+                    transform: translateX(23px);
+                }
+            
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    justify-content: left;
+                    transform: translateX(18px);
+                }
+            }
         }
     }
 }
@@ -52,6 +66,30 @@ input{
     bottom: 0;
     border-radius: 20px;
     background-color: white;
+    
+    & i{
+        position: absolute;
+        cursor:  pointer;
+        top:8px;
+        left:8px;
+        right:0;
+        bottom: 0;
+        color:  white;
+        font-size: 12px;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            top:7.5px;
+            left:7px;
+        }
+    
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            top:4.5px;
+            left:5.5px;
+            font-size: 8px;
+        }
+       
+    }
+
 
     &::before{
         position: absolute;

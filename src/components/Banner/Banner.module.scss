@@ -2,9 +2,20 @@
 // @use "../../sass/utils/mixins";
 
 .banner{
-    width: 200px;
-    height: 600px;
     position: relative;
+    width: 100px;
+    height: 550px;
+    z-index: -5555;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        width: 80px;
+        height: 545px;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        width: 60px;
+        height: 400px;
+    }
 
     &__bg{
         position: absolute;
@@ -12,23 +23,22 @@
         left:0px;
         opacity: 0;
         animation: rain 1.5s 600ms ease-in forwards;
-
-        // & img{
-        //     filter:brightness()
-        // }
-  
-
-        @media screen and (max-width: variables.$breakpoint-tablette) {
-            width: 130px;
-        }
-
-        @media screen and (max-width: variables.$breakpoint-mobile) {
-            width: 80px;
-        }
         
         & img{
+            object-fit: cover;
             width: 100px;
             height: 550px;
+
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                width: 80px;
+                height: 545px;
+            }
+        
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                width: 60px;
+                height: 400px;
+            }
+        
         }
     }
 }
@@ -38,6 +48,15 @@
         opacity: 0;
         transform: translateY(-250px);
         z-index: 1;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            transform: translateY(-200px);
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            transform: translateY(-100px);
+        }
+        
     }
     100%{
         z-index: 1;

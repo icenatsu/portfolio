@@ -12,13 +12,11 @@ const Banner = (): JSX.Element => {
     let [BannerSrc, SetBannerSrc] = useState<string>(BannerBgDark)
 
     useEffect(() => {
-
         const checkTheme = () => {
-
-            if (document.body.classList.value === "dark") {
-                SetBannerSrc(BannerBgLight)
-            } else if (document.body.classList.value === "light") {
+            if (themeContext!.theme === "dark") {
                 SetBannerSrc(BannerBgDark)
+            } else if (themeContext!.theme === "light") {
+                SetBannerSrc(BannerBgLight)
             }
         }
         checkTheme()
