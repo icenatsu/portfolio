@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
 // import { createContext, useState, useEffect } from "react";
-import styles from "./Layout.module.scss"
 import ThemeContextProvider from '../ThemeContext/ThemeContext'
 
 // export interface IThemeContext {
