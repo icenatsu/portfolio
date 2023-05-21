@@ -1,13 +1,32 @@
 import styles from "./Switch.module.scss";
+import { useEffect } from "react";
 
 interface ISwitch {
-    toggleTheme: () => void;
+    checktheme: string;
+    theme: string;
+    switchTheme: () => void
 }
 
-const Switch = ({ toggleTheme }: ISwitch): JSX.Element => {
+const Switch = ({ theme, switchTheme }: ISwitch): JSX.Element => {
+
+    useEffect(() => {
+
+        const switchClass = () => {
+
+            if (theme === 'dark') {
+                document.body.classList.remove("light")
+                document.body.classList.add("dark");
+            } else if (theme === 'light') {
+                document.body.classList.remove("dark")
+                document.body.classList.add("light");
+            }
+        }
+        switchClass();
+    }, [theme]);
+
     return (
         <label className={styles.switch} >
-            <input type="checkbox" onChange={toggleTheme} />
+            <input type="checkbox" onChange={switchTheme} />
             <span className={styles.slider}><i className="fa-solid fa-circle-half-stroke"></i></span>
         </label>
     );

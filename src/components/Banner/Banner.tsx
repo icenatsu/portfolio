@@ -2,7 +2,7 @@ import styles from "./Banner.module.scss"
 import { useEffect, useContext, useState } from "react";
 import BannerBgDark from "../../assets/img/banner_bg_dark.png";
 import BannerBgLight from "../../assets/img/banner_bg_light.png";
-import { ThemeContext } from "../../layout/Layout";
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
 const Banner = (): JSX.Element => {
