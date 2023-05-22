@@ -6,6 +6,7 @@ export interface IThemeContext {
     checkThemeUser: string,
     theme: string
     switchTheme: () => void
+    // checkInitialThemeUser: () => string
 }
 
 
@@ -18,7 +19,6 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     )
 
     useEffect(() => {
-
         window
             .matchMedia("(prefers-color-scheme: dark)")
             .addEventListener('change', e => setMatches(e.matches));
@@ -30,14 +30,19 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     }
     let checkThemeUser = checkInitialThemeUser()
 
+
+    useEffect(() => {
+        const removeClass = () => {
+            document.body.classList.remove("light")
+            document.body.classList.remove("dark")
+        }
+        removeClass()
+    }, [checkThemeUser])
+
     const [theme, setTheme] = useState<string>(checkThemeUser)
 
     const switchTheme = () => {
-        if (theme === "dark") {
-            setTheme('light')
-        } else if (theme === "light") {
-            setTheme('dark')
-        }
+        theme === "dark" ? setTheme('light') : setTheme('dark')
     }
 
     return (
