@@ -1,14 +1,10 @@
 import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png"
-import { ThemeContext } from "../../ThemeContext/ThemeContext";
-import { useContext } from "react";
 import Switch from "../../components/Switch/Switch";
 
 
 const Header = (): JSX.Element => {
-
-    const themeContext = useContext(ThemeContext);
 
     return (
         <header>
@@ -21,7 +17,7 @@ const Header = (): JSX.Element => {
             </ul>
             <div id={styles.autotext}></div>
             <div className={styles.switch}>
-                <Switch checktheme={themeContext!.checkThemeUser} theme={themeContext!.theme} switchTheme={themeContext!.switchTheme} />
+                <Switch />
             </div>
         </header>
     );
