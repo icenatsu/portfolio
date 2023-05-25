@@ -1,52 +1,40 @@
 import { createContext, useState, useEffect, PropsWithChildren } from "react";
 
-
 export interface IThemeContext {
-    matches: boolean,
-    checkThemeUser: string,
-    theme: string
+    isDarkMode: boolean,
     switchTheme: () => void
-    // checkInitialThemeUser: () => string
 }
-
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
 
 const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
 
-    const [matches, setMatches] = useState<boolean>(
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(
         window.matchMedia('(prefers-color-scheme: dark)').matches
     )
 
     useEffect(() => {
         window
             .matchMedia("(prefers-color-scheme: dark)")
-            .addEventListener('change', e => setMatches(e.matches));
+            .addEventListener('change', e => setIsDarkMode(e.matches));
     }, []);
 
-    const checkInitialThemeUser = () => {
-        let checkThemeUser = matches ? 'dark' : 'light';
-        return checkThemeUser
-    }
-    let checkThemeUser = checkInitialThemeUser()
-
-
     useEffect(() => {
-        const removeClass = () => {
-            document.body.classList.remove("light")
-            document.body.classList.remove("dark")
+        if (isDarkMode) {
+            document.body.classList.add('dark')
+            document.body.classList.remove("light");
+        } else {
+            document.body.classList.add('light')
+            document.body.classList.remove("dark");
         }
-        removeClass()
-    }, [checkThemeUser])
-
-    const [theme, setTheme] = useState<string>(checkThemeUser)
+    }, [isDarkMode])
 
     const switchTheme = () => {
-        theme === "dark" ? setTheme('light') : setTheme('dark')
+        setIsDarkMode((curr) => curr = !curr)
     }
 
     return (
-        < ThemeContext.Provider value={{ matches, checkThemeUser, theme, switchTheme }}>
+        < ThemeContext.Provider value={{ isDarkMode, switchTheme }}>
             {children}</ ThemeContext.Provider >
     );
 };

@@ -9,23 +9,16 @@ const Banner = (): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
-    let [BannerSrc, SetBannerSrc] = useState<string>(BannerBgDark)
+    let [BannerSrc, SetBannerSrc] = useState<string>(themeContext!.isDarkMode ? BannerBgDark : BannerBgLight)
 
     useEffect(() => {
-        const checkTheme = () => {
-            if (themeContext!.theme === "dark") {
-                SetBannerSrc(BannerBgDark)
-            } else if (themeContext!.theme === "light") {
-                SetBannerSrc(BannerBgLight)
-            }
-        }
-        checkTheme()
-    }, [themeContext!.theme])
+        themeContext!.isDarkMode ? SetBannerSrc(BannerBgDark) : SetBannerSrc(BannerBgLight)
+    }, [themeContext!.isDarkMode])
 
     return (
         <div className={styles.banner}>
             <div className={styles["banner__bg"]}>
-                <img src={BannerSrc} alt="Banner" />
+                <img src={BannerSrc} alt={'Image animée de code'} />
             </div>
         </div>
     );

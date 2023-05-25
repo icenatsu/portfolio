@@ -40,19 +40,6 @@ input{
                     transform: translateX(18px);
                 }
             }
-
-            & i{
-                transform: translateX(25px);
-    
-                @media screen and (max-width: variables.$breakpoint-tablette) {
-                    transform: translateX(23px);
-                }
-            
-                @media screen and (max-width: variables.$breakpoint-mobile) {
-                    justify-content: left;
-                    transform: translateX(18px);
-                }
-            }
         }
     }
 }
@@ -68,28 +55,27 @@ input{
     background-color: white;
     
     & i{
+        color: black;
         position: absolute;
-        cursor:  pointer;
-        top:8px;
-        left:8px;
-        right:0;
-        bottom: 0;
-        color:  white;
-        font-size: 12px;
-
-        @media screen and (max-width: variables.$breakpoint-tablette) {
-            top:7.5px;
-            left:7px;
-        }
+        top: 7px;
+        z-index: 1;
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            top:4.5px;
-            left:5.5px;
-            font-size: 8px;
+            font-size: 9px;
+            top: 4.5px
         }
-       
-    }
 
+        &:nth-child(1){
+            left:5px;
+        }
+        &:nth-child(2){
+            right:9px;
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                right:7px
+            }
+        }
+    }
 
     &::before{
         position: absolute;
@@ -101,30 +87,22 @@ input{
         border-radius: 20px;
         background-color: rgb(7, 33, 110);
         transition: 0.4s;
+        z-index: 2;
+        transform: translateX(0px);
     }
+
+    .test::before{
+        animation:test 500ms
+    }
+
 }
 
-
-// Léorio
-/********/
-
-// .switch{
-//     position: relative;
-//     border-radius: 20px;
-//     background-color: white;
-// }
-
-// .slider {
-//     position: absolute;
-//     cursor:  pointer;
-//     top:3px;
-//     left: 3px;
-//     border-radius: 20px;
-//     background-color: rgb(0, 0, 0);
-//     transition: left 0.4s ease-in-out, background-color 0.4s ease-in-out;
-
-//     &.selected {
-//         background-color: rgb(20, 105, 216);
-//     }
-// }
-
+@keyframes test{
+    from,
+    to{
+        transform: translateX(0px); 
+    }
+    50% {
+         transform: translateX(25px);
+    }
+}
