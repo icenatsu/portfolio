@@ -29,7 +29,7 @@ input{
 
             &::before{
                 transform: translateX(25px);
-                background-color: rgb(7, 69, 193);
+                // background-color: rgb(7, 69, 193);
     
                 @media screen and (max-width: variables.$breakpoint-tablette) {
                     transform: translateX(23px);
@@ -52,7 +52,6 @@ input{
     right:0;
     bottom: 0;
     border-radius: 20px;
-    background-color: white;
     
     & i{
         color: black;
@@ -95,6 +94,21 @@ input{
         animation:test 500ms
     }
 
+    &--light{
+        background-color: #1c76d3;
+
+        &::before{
+            background-color: #fff;
+        }
+
+        & i{
+            color: rgb(8, 8, 154);
+        }
+    }
+
+    &--dark{
+        background-color: white;
+    }
 }
 
 @keyframes test{

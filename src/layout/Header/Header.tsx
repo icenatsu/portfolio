@@ -2,9 +2,13 @@ import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png"
 import Switch from "../../components/Switch/Switch";
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
 const Header = (): JSX.Element => {
+
+    const themeContext = useContext(ThemeContext);
 
     return (
         <header>
@@ -15,7 +19,7 @@ const Header = (): JSX.Element => {
                 <li className={styles["list__item"]}><NavLink to="/experience">Expérience</NavLink></li>
                 <li className={styles["list__item"]}><NavLink to="/contact">Contact</NavLink></li>
             </ul>
-            <div id={styles.autotext}></div>
+            <div id={styles.autotext} className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}></div>
             <div className={styles.switch}>
                 <Switch />
             </div>
@@ -25,3 +29,4 @@ const Header = (): JSX.Element => {
 
 export default Header;
 
+// className={[styles.slider, themeContext?.isDarkMode ? styles['slider--dark'] : styles['slider--light']].join(' ')}

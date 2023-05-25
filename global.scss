@@ -1,0 +1,49 @@
+@use "./src/sass/utils/variables";
+@use "./src/sass/utils/mixins";
+
+.light {
+    background-color: #fff;
+    font-weight: 500;
+
+    & header, footer{
+        background-image: url(./src/assets/img/bg_light.png);
+        color: black;
+    }
+
+    & a{
+        color: white;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            color: black;
+            font-weight: 600;
+        }
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            color: black;
+        }
+    }
+
+    & i{
+        color: black;
+    }
+}
+
+.dark {
+    background-color: black;
+
+    & header, footer{
+        background-image: url(./src/assets/img/bg_dark.png);
+        color: white;
+    }
+}
+
+@media(prefers-color-scheme: ligth){
+    body {
+        background-color: #fff;
+    }
+}
+
+@media(prefers-color-scheme: dark){
+    body {
+        background-color: black;
+    }
+}

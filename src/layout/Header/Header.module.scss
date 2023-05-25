@@ -6,10 +6,9 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
-    background-image: url(../../assets/img/header_bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url(../../assets/img/bklight.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
     border-radius: 30px;
     height: 100px;
 
@@ -104,10 +103,11 @@ header{
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
         font-size: 17px;
-        background-color: transparent;
+        background-color: transparent;   
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             font-size: 14px;
+            color: white;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -119,6 +119,7 @@ header{
             background-color: transparent;
             animation: change-text 10s forwards;
         }
+
     }
 
     .switch{
@@ -130,6 +131,16 @@ header{
             margin-right: 0px;
         }
 
+    }
+
+    & .light{
+        color: rgb(8, 92, 8);
+        font-weight: 600; 
+    }
+
+    & .dark{
+        color: green;
+        font-weight: 500; 
     }
 }
 

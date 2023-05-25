@@ -9,7 +9,7 @@ const Switch = (): JSX.Element => {
     return (
         <label className={styles.switch} >
             <input type="checkbox" checked={!themeContext?.isDarkMode} onChange={themeContext?.switchTheme} />
-            <span className={styles.slider}><i className="fa-solid fa-moon"></i><i className="fa-solid fa-sun"></i></span>
+            <span className={[styles.slider, themeContext?.isDarkMode ? styles['slider--dark'] : styles['slider--light']].join(' ')} ><i className="fa-solid fa-moon"></i><i className="fa-solid fa-sun"></i></span>
         </label>
     );
 }

@@ -3,7 +3,7 @@ import Banner from "../../components/Banner/Banner"
 
 const Home = (): JSX.Element => {
     return (
-        <div className={styles.container}>
+        <div className={styles.home}>
             <Banner></Banner>
         </div>
     );
