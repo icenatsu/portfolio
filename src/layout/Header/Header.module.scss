@@ -14,7 +14,6 @@ header{
     height: 100px;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        // background-size: cover;
         @include mixins.mediumScreen;
     }
 

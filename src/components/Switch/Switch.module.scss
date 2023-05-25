@@ -4,7 +4,7 @@
     position: relative;
     display: inline-block;
     width: 56px;
-    height: 28px;
+    height: 29px;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         width: 53px;
@@ -12,7 +12,7 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 38px;
+        width: 36px;
         height: 18px;
     }
 }
@@ -37,7 +37,7 @@ input{
             
                 @media screen and (max-width: variables.$breakpoint-mobile) {
                     justify-content: left;
-                    transform: translateX(18px);
+                    transform: translateX(16px);
                 }
             }
         }
