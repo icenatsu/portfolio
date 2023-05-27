@@ -6,11 +6,8 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid grey;
-    border-radius: 30px;
-    // background-image: url("../../assets/img/bklight.png");
-    // background-size: 1280px 200px;
-    // background-repeat: no-repeat;
+    // border: 2px solid rgb(70, 107, 175);
+    // border-radius: 5px;
     position: relative;
     height: 100px;
     z-index: 11;
@@ -70,4 +67,14 @@ footer{
             }
         }
     }
+}
+
+// .light{
+//     // border: 2px solid rgb(70, 107, 175);
+// }
+
+.dark{
+    // border: 2px dashed rgb(126, 79, 126);
+    border-top: 2px dashed rgb(126, 79, 126);
+    border-bottom: 2px dashed rgb(126, 79, 126);
 }

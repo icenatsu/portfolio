@@ -1,3 +1,27 @@
+@use "../../sass/utils/variables";
+
 .home{
     color: green;
+}
+
+@keyframes rain{
+    0%{
+        opacity: 0;
+        transform: translateY(-250px);
+        z-index: 1;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            transform: translateY(-200px);
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            transform: translateY(-100px);
+        }
+        
+    }
+    100%{
+        z-index: 1;
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

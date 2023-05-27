@@ -1,9 +1,14 @@
 import styles from "./Footer.module.scss"
-// import FooterBg from "../../assets/img/test.jpg"
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 const Footer = (): JSX.Element => {
+
+    const themeContext = useContext(ThemeContext);
+
+
     return (
-        <footer>
+        <footer className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}>
             <ul className={styles.infos}>
                 <li className={styles['infos__item']}>Gaëlle Blanchard</li>
                 <li className={styles['infos__item']}>Marseille 13013</li>

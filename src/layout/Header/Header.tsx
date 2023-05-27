@@ -2,17 +2,24 @@ import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png"
 import Switch from "../../components/Switch/Switch";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
 const Header = (): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
+    const logoStart = useRef<HTMLDivElement>(null)
+    console.log(logoStart);
+
+
+    useEffect(() => {
+        logoStart.current?.classList.add("logo--start")
+    }, [])
 
     return (
         <header>
-            <div className={styles.logo}><img src={Logo} alt="logo" /></div>
+            <div className={styles.logo} ref={logoStart}><img src={Logo} alt="logo" /></div>
             <ul className={styles.list}>
                 <li className={styles["list__item"]}><NavLink to="/">Accueil </NavLink></li>
                 <li className={styles["list__item"]}><NavLink to="/portfolio">Portfolio</NavLink></li>

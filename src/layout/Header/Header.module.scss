@@ -6,9 +6,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // background-image: url(../../assets/img/bklight.png);
-    // background-repeat: no-repeat;
-    // background-size: cover;
     border-radius: 30px;
     height: 100px;
 
@@ -25,15 +22,13 @@ header{
     }
     
     .logo{  
-        transform: rotate(60deg);
         z-index: 3;
         animation: jug 1.5s ease-in-out forwards;
-    
-        &:hover{
-            transform: rotate(360deg);
-            transition: 500ms;
+
+        &--start{
+            animation: jug 1.5s ease-in-out forwards;
         }
-        
+            
         & img{
             border-radius: 50%;
             width: 70px;
@@ -139,7 +134,7 @@ header{
     }
 
     & .dark{
-        color: green;
+        color: rgb(126, 79, 126);
         font-weight: 500; 
     }
 }

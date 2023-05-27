@@ -5,7 +5,7 @@ import BannerBgLight from "../../assets/img/banner_bg_light.png";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 
-const Banner = (): JSX.Element => {
+const Banner = ({ animation }: { animation: { animation: string } }): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
@@ -17,7 +17,7 @@ const Banner = (): JSX.Element => {
 
     return (
         <div className={styles.banner}>
-            <div className={styles["banner__bg"]}>
+            <div className={styles["banner__bg"]} style={animation}>
                 <img src={BannerSrc} alt={'Image animée de code'} />
             </div>
         </div>
