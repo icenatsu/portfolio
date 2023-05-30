@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1",
+        "title": "Projet 2 - Booki",
+        "description": "Transformez une maquette en site web avec HTML & CSS",
+        "cover": "./projects_img/cover/booki.PNG",
+        "technologies": [
+            "HTML",
+            "CSS"
+        ],
+        "icones": [
+            "./projects_img/techno_icones/html5.png",
+            "./projects_img/techno_icones/css3.png"
+        ],
+        "lien_site": "https://icenatsu.github.io/projet2_booki/",
+        "lien_code": "https://github.com/icenatsu/projet2_booki"  
+    },
+    {
+        "id": "2",
+        "title": "Projet 3 - Oh my Food",
+        "description": "Dynamisez une page web avec des animations CSS",
+        "cover": "./projects_img/cover/oh_my_food.PNG",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "SASS"
+        ],
+        "icones": [
+            "./projects_img/techno_icones/html5.png",
+            "./projects_img/techno_icones/css3.png",
+            "./projects_img/techno_icones/sass.png"
+        ],
+        "lien_site": "https://icenatsu.github.io/projet3_ohmyfood/",
+        "lien_code": "https://github.com/icenatsu/projet3_ohmyfood"    
+    },
+    {
+        "id": "3",
+        "title": "Projet 6 - Piiquante",
+        "description": "Construisez une API sécurisée pour une application d'avis gastronomiques",
+        "cover": "./projects_img/cover/piquante.PNG",
+        "technologies": [
+            "NODE JS"
+        ],
+        "icones": [
+            "./projects_img/techno_icones/nodejs.png"
+        ],
+        "lien_code": "https://github.com/icenatsu/projet6_piquante"      
+    },
+    {
+        "id": "4",
+        "title": "Projet 7 - ",
+        "description": "Créez une application web de location immobilière avec React",
+        "cover": "./projects_img/cover/kasa.PNG",
+        "technologies": [
+            "React",
+            "SASS"
+        ],
+        "icones": [
+            "./projects_img/techno_icones/",
+            "./projects_img/techno_icones/sass.png"
+        ],
+        "lien_site": "https://projet7-kasa.vercel.app/",
+        "lien_code": "https://github.com/icenatsu/projet7_kasa"  
+    }
+]

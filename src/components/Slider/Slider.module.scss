@@ -1,0 +1,62 @@
+.projects-info{
+    color: white;
+    background-color: rgb(208, 208, 208);
+    border-radius: 10px;
+    flex:4;
+    display: flex;
+    justify-content: center;
+    
+    .slider{
+
+        width: 300px;
+        height: 400px;
+        margin-top: 20px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &__next-previous{
+            & img{
+                height: 25px;
+                width: 25px;
+            }
+            
+            &__next{
+                z-index: 8888888;
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                transform: translateY(-50%);
+                
+            }
+
+            &__prev{
+                z-index: 8888888;
+                position: absolute;
+                left:-10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &__pictures{
+            display: flex;
+            // border: 1px solid blue;
+        
+            transition: 1S;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            &__item{
+                width: 300px;
+                height: 400px;
+
+                & img{
+                    width: 300px;
+                    height: 400px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

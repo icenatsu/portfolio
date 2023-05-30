@@ -4,6 +4,7 @@
 .banner{
     width: 100px;
     height: 550px;
+    flex: 0.5;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         width: 80px;

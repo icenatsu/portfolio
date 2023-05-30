@@ -4,11 +4,11 @@ import BannerBgDark from "../../assets/img/banner_bg_dark.png";
 import BannerBgLight from "../../assets/img/banner_bg_light.png";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
-export interface IBanner {
-    animation?: { animation: string },
+interface IBanner {
+    animation?: { animation?: string },
 }
 
-const Banner = ({ animation }: IBanner): JSX.Element => {
+const Banner = ({ animation = {} }: IBanner): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
@@ -20,7 +20,7 @@ const Banner = ({ animation }: IBanner): JSX.Element => {
 
     return (
         <div className={styles.banner}>
-            <div className={styles["banner__bg"]} style={animation}>
+            <div className={styles.banner__bg} style={animation}>
                 <img src={BannerSrc} alt={'Image animée de code'} />
             </div>
         </div>
