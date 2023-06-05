@@ -127,15 +127,32 @@ header{
         }
 
     }
+}
 
-    & .light{
+.light{
+    background-image: url(./src/assets/img/bg_light_header.png);
+    color: black;
+    #autotext{
         color: rgb(8, 92, 8);
-        font-weight: 600; 
-    }
+        font-weight: 600;
 
-    & .dark{
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            color: rgb(184, 236, 186);
+        }
+    }
+}
+
+.dark{
+    background-image: url(./src/assets/img/bg_dark_header.png);
+    color: white;
+    
+    #autotext{
         color: rgb(126, 79, 126);
         font-weight: 500; 
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            color: rgb(233, 129, 233);
+        }
     }
 }
 

@@ -10,7 +10,7 @@ const Header = (): JSX.Element => {
     const themeContext = useContext(ThemeContext);
 
     return (
-        <header>
+        <header className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}>
             <div className={styles.logo}><img src={Logo} alt="logo" /></div>
             <ul className={styles.list}>
                 <li className={styles.list__item}><NavLink to="/">Accueil </NavLink></li>
@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
                 <li className={styles.list__item}><NavLink to="/experience">Expérience</NavLink></li>
                 <li className={styles.list__item}><NavLink to="/contact">Contact</NavLink></li>
             </ul>
-            <div id={styles.autotext} className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}></div>
+            <div id={styles.autotext}></div>
             <div className={styles.switch}>
                 <Switch />
             </div>

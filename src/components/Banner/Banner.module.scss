@@ -7,13 +7,15 @@
     flex: 0.5;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        width: 80px;
-        height: 545px;
+        // width: 80px;
+        // height: 545px;
+        display: none;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 60px;
-        height: 400px;
+        // width: 60px;
+        // height: 400px;
+        display: none;
     }
 
     &__bg{

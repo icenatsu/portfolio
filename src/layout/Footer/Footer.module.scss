@@ -3,18 +3,18 @@
 
 footer{
     @include mixins.largeScreen;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border: 2px solid rgb(70, 107, 175);
-    // border-radius: 5px;
     position: relative;
-    height: 100px;
+    height: 140px;
     z-index: 11;
    
     @media screen and (max-width: variables.$breakpoint-tablette) {
         background-size: variables.$breakpoint-tablette 200px;
         @include mixins.mediumScreen;
+        width: 100%;
         padding: 10px 10px;
         height: 100px;
     }
@@ -23,7 +23,8 @@ footer{
         background-size: variables.$breakpoint-tablette 200px;
         @include mixins.smallScreen;
         height: 80px;
-        border-radius: 20px;
+        width: 100%;
+        padding: 10px;
     }
             
     .infos{
@@ -69,12 +70,12 @@ footer{
     }
 }
 
-// .light{
-//     // border: 2px solid rgb(70, 107, 175);
-// }
-
 .dark{
-    // border: 2px dashed rgb(126, 79, 126);
-    border-top: 2px dashed rgb(126, 79, 126);
-    border-bottom: 2px dashed rgb(126, 79, 126);
+    color: white;
+    background-color: rgb(169, 163, 163);
+}
+
+.light{
+    background-image: url(./src/assets/img/bg_light_footer.png);
+    color: black;
 }

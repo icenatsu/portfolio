@@ -1,4 +1,4 @@
-// @use '../../sass/utils/variables';
+@use '../../sass/utils/variables';
 @use '../../sass/utils/mixins';
 
 *,
@@ -16,5 +16,12 @@
 
 main{
     @include mixins.largeScreen;
-    // border: 1px solid black;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        @include mixins.mediumScreen;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        @include mixins.smallScreen;
+    }
 }

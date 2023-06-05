@@ -5,14 +5,14 @@ import BannerBgLight from "../../assets/img/banner_bg_light.png";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 interface IBanner {
-    animation?: { animation?: string },
+    inAnimation?: { animation?: string },
 }
 
-const Banner = ({ animation = {} }: IBanner): JSX.Element => {
+const Banner = ({ inAnimation = {} }: IBanner): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
-    let [BannerSrc, SetBannerSrc] = useState<string>(themeContext!.isDarkMode ? BannerBgDark : BannerBgLight)
+    const [BannerSrc, SetBannerSrc] = useState<string>(themeContext!.isDarkMode ? BannerBgDark : BannerBgLight)
 
     useEffect(() => {
         themeContext!.isDarkMode ? SetBannerSrc(BannerBgDark) : SetBannerSrc(BannerBgLight)
@@ -20,7 +20,7 @@ const Banner = ({ animation = {} }: IBanner): JSX.Element => {
 
     return (
         <div className={styles.banner}>
-            <div className={styles.banner__bg} style={animation}>
+            <div className={styles.banner__bg} style={inAnimation}>
                 <img src={BannerSrc} alt={'Image animée de code'} />
             </div>
         </div>

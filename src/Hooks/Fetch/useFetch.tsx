@@ -1,11 +1,23 @@
-
 import { useState, useEffect } from "react";
-import { ISlider } from "../../components/Slider/Slider";
 
+interface IItems {
+    title: string,
+    description: string,
+    cover: string,
+    technologies: {
+        html?: string;
+        css?: string;
+        sass?: string;
+        react?: string;
+        nodejs?: string;
+    },
+    site: string,
+    code: string
+}
 
 interface IFetch {
+    items: IItems[]
     loading: boolean,
-    items: ISlider[]
 }
 
 
@@ -16,10 +28,10 @@ export const useFetch = (): IFetch => {
     });
 
     useEffect(() => {
-        const fetchDatas = async (data?: string): Promise<void> => {
+        const fetchDatas = async (): Promise<void> => {
             try {
-                let fetchconfig = await fetch("/projets.json");
-                let response: ISlider[] | undefined = await fetchconfig.json();
+                const fetchconfig = await fetch("/projets.json");
+                const response: IItems[] | undefined = await fetchconfig.json();
 
                 setState({
                     items: response || [],
@@ -32,5 +44,5 @@ export const useFetch = (): IFetch => {
         fetchDatas();
 
     }, []);
-    return state;
+    return state
 }

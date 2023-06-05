@@ -1,0 +1,142 @@
+@use "../../sass/utils/variables";
+
+.boxinfos{
+    margin-top: 50px;
+    width: 100%;
+    // border-radius: 20px;
+    color: variables.$secondary-color;
+    padding: 0px;
+    // overflow: hidden;
+    // border: 1px solid white;
+    // border-top: 1px dashed variables.$secondary-color;
+
+    #container{
+        color: variables.$secondary-color;;
+    }
+       
+    .container{
+        &__title{
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        &__description{
+            padding: 10px;   
+            
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                
+            }
+        
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                font-size: 14px;
+            }
+        }
+
+        &__technologies{
+            display: flex;
+            padding: 10px;
+
+            .technologies{
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                flex-basis: 100%;
+ 
+            
+                &__name{
+                    padding: 10px;
+                }
+        
+                &__icones{
+                    & img{
+                        width: 50px;
+                        height: 50px;
+
+                        @media screen and (max-width: variables.$breakpoint-mobile) {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }   
+                }
+            }
+        }
+
+        &__sources{
+            display: flex;
+            justify-content: space-around;
+            padding: 5px;
+
+            button{
+                border : 1px solid variables.$secondary-color;
+                border-radius: 10px;
+                padding: 5px;    
+            }
+        }
+        
+    }
+
+    &--dark{
+        .container{
+            &__title{
+                    background: url('../../assets/img/bg_dark_title.webp');
+                    background-size: cover;
+            }
+
+            &__technologies{
+     
+                color: white;
+            }
+
+            &__description{
+                color: white;          
+            }
+
+        
+            &__sources{
+    
+                button{
+                    background-color: variables.$secondary-color;
+
+                    & a{
+                        color: white;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &--light{
+        .container{
+            &__title{
+                    background: url('../../assets/img/bg_light_header.png');
+                    background-size: cover;
+            }
+
+            &__sources{
+    
+                button{
+               
+                    & a{
+                        color: variables.$secondary-color;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+.animOpacity{
+    animation: opacitytitle 1.5s ease-in-out;
+}
+
+@keyframes opacitytitle{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

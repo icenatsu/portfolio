@@ -1,65 +1,50 @@
 [
     {
         "id": "1",
-        "title": "Projet 2 - Booki",
-        "description": "Transformez une maquette en site web avec HTML & CSS",
-        "cover": "./projects_img/cover/booki.PNG",
-        "technologies": [
-            "HTML",
-            "CSS"
-        ],
-        "icones": [
-            "./projects_img/techno_icones/html5.png",
-            "./projects_img/techno_icones/css3.png"
-        ],
-        "lien_site": "https://icenatsu.github.io/projet2_booki/",
-        "lien_code": "https://github.com/icenatsu/projet2_booki"  
+        "title": "Booki",
+        "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
+        "cover": "./projects_img/covers/booki.webp",
+        "technologies": {
+            "HTML": "./projects_img/techno_icones/html5.png",
+            "CSS": "./projects_img/techno_icones/css3.png"
+        },
+        "site": "https://icenatsu.github.io/projet2_booki/",
+        "code": "https://github.com/icenatsu/projet2_booki"  
     },
     {
         "id": "2",
-        "title": "Projet 3 - Oh my Food",
-        "description": "Dynamisez une page web avec des animations CSS",
-        "cover": "./projects_img/cover/oh_my_food.PNG",
-        "technologies": [
-            "HTML",
-            "CSS",
-            "SASS"
-        ],
-        "icones": [
-            "./projects_img/techno_icones/html5.png",
-            "./projects_img/techno_icones/css3.png",
-            "./projects_img/techno_icones/sass.png"
-        ],
-        "lien_site": "https://icenatsu.github.io/projet3_ohmyfood/",
-        "lien_code": "https://github.com/icenatsu/projet3_ohmyfood"    
+        "title": "Oh my Food",
+        "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS. Cela a également été l'occasion d'apprendre le préprocesseur SASS.",
+        "cover": "./projects_img/covers/ohmyfood.webp",
+        "technologies": {
+            "HTML": "./projects_img/techno_icones/html5.png",
+            "CSS": "./projects_img/techno_icones/css3.png",
+            "SASS": "./projects_img/techno_icones/sass.png"
+        },
+        "site": "https://icenatsu.github.io/projet3_ohmyfood/",
+        "code": "https://github.com/icenatsu/projet3_ohmyfood"    
     },
     {
         "id": "3",
-        "title": "Projet 6 - Piiquante",
-        "description": "Construisez une API sécurisée pour une application d'avis gastronomiques",
-        "cover": "./projects_img/cover/piquante.PNG",
-        "technologies": [
-            "NODE JS"
-        ],
-        "icones": [
-            "./projects_img/techno_icones/nodejs.png"
-        ],
-        "lien_code": "https://github.com/icenatsu/projet6_piquante"      
+        "title": "Piiquante",
+        "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB",
+        "cover": "./projects_img/covers/piquante.webp",
+        "technologies":{ 
+            "NODEJS": "./projects_img/techno_icones/nodejs.png",
+            "MongoDB": "./projects_img/techno_icones/mongodb.webp"
+        },
+        "code": "https://github.com/icenatsu/projet6_piquante"      
     },
     {
         "id": "4",
-        "title": "Projet 7 - ",
-        "description": "Créez une application web de location immobilière avec React",
-        "cover": "./projects_img/cover/kasa.PNG",
-        "technologies": [
-            "React",
-            "SASS"
-        ],
-        "icones": [
-            "./projects_img/techno_icones/",
-            "./projects_img/techno_icones/sass.png"
-        ],
-        "lien_site": "https://projet7-kasa.vercel.app/",
-        "lien_code": "https://github.com/icenatsu/projet7_kasa"  
+        "title": "Kasa",
+        "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React",
+        "cover": "./projects_img/covers/kasa.webp",
+        "technologies": {
+            "REACT": "./projects_img/techno_icones/react.png",
+            "SASS":"./projects_img/techno_icones/sass.png"
+        },
+        "site": "https://projet7-kasa.vercel.app/",
+        "code": "https://github.com/icenatsu/projet7_kasa"  
     }
 ]

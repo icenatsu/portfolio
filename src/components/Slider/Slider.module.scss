@@ -1,62 +1,127 @@
-.projects-info{
-    color: white;
-    background-color: rgb(208, 208, 208);
-    border-radius: 10px;
-    flex:4;
-    display: flex;
-    justify-content: center;
-    
-    .slider{
+@use "../../sass/utils/variables";
 
+.slider{
+    margin-top: 20px;
+    width: 500px;
+    height: 330px;
+    position: relative;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        width: 400px;
+        height: 230px;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
         width: 300px;
-        height: 400px;
-        margin-top: 20px;
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
+        height: 130px;
+    }
 
-        &__next-previous{
-            & img{
-                height: 25px;
-                width: 25px;
-            }
-            
-            &__next{
-                z-index: 8888888;
-                position: absolute;
-                right: -10px;
-                top: 50%;
-                transform: translateY(-50%);
-                
-            }
 
-            &__prev{
-                z-index: 8888888;
-                position: absolute;
-                left:-10px;
-                top: 50%;
-                transform: translateY(-50%);
+    &__chevron{
+        & img{ 
+            width: 50px;
+            height: 50px;
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                width: 30px;
+                height: 30px;
             }
         }
+      
+        &__prev{
+            z-index: 888888;
+            position: absolute;
+            left: -100px;
+            top: 50%;
+            transform: translateY(-50%);
 
-        &__pictures{
-            display: flex;
-            // border: 1px solid blue;
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                left: -15px;
+            }
+        }
         
-            transition: 1S;
-            width: 300px;
-            height: 400px;
-            border-radius: 10px;
-            &__item{
-                width: 300px;
-                height: 400px;
+        &__next{
+            z-index: 888888;
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
 
-                & img{
-                    width: 300px;
-                    height: 400px;
-                    object-fit: cover;
-                }
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                right: -15px;
+            }
+        }
+    }
+    
+    &__images{
+        display: flex;
+        justify-content: center;
+        width: 1500px;
+        height: 330px;
+        transform: translateX(-500px);
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            width: 1200px;
+            height: 230px;
+            transform: translateX(-400px);
+        }
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            width: 900px;
+            height: 130px;
+            transform: translateX(-300px);
+        }
+
+        &__item{
+            margin: 0;
+            width: 500px;
+            height: 100%;
+
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                width: 400px;
+            }
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                width: 300px;
+            }
+            
+            &__img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
 }
+
+#slider__pictures{
+    color: black;
+}
+
+.overflow{
+    overflow: hidden; 
+    border-radius: 30px;
+    // box-shadow: 5px 5px 10px rgb(178, 167, 167);
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        border-radius: 30px;
+    }
+}
+
+.translateprev{       
+  transform: translateX(0px);
+  transition: all 0.5s ease-in-out;
+}
+.translatenext{       
+    transform: translateX(-1000px);
+    transition: all 0.5s ease-in-out;
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        transform: translateX(-800px);
+    }
+
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        transform: translateX(-600px);
+    }
+}
+  
