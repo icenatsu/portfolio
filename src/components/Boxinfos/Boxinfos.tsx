@@ -15,11 +15,10 @@ const Boxinfos = ({ inTitle, inDescription, inTechnologies, inSite, inCode, inCu
 
     const themeContext = useContext(ThemeContext);
 
-
     return (
         <div className={[styles.boxinfos, themeContext?.isDarkMode ? styles['boxinfos--dark'] : styles['boxinfos--light']].join(' ')}>
             <div id={styles.container} className={styles.container}>
-                <h2 className={styles.container__title}>{inTitle[inCurrentIdx]}</h2>
+                <h2 className={styles.container__title}>{inTitle[inCurrentIdx]}</h2><span className={styles.background}></span>
                 <p className={styles.container__description}>{inDescription[inCurrentIdx]}</p>
 
                 <div className={styles.container__technologies}>
@@ -27,7 +26,7 @@ const Boxinfos = ({ inTitle, inDescription, inTechnologies, inSite, inCode, inCu
                         return (
                             <div className={styles.technologies} key={idx}>
                                 <figure className={styles.technologies__icones}>
-                                    <img src={techno[1]} alt=''></img>
+                                    <img src={techno[1]} alt={`icone ${techno[0]}`}></img>
                                 </figure>
                                 <p className={styles.technologies__name}>{techno[0]}</p>
                             </div>

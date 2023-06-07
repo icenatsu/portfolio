@@ -80,6 +80,7 @@ const Projets = (): JSX.Element => {
                     inNextIdx={nextIdx}
                     inPrevCursor={prevCursor}
                     inNextCursor={nextCursor}
+                    inTitle={title}
                 />
                 <Boxinfo
                     inTitle={title}

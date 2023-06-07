@@ -1,19 +1,25 @@
 @use "../../sass/utils/variables";
 
 .slider{
-    margin-top: 20px;
-    width: 500px;
-    height: 330px;
+    margin-top: 30px;
+    width: 450px;
+    height: 235px;
     position: relative;
-
+    margin-bottom: 55px;
+    // border: 1px solid green;
+    z-index: 9999;
+ 
     @media screen and (max-width: variables.$breakpoint-tablette) {
+        margin-top: 45px;
         width: 400px;
-        height: 230px;
+        height: 199px;
+        margin-bottom: 40px;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 300px;
-        height: 130px;
+        width: 250px;
+        height: 150px;
+        margin-bottom: 15px;
     }
 
 
@@ -36,7 +42,7 @@
             transform: translateY(-50%);
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                left: -15px;
+                left: -20px;
             }
         }
         
@@ -48,7 +54,7 @@
             transform: translateY(-50%);
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                right: -15px;
+                right: -20px;
             }
         }
     }
@@ -56,39 +62,40 @@
     &__images{
         display: flex;
         justify-content: center;
-        width: 1500px;
-        height: 330px;
-        transform: translateX(-500px);
+        width: 1350px;
+        height: 235px;
+        transform: translateX(-450px);
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             width: 1200px;
-            height: 230px;
+            height: 199px;
             transform: translateX(-400px);
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            width: 900px;
-            height: 130px;
-            transform: translateX(-300px);
+            width: 750px;
+            height: 150px;
+            transform: translateX(-250px);
         }
 
         &__item{
             margin: 0;
-            width: 500px;
+            width: 531px;
             height: 100%;
 
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                width: 400px;
+                width: 431px;
             }
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                width: 300px;
+                width: 250px;
+
             }
             
             &__img{
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                // object-fit: cover;
             }
         }
     }
@@ -98,14 +105,55 @@
     color: black;
 }
 
+
+
 .overflow{
     overflow: hidden; 
-    border-radius: 30px;
-    // box-shadow: 5px 5px 10px rgb(178, 167, 167);
+  
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        width: 400px;
+        height: 199px;
+    }
+    @media screen and (max-width: variables.$breakpoint-mobile) {
+        width: 250px;
+        height: 150px;
+    }
+    
+}
+
+.cadre{
+    position: absolute;
+    width: 540px;
+    height: 450px;
+    margin-bottom: 50px;
+    top: -15px;
+    left: -18px;
+
+    & img{
+        width: 484px;
+        height: 368px;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-tablette) {
+        top: -14px;
+        left: -10px;
+
+        & img{
+            width: 425px;
+            height: 314px;
+        }
+    }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        border-radius: 30px;
+        top:-9px;
+        left: -10px;
+
+        & img{
+            width: 270px;
+            height: 235px;
+        }
     }
+
 }
 
 .translateprev{       
@@ -113,7 +161,7 @@
   transition: all 0.5s ease-in-out;
 }
 .translatenext{       
-    transform: translateX(-1000px);
+    transform: translateX(-900px);
     transition: all 0.5s ease-in-out;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
@@ -121,7 +169,7 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        transform: translateX(-600px);
+        transform: translateX(-500px);
     }
 }
   

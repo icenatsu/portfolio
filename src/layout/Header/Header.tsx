@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss"
 import { NavLink } from "react-router-dom";
-import Logo from "../../assets/img/logo.png"
+import Logo from "../../assets/img/logo.webp"
 import Switch from "../../components/Switch/Switch";
 import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";

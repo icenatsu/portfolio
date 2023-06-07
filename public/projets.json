@@ -5,8 +5,8 @@
         "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
         "cover": "./projects_img/covers/booki.webp",
         "technologies": {
-            "HTML": "./projects_img/techno_icones/html5.png",
-            "CSS": "./projects_img/techno_icones/css3.png"
+            "HTML": "./projects_img/techno_icones/html5.webp",
+            "CSS": "./projects_img/techno_icones/css3.webp"
         },
         "site": "https://icenatsu.github.io/projet2_booki/",
         "code": "https://github.com/icenatsu/projet2_booki"  
@@ -17,9 +17,9 @@
         "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS. Cela a également été l'occasion d'apprendre le préprocesseur SASS.",
         "cover": "./projects_img/covers/ohmyfood.webp",
         "technologies": {
-            "HTML": "./projects_img/techno_icones/html5.png",
-            "CSS": "./projects_img/techno_icones/css3.png",
-            "SASS": "./projects_img/techno_icones/sass.png"
+            "HTML": "./projects_img/techno_icones/html5.webp",
+            "CSS": "./projects_img/techno_icones/css3.webp",
+            "SASS": "./projects_img/techno_icones/sass.webp"
         },
         "site": "https://icenatsu.github.io/projet3_ohmyfood/",
         "code": "https://github.com/icenatsu/projet3_ohmyfood"    
@@ -30,7 +30,7 @@
         "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB",
         "cover": "./projects_img/covers/piquante.webp",
         "technologies":{ 
-            "NODEJS": "./projects_img/techno_icones/nodejs.png",
+            "NODEJS": "./projects_img/techno_icones/nodejs.webp",
             "MongoDB": "./projects_img/techno_icones/mongodb.webp"
         },
         "code": "https://github.com/icenatsu/projet6_piquante"      
@@ -41,8 +41,8 @@
         "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React",
         "cover": "./projects_img/covers/kasa.webp",
         "technologies": {
-            "REACT": "./projects_img/techno_icones/react.png",
-            "SASS":"./projects_img/techno_icones/sass.png"
+            "REACT": "./projects_img/techno_icones/react.webp",
+            "SASS":"./projects_img/techno_icones/sass.webp"
         },
         "site": "https://projet7-kasa.vercel.app/",
         "code": "https://github.com/icenatsu/projet7_kasa"  

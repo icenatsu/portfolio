@@ -1,7 +1,7 @@
 import styles from "./Banner.module.scss"
 import { useEffect, useContext, useState } from "react";
-import BannerBgDark from "../../assets/img/banner_bg_dark.png";
-import BannerBgLight from "../../assets/img/banner_bg_light.png";
+import BannerBgDark from "../../assets/img/banner_bg_dark.webp";
+import BannerBgLight from "../../assets/img/banner_bg_light.webp";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 
 interface IBanner {
@@ -21,7 +21,7 @@ const Banner = ({ inAnimation = {} }: IBanner): JSX.Element => {
     return (
         <div className={styles.banner}>
             <div className={styles.banner__bg} style={inAnimation}>
-                <img src={BannerSrc} alt={'Image animée de code'} />
+                <img src={BannerSrc} alt='Image animée de code' />
             </div>
         </div>
     );

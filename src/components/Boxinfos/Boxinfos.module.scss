@@ -3,18 +3,15 @@
 .boxinfos{
     margin-top: 50px;
     width: 100%;
-    // border-radius: 20px;
     color: variables.$secondary-color;
     padding: 0px;
-    // overflow: hidden;
-    // border: 1px solid white;
-    // border-top: 1px dashed variables.$secondary-color;
 
     #container{
         color: variables.$secondary-color;;
     }
        
     .container{
+
         &__title{
             padding: 10px;
             margin-bottom: 10px;
@@ -109,7 +106,7 @@
     &--light{
         .container{
             &__title{
-                    background: url('../../assets/img/bg_light_header.png');
+                    background: url('../../assets/img/bg_light_header.webp');
                     background-size: cover;
             }
 
