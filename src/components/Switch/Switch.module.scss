@@ -29,8 +29,7 @@ input{
 
             &::before{
                 transform: translateX(25px);
-                // background-color: rgb(7, 69, 193);
-    
+           
                 @media screen and (max-width: variables.$breakpoint-tablette) {
                     transform: translateX(23px);
                 }
