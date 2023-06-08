@@ -11,7 +11,7 @@ const Header = (): JSX.Element => {
 
     return (
         <header className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}>
-            <div className={styles.logo}><img src={Logo} alt="logo" /></div>
+            <div className={styles.logo}><img src={Logo} alt="Dessin d'une cruche inclinée" /></div>
             <ul className={styles.list}>
                 <li className={styles.list__item}><NavLink to="/">Accueil </NavLink></li>
                 <li className={styles.list__item}><NavLink to="/projets">Projets</NavLink></li>
