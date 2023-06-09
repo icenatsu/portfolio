@@ -27,6 +27,7 @@ export const useFetch = (): IFetch => {
         loading: true,
     });
 
+
     useEffect(() => {
         const fetchDatas = async (): Promise<void> => {
             try {

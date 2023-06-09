@@ -1,3 +1,5 @@
+@use "../../sass/utils/variables";
+
 .projects{
     display: flex;
 
@@ -6,7 +8,38 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        // background-color: rgb(237, 232, 237);
         border-radius: 20px;
+        position: relative;
+    }
+
+    .background__title{
+        width: 100%;
+        height: 47.6px;
+        position: absolute;
+        top: 370px;
+        z-index: -9999;
+
+        @media screen and (max-width: variables.$breakpoint-tablette) {
+            top: 335px;
+        }
+    
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            top: 260px;
+        }
+    }
+
+    &--dark{
+        .background__title{
+            background: url('../../assets/img/bg_dark_title.webp');
+        }
+
+    }
+
+    &--light{
+        .background__title{
+            background: url('../../assets/img/bg_light_header.webp');
+            background-size: cover;
+        }
     }
 }
+

@@ -74,10 +74,6 @@
 
     &--dark{
         .container{
-            &__title{
-                    background: url('../../assets/img/bg_dark_title.webp');
-                    background-size: cover;
-            }
 
             &__technologies{
      
@@ -105,11 +101,6 @@
 
     &--light{
         .container{
-            &__title{
-                    background: url('../../assets/img/bg_light_header.webp');
-                    background-size: cover;
-            }
-
             &__sources{
     
                 button{

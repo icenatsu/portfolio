@@ -6,19 +6,18 @@ import { useEffect, useState } from "react";
 import styleSlider from "../../components/Slider/Slider.module.scss"
 import Boxinfo from "../../components/Boxinfos/Boxinfos"
 import stylesBoxinfo from "../../components/Boxinfos/Boxinfos.module.scss"
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
+import { useContext } from "react";
 
 
 const Projets = (): JSX.Element => {
 
+    const themeContext = useContext(ThemeContext);
+
     const state = useFetch();
+    console.log('state.items.length ===> ' + state.items.length);
 
-    const covers = state.items.map(projects => projects.cover)
-    const title = state.items.map(projects => projects.title)
-    const description = state.items.map(projects => projects.description)
-    const technologies = state.items.map(projects => Object.entries(projects.technologies))
-    const site = state.items.map(projects => projects.site)
-    const code = state.items.map(projects => projects.code)
-
+    console.log();
     const [currentIdx, setCurrentIdx] = useState(0);
     const [nextIdx, setNextIdx] = useState(0);
     const [prevIdx, setPrevIdx] = useState(0);
@@ -53,11 +52,26 @@ const Projets = (): JSX.Element => {
         cursorAnimation('next');
     }
 
+
+
     useEffect(() => {
         const timer1 = setTimeout(() => {
-            currentIdx + 1 > nbProject - 1 ? setNextIdx(0) : setNextIdx(currentIdx + 1)
-            currentIdx - 1 < 0 ? setPrevIdx(nbProject - 1) : setPrevIdx(currentIdx - 1)
+
+            setNextIdx(() => {
+                if (currentIdx + 1 > nbProject - 1) {
+                    return nbProject - 1
+                }
+                return currentIdx + 1
+            })
+
+            setPrevIdx(() => {
+                if (currentIdx - 1 < 0) {
+                    return nbProject - 1
+                }
+                return currentIdx - 1
+            })
         }, 50)
+
 
         return (() => {
             clearTimeout(timer1)
@@ -65,34 +79,40 @@ const Projets = (): JSX.Element => {
     }, [currentIdx, nbProject])
 
     useEffect(() => {
-        setNbProject(covers.length)
-    }, [covers])
+        setNbProject(state.items.length)
+        // setCurrentIdx(0);
 
+    }, [state.items])
 
-    return (
-        <div className={styles.projects}>
-            <Banner />
-            <div className={styles.projects__content}>
-                <Slider
-                    inCovers={covers}
-                    inCurrentIdx={currentIdx}
-                    inPrevIdx={prevIdx}
-                    inNextIdx={nextIdx}
-                    inPrevCursor={prevCursor}
-                    inNextCursor={nextCursor}
-                    inTitle={title}
-                />
-                <Boxinfo
-                    inTitle={title}
-                    inDescription={description}
-                    inTechnologies={technologies}
-                    inSite={site}
-                    inCode={code}
-                    inCurrentIdx={currentIdx}
-                />
+    console.log('nbProject ===> ' + nbProject);
+
+    console.log(prevIdx, currentIdx, nextIdx);
+
+    if (state.items.length !== 0) {
+        return (
+            <div className={[styles.projects, themeContext?.isDarkMode ? styles['projects--dark'] : styles['projects--light']].join(' ')}>
+                <Banner />
+                <div className={styles.projects__content}>
+                    <Slider
+                        inData={state.items}
+                        inCurrentIdx={currentIdx}
+                        inPrevIdx={prevIdx}
+                        inNextIdx={nextIdx}
+                        inPrevCursor={prevCursor}
+                        inNextCursor={nextCursor}
+                    />
+                    <div className={styles.background__title}></div>
+                    <Boxinfo
+                        inData={state.items}
+                        inCurrentIdx={currentIdx}
+                    />
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    return (
+        <></>
+    )
 };
 
 export default Projets;

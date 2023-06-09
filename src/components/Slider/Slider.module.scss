@@ -1,13 +1,14 @@
 @use "../../sass/utils/variables";
 
+
 .slider{
     margin-top: 30px;
     width: 450px;
     height: 235px;
     position: relative;
     margin-bottom: 55px;
-    // border: 1px solid green;
     z-index: 9999;
+    
  
     @media screen and (max-width: variables.$breakpoint-tablette) {
         margin-top: 45px;
