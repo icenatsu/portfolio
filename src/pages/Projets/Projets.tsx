@@ -4,8 +4,6 @@ import Slider from "../../components/Slider/Slider"
 import { useFetch } from "../../Hooks/Fetch/useFetch"
 import { useEffect, useState } from "react";
 import styleSlider from "../../components/Slider/Slider.module.scss"
-import Boxinfo from "../../components/Boxinfos/Boxinfos"
-import stylesBoxinfo from "../../components/Boxinfos/Boxinfos.module.scss"
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
 import { useContext } from "react";
 
@@ -15,9 +13,7 @@ const Projets = (): JSX.Element => {
     const themeContext = useContext(ThemeContext);
 
     const state = useFetch();
-    console.log('state.items.length ===> ' + state.items.length);
 
-    console.log();
     const [currentIdx, setCurrentIdx] = useState(0);
     const [nextIdx, setNextIdx] = useState(0);
     const [prevIdx, setPrevIdx] = useState(0);
@@ -26,13 +22,13 @@ const Projets = (): JSX.Element => {
     const cursorAnimation = (cursor: 'prev' | 'next') => {
 
         const pictures = document.getElementById(styleSlider.slider__pictures)
-        const boxinfo = document.getElementById(stylesBoxinfo.container)
+        const boxinfo = document.getElementById(styles.container)
 
         cursor === 'prev' ? pictures?.classList.add(styleSlider.translateprev) : pictures?.classList.add(styleSlider.translatenext)
 
         setTimeout(() => {
             cursor === "prev" ? setCurrentIdx(curr => curr === 0 ? nbProject - 1 : curr - 1) : setCurrentIdx(curr => curr === nbProject - 1 ? 0 : curr + 1)
-            boxinfo?.classList.add(stylesBoxinfo.animOpacity)
+            boxinfo?.classList.add(styles.animOpacity)
         }, 500)
 
         setTimeout(() => {
@@ -40,7 +36,7 @@ const Projets = (): JSX.Element => {
         }, 550)
 
         setTimeout(() => {
-            boxinfo?.classList.remove(stylesBoxinfo.animOpacity)
+            boxinfo?.classList.remove(styles.animOpacity)
         }, 1500)
     }
 
@@ -52,41 +48,35 @@ const Projets = (): JSX.Element => {
         cursorAnimation('next');
     }
 
-
-
     useEffect(() => {
-        const timer1 = setTimeout(() => {
 
-            setNextIdx(() => {
-                if (currentIdx + 1 > nbProject - 1) {
-                    return nbProject - 1
-                }
-                return currentIdx + 1
+        if (nbProject !== 0) {
+            const timer1 = setTimeout(() => {
+                setNextIdx(() => {
+                    if (currentIdx + 1 > nbProject - 1) {
+                        return nbProject - 1
+                    }
+                    return currentIdx + 1
+                })
+
+                setPrevIdx(() => {
+                    if (currentIdx - 1 < 0) {
+                        return nbProject - 1
+                    }
+                    return currentIdx - 1
+                })
+            }, 50)
+            return (() => {
+                clearTimeout(timer1)
             })
+        }
 
-            setPrevIdx(() => {
-                if (currentIdx - 1 < 0) {
-                    return nbProject - 1
-                }
-                return currentIdx - 1
-            })
-        }, 50)
-
-
-        return (() => {
-            clearTimeout(timer1)
-        })
     }, [currentIdx, nbProject])
 
     useEffect(() => {
         setNbProject(state.items.length)
-        // setCurrentIdx(0);
+    }, [state.items.length])
 
-    }, [state.items])
-
-    console.log('nbProject ===> ' + nbProject);
-
-    console.log(prevIdx, currentIdx, nextIdx);
 
     if (state.items.length !== 0) {
         return (
@@ -102,10 +92,29 @@ const Projets = (): JSX.Element => {
                         inNextCursor={nextCursor}
                     />
                     <div className={styles.background__title}></div>
-                    <Boxinfo
-                        inData={state.items}
-                        inCurrentIdx={currentIdx}
-                    />
+                    <div className={styles.boxinfos}>
+                        <div id={styles.container} className={styles.container}>
+                            <h2 className={styles.container__title}>{state.items[currentIdx].title}</h2>
+                            <p className={styles.container__description}>{state.items[currentIdx].description}</p>
+
+                            <div className={styles.container__technologies}>
+                                {Object.entries(state.items[currentIdx].technologies).map((techno, idx: number) => {
+                                    return (
+                                        <div className={styles.technologies} key={idx}>
+                                            <figure className={styles.technologies__icones}>
+                                                <img src={techno[1]} alt={`icone ${techno[0]}`}></img>
+                                            </figure>
+                                            <p className={styles.technologies__name}>{techno[0]}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.container__sources}>
+                                {state.items[currentIdx].site !== undefined && <button className={styles.site}><a href={state.items[currentIdx].site}>Voir le site</a></button>}
+                                <button className={styles.code}><a href={state.items[currentIdx].code}>Voir le code</a></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

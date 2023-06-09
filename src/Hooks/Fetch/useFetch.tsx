@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-interface IItems {
+interface IntItems {
     title: string,
     description: string,
     cover: string,
@@ -16,7 +16,7 @@ interface IItems {
 }
 
 interface IFetch {
-    items: IItems[]
+    items: IntItems[]
     loading: boolean,
 }
 
@@ -32,13 +32,13 @@ export const useFetch = (): IFetch => {
         const fetchDatas = async (): Promise<void> => {
             try {
                 const fetchconfig = await fetch("/projets.json");
-                const response: IItems[] | undefined = await fetchconfig.json();
+                const response: IntItems[] | undefined = await fetchconfig.json();
 
                 setState({
                     items: response || [],
                     loading: false,
                 });
-            } catch (e) {
+            } catch (e: any) {
                 setState((s) => ({ ...s, loading: false }));
             }
         };
