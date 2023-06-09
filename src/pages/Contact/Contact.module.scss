@@ -1,3 +1,25 @@
-.test{
-    color: green;
+.container{
+    color: white;
+    display: flex;
+ 
+
+    .form__contact{
+        flex: 4;
+        background: url('../../assets/img/bg_dark_title.webp') no-repeat;
+        padding: 10px;
+    
+        // .lastname{
+        //     // height: 100px;
+        //     // width: 100px;
+            
+        // }
+        .test{
+            color: white;
+            border: 1px solid white;
+            height: 100px;
+            width: 100%;
+            background-color: white;
+        }
+    }
+
 }
