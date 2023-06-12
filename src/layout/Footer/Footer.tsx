@@ -8,7 +8,7 @@ const Footer = (): JSX.Element => {
 
 
     return (
-        <footer className={[!themeContext?.isDarkMode ? styles.light : styles.dark].join('')}>
+        <footer className={[styles.footer, !themeContext?.isDarkMode ? styles.light : styles.dark].join(' ')}>
             <ul className={styles.infos}>
                 <li className={styles.infos__item}>Gaëlle Blanchard</li>
                 <li className={styles.infos__item}>Marseille 13013</li>

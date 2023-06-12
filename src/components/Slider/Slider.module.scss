@@ -7,7 +7,7 @@
     height: 235px;
     position: relative;
     margin-bottom: 55px;
-    z-index: 9999;
+    z-index: 1;
     
  
     @media screen and (max-width: variables.$breakpoint-tablette) {
@@ -36,7 +36,7 @@
         }
       
         &__prev{
-            z-index: 888888;
+            z-index: 4;
             position: absolute;
             left: -100px;
             top: 50%;
@@ -48,7 +48,7 @@
         }
         
         &__next{
-            z-index: 888888;
+            z-index: 4;
             position: absolute;
             right: -100px;
             top: 50%;
@@ -103,7 +103,7 @@
 }
 
 #slider__pictures{
-    color: black;
+    color: variables.$light-contrast-color;
 }
 
 
@@ -124,37 +124,29 @@
 
 .cadre{
     position: absolute;
-    width: 540px;
-    height: 450px;
-    margin-bottom: 50px;
+    width: 484px;
+    height: 370px;
     top: -15px;
     left: -18px;
 
     & img{
-        width: 484px;
-        height: 368px;
+        width: 100%;
+        height: 100%;
     }
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
+        width: 425px;
+        height: 314px;
         top: -14px;
         left: -10px;
-
-        & img{
-            width: 425px;
-            height: 314px;
-        }
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
+        width: 270px;
+        height: 235px;
         top:-9px;
         left: -10px;
-
-        & img{
-            width: 270px;
-            height: 235px;
-        }
     }
-
 }
 
 .translateprev{       

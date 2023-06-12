@@ -12,25 +12,25 @@
     font-weight: 500;
 
     & a{
-        color: white;
+        color: variables.$dark-contrast-color;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            color: black;
+            color: variables.$light-contrast-color;
             font-weight: 600;
         }
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            color: black;
+            color: variables.$light-contrast-color;
         }
     }
 
     & i{
-        color: black;
+        color: variables.$light-contrast-color;
     }
 
 }
 
 .dark {
-    background-color: black;
+    background-color: variables.$light-contrast-color;
     position: relative;
 }
 
@@ -42,6 +42,6 @@
 
 @media(prefers-color-scheme: dark){
     body {
-        background-color: black;
+        background-color: variables.$light-contrast-color;
     }
 }

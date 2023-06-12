@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 20px;
+        border-radius: variables.$big-radius;
         position: relative;
     }
 
@@ -31,11 +31,11 @@
     .boxinfos{
         margin-top: 50px;
         width: 100%;
-        color: variables.$secondary-color;
+        color: variables.$primary-color;
         padding: 0px;
     
         #container{
-            color: variables.$secondary-color;;
+            color: variables.$primary-color;;
         }
            
         .container{
@@ -64,7 +64,7 @@
                 .technologies{
                     display: flex;
                     align-items: center;
-                    border-radius: 5px;
+                    border-radius: variables.$small-radius;
                     flex-basis: 100%;
      
                 
@@ -92,8 +92,8 @@
                 padding: 5px;
     
                 button{
-                    border : 1px solid variables.$secondary-color;
-                    border-radius: 10px;
+                    border : 1px solid variables.$primary-color;
+                    border-radius: variables.$medium-radius;
                     padding: 5px;    
                 }
             }   
@@ -109,21 +109,21 @@
 
             &__technologies{
      
-                color: white;
+                color: variables.$dark-contrast-color;
             }
 
             &__description{
-                color: white;          
+                color: variables.$dark-contrast-color;          
             }
 
         
             &__sources{
     
                 button{
-                    background-color: variables.$secondary-color;
+                    background-color: variables.$primary-color;
 
                     & a{
-                        color: white;
+                        color: variables.$dark-contrast-color;
                     }
                 }
             }
@@ -143,7 +143,7 @@
                 button{
                
                     & a{
-                        color: variables.$secondary-color;
+                        color: variables.$primary-color;
                     }
                 }
             }

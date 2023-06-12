@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         height: 60px;
-        border-radius: 10px;
+        border-radius: variables.$medium-radius;
         justify-content: end;
     }
     
@@ -56,10 +56,6 @@
         }    
     }
 
-    #list{
-        font-size: 20px;
-    }
-
     .list{
         display: flex;
         flex: 1.3;
@@ -78,78 +74,115 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            top:0%;
-            left: -100%;
-            z-index: 99999;
+            position: fixed;
+            top:-100%;
+            left: 0%;
+            z-index: 3;
             height: 100vh;
-            width: 100vw;
-            transition: left 0.8s;       
+            width: 150vw;
+            transition: top 0.8s ease-in-out;  
+            margin-left: 0;     
         }
 
-    
-        
         &__item{
             background-color: transparent;
             margin-left: 5px;
 
-            & a{
-                margin-left: 5px;
-            }
-            
             @media screen and (max-width: variables.$breakpoint-tablette) {
                 font-size: 18px
             }
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 font-size: 25px;
-                padding: 10px;
+                padding: 5px;
+                margin-bottom: 20px;
             }
-            
+
+            & a{
+                margin-left: 5px;
+
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    margin-left: 0px;
+                }
+            }
+        
             a:hover{
                 padding-bottom: 4px;
-                border-bottom: 2px solid violet;
+                border-bottom: 2px solid variables.$secondary-color;
             }
         }
     } 
     
     .mobile{
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            display: flex;
+            top:0%;
+        }
+    }
+
+    .background__action{
+        &__left{
+            
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                left : 0% !important;  
+            }
+        }
+        
+        &__right{
+
+            @media screen and (max-width: variables.$breakpoint-mobile) {
+                left: 50% !important; 
+            }
+           
+        }
+    }
+
+    .visible{
+        
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            display: block!important; 
+        }
+    }
+    
+    .background__list__mobile{
         display: none;
+
         @media screen and (max-width: variables.$breakpoint-tablette) {
             display: none;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            display: flex;
-            left:1%;
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            z-index: 2;  
         }
-    }
-    
-    // .background__list__mobile{
-    //     display: none;
 
-    //     @media screen and (max-width: variables.$breakpoint-tablette) {
-    //         display: none;
-    //     }
+        &__left{
+            width: 50%;
+            height: 100%; 
+            left: -50%; 
+            position: fixed;
+            transition: left 0.4s;
+        }
 
-    //     @media screen and (max-width: variables.$breakpoint-mobile) {
-    //         display: block;
-    //         background-color: red; 
-    //         height: 100vh;
-    //         width: 100vw;
-    //         position: fixed;
-    //         top: 0;
-    //         left: 0;
-    //     }
-    // }    
-
-
+        
+        &__right{
+            width: 50%;
+            height: 100%;
+            left: 100%;  
+            position: fixed;
+            transition: left 0.4s;
+        }
+    }    
 
     #autotext{
         display: flex;
         flex: 0.7;
         justify-content: right;
-        border-right: 0.15em solid variables.$secondary-color;
+        border-right: 0.15em solid variables.$primary-color;
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
         font-size: 17px;
@@ -157,7 +190,7 @@
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             font-size: 14px;
-            color: white;
+            color: variables.$dark-contrast-color;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -183,10 +216,6 @@
 
     }
 
-    #burger{
-        color: white;
-    }
-
     .burger{
         display: none;
 
@@ -194,7 +223,7 @@
             display: block;
             position: absolute;
             padding-right: 10px;
-            z-index: 9999999999999;
+            z-index: 5;
             top:25px;
             left:10px;
         }    
@@ -202,13 +231,44 @@
 
     &--light{
         background-image: url(../../assets/img/bg_light_header.webp);
-        color: black;
+        color: variables.$light-contrast-color;
 
         .list{
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                background-color: rgb(255, 255, 255);
+                background: url("../../assets/img/banner_bg_light.webp");
+                background-repeat: no-repeat;
+                background-size: 270px 100%;
             }
-        } 
+
+            &__item{
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    background-color: variables.$dark-contrast-color;
+                    border-radius: 15px;
+                    border: 2px solid variables.$primary-color;
+                    padding: 10px;
+                    transition: 1s;
+                }
+
+                &:active{
+                    @media screen and (max-width: variables.$breakpoint-mobile) {
+                        border-bottom: none;
+                        background-color: rgb(155, 216, 243);
+                        border: 2px solid variables.$primary-color;
+                    }
+                }
+
+                & a{
+                    @media screen and (max-width: variables.$breakpoint-mobile) {
+                        color: variables.$primary-color;
+                    }
+                    &:hover{
+                        @media screen and (max-width: variables.$breakpoint-mobile) {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
 
         #autotext{
             color: rgb(8, 92, 8);
@@ -219,20 +279,53 @@
             }
         }
     
-        #burger{
-            color: black;
+        .background__list__mobile{    
+            &__left{
+                background-color: variables.$dark-contrast-color;
+            }
+
+            &__right{
+                background-color: variables.$dark-contrast-color;
+            }
         }
     }
     
     &--dark{
         background-image: url(../../assets/img/bg_dark_header.webp);
-        color: white;
+        color: variables.$dark-contrast-color;   
 
         .list{
-            @media screen and (max-width: variables.$breakpoint-mobile) {
-                background-color: rgb(0, 0, 0);
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                background: url("../../assets/img/banner_bg_dark.webp");
+                background-repeat: no-repeat;
+                background-size: 270px 100%;
             }
-        }    
+
+            &__item{
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    background-color: variables.$primary-color;
+                    border-radius: 15px;
+                    border: 2px solid variables.$dark-contrast-color;
+                    padding: 10px;
+                    transition: 1s;
+                }
+
+                &:active{
+                    @media screen and (max-width: variables.$breakpoint-mobile) {
+                        border-bottom: none;
+                        border: 2px solid rgb(61, 120, 145);
+                    }
+                }
+
+                & a{
+                    &:hover{
+                        @media screen and (max-width: variables.$breakpoint-mobile) {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
         
         #autotext{
             color: rgb(126, 79, 126);
@@ -240,6 +333,17 @@
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
                 color: rgb(233, 129, 233);
+            }
+        }
+
+        .background__list__mobile{  
+            &__left{
+                background-color: variables.$light-contrast-color;
+            }
+
+            
+            &__right{
+                background-color: variables.$light-contrast-color;
             }
         }
     }
@@ -284,7 +388,7 @@
        border-color: transparent; 
     }
     50% {
-        border-color: variables.$secondary-color;
+        border-color: variables.$primary-color;
     }
 }
 

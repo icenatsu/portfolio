@@ -1,7 +1,7 @@
 @use "../../sass/utils/variables";
 @use "../../sass/utils/mixins";
 
-footer{
+.footer{
     @include mixins.largeScreen;
     max-width: 100%;
     display: flex;
@@ -9,7 +9,6 @@ footer{
     align-items: center;
     position: relative;
     height: 140px;
-    z-index: 11;
    
     @media screen and (max-width: variables.$breakpoint-tablette) {
         background-size: variables.$breakpoint-tablette 200px;
@@ -42,7 +41,7 @@ footer{
             background-size: variables.$breakpoint-tablette 200px;
             @include mixins.smallScreen;
             height: 80px;
-            border-radius: 20px;
+            border-radius: variables.$big-radius;
             font-size: 13px;
             padding: 10px 0px;
         }
@@ -73,11 +72,11 @@ footer{
 }
 
 .dark{
-    color: black;
+    color: variables.$light-contrast-color;
     background-color: rgb(169, 163, 163);
 }
 
 .light{
     background-image: url(../../assets/img/bg_light_footer.webp);
-    color: black;
+    color: variables.$light-contrast-color;
 }

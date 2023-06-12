@@ -1,5 +1,7 @@
+@use "../../sass/utils/variables";
+
 .container{
-    color: white;
+    color: variables.$dark-contrast-color;
     display: flex;
 
     .form__contact{
@@ -16,15 +18,15 @@
                 padding: 20px 0px 0px 0px;
                 display: block;
                 width: 100%;
-                border-radius: 10px;
-                border: 1px solid white;
+                border-radius: variables.$medium-radius;
+                border: 1px solid variables.$dark-contrast-color;
     
                 .input{
-                    color: black;
-                    border: 1px solid white;
+                    color: variables.$light-contrast-color;
+                    border: 1px solid variables.$dark-contrast-color;
                     height: 50px;
                     width: 100%;
-                    background-color: white;
+                    background-color: variables.$dark-contrast-color;
                 }
             }
 
