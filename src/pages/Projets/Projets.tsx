@@ -8,11 +8,28 @@ import { ThemeContext } from "../../ThemeContext/ThemeContext";
 import { useContext } from "react";
 
 
+interface IntItems {
+    id: number,
+    title: string,
+    description: string,
+    cover: string,
+    technologies: {
+        html?: string;
+        css?: string;
+        sass?: string;
+        react?: string;
+        nodejs?: string;
+    },
+    site: string,
+    code: string
+}
+
 const Projets = (): JSX.Element => {
 
-    const themeContext = useContext(ThemeContext);
 
-    const state = useFetch();
+    const { items, error } = useFetch<IntItems[]>();
+
+    const themeContext = useContext(ThemeContext);
 
     const [currentIdx, setCurrentIdx] = useState(0);
     const [nextIdx, setNextIdx] = useState(0);
@@ -48,8 +65,9 @@ const Projets = (): JSX.Element => {
         cursorAnimation('next');
     }
 
-    useEffect(() => {
 
+
+    useEffect(() => {
         if (nbProject !== 0) {
             const timer1 = setTimeout(() => {
                 setNextIdx(() => {
@@ -74,17 +92,25 @@ const Projets = (): JSX.Element => {
     }, [currentIdx, nbProject])
 
     useEffect(() => {
-        setNbProject(state.items.length)
-    }, [state.items.length])
+        if (items !== undefined) {
+            setNbProject(items.length)
+        }
+    }, [items]);
 
 
-    if (state.items.length !== 0) {
+    if (error !== undefined) {
+        return (
+            <div>{error}</div>
+        )
+    }
+
+    if (items !== undefined) {
         return (
             <div className={[styles.projects, themeContext?.isDarkMode ? styles['projects--dark'] : styles['projects--light']].join(' ')}>
                 <Banner />
                 <div className={styles.projects__content}>
                     <Slider
-                        inData={state.items}
+                        inData={items}
                         inCurrentIdx={currentIdx}
                         inPrevIdx={prevIdx}
                         inNextIdx={nextIdx}
@@ -94,11 +120,11 @@ const Projets = (): JSX.Element => {
                     <div className={styles.background__title}></div>
                     <div className={styles.boxinfos}>
                         <div id={styles.container} className={styles.container}>
-                            <h2 className={styles.container__title}>{state.items[currentIdx].title}</h2>
-                            <p className={styles.container__description}>{state.items[currentIdx].description}</p>
+                            <h2 className={styles.container__title}>{items[currentIdx].title}</h2>
+                            <p className={styles.container__description}>{items[currentIdx].description}</p>
 
                             <div className={styles.container__technologies}>
-                                {Object.entries(state.items[currentIdx].technologies).map((techno, idx: number) => {
+                                {Object.entries(items[currentIdx].technologies).map((techno, idx: number) => {
                                     return (
                                         <div className={styles.technologies} key={idx}>
                                             <figure className={styles.technologies__icones}>
@@ -110,8 +136,8 @@ const Projets = (): JSX.Element => {
                                 })}
                             </div>
                             <div className={styles.container__sources}>
-                                {state.items[currentIdx].site !== undefined && <button className={styles.site}><a href={state.items[currentIdx].site}>Voir le site</a></button>}
-                                <button className={styles.code}><a href={state.items[currentIdx].code}>Voir le code</a></button>
+                                {items[currentIdx].site !== undefined && <button className={styles.site}><a href={items[currentIdx].site}>Voir le site</a></button>}
+                                <button className={styles.code}><a href={items[currentIdx].code}>Voir le code</a></button>
                             </div>
                         </div>
                     </div>
@@ -119,9 +145,13 @@ const Projets = (): JSX.Element => {
             </div>
         );
     }
+
     return (
         <></>
     )
+
+
+
 };
 
 export default Projets;

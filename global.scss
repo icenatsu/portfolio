@@ -1,6 +1,12 @@
 @use "./src/sass/utils/variables";
 @use "./src/sass/utils/mixins";
 
+// #root{
+//     @media screen and (max-width: variables.$breakpoint-mobile) {
+//        position: relative;
+//     }
+// }
+
 .light {
     background-color: #fff;
     font-weight: 500;
@@ -20,10 +26,12 @@
     & i{
         color: black;
     }
+
 }
 
 .dark {
     background-color: black;
+    position: relative;
 }
 
 @media(prefers-color-scheme: ligth){

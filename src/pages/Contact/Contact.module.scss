@@ -1,25 +1,39 @@
 .container{
     color: white;
     display: flex;
- 
 
     .form__contact{
         flex: 4;
-        background: url('../../assets/img/bg_dark_title.webp') no-repeat;
-        padding: 10px;
-    
-        // .lastname{
-        //     // height: 100px;
-        //     // width: 100px;
-            
-        // }
-        .test{
-            color: white;
-            border: 1px solid white;
-            height: 100px;
-            width: 100%;
-            background-color: white;
-        }
-    }
 
+        .test{
+            display: grid;
+            grid-gap : 10px;
+            grid-template-columns: repeat(2, minmax(200px, 1fr));
+            grid-template-rows: repeat(4, 1fr);
+
+            .label{
+                background: url('../../assets/img/bg_dark_title.webp') no-repeat;
+                padding: 20px 0px 0px 0px;
+                display: block;
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid white;
+    
+                .input{
+                    color: black;
+                    border: 1px solid white;
+                    height: 50px;
+                    width: 100%;
+                    background-color: white;
+                }
+            }
+
+            .objet, .message{
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+    }
+    
 }

@@ -8,5 +8,5 @@ const Home = (): JSX.Element => {
         </div>
     );
 };
-// animation: `fade ${item.duration} ${item.delay} infinite`
+
 export default Home;

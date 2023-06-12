@@ -22,9 +22,11 @@ footer{
     @media screen and (max-width: variables.$breakpoint-mobile) {
         background-size: variables.$breakpoint-tablette 200px;
         @include mixins.smallScreen;
-        height: 80px;
+        height: 100%;
         width: 100%;
         padding: 10px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
             
     .infos{

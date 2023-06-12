@@ -1,49 +1,29 @@
 import { useState, useEffect } from "react";
 
-interface IntItems {
-    title: string,
-    description: string,
-    cover: string,
-    technologies: {
-        html?: string;
-        css?: string;
-        sass?: string;
-        react?: string;
-        nodejs?: string;
-    },
-    site: string,
-    code: string
-}
 
-interface IFetch {
-    items: IntItems[]
-    loading: boolean,
-}
+export const useFetch = <T,>(): {
+    items: T | undefined
+    error: string | undefined
+} => {
 
+    const [items, setItems] = useState<T | undefined>(undefined);
+    const [error, setError] = useState<string | undefined>(undefined)
 
-export const useFetch = (): IFetch => {
-    const [state, setState] = useState<IFetch>({
-        items: [],
-        loading: true,
-    });
+    const fetchDatas = async (): Promise<void> => {
+        try {
+            const response = await (await fetch("./projets.json")).json();
+            setItems(response);
 
+        } catch (e: any) {
+            setError(e);
+        }
+    };
 
     useEffect(() => {
-        const fetchDatas = async (): Promise<void> => {
-            try {
-                const fetchconfig = await fetch("/projets.json");
-                const response: IntItems[] | undefined = await fetchconfig.json();
-
-                setState({
-                    items: response || [],
-                    loading: false,
-                });
-            } catch (e: any) {
-                setState((s) => ({ ...s, loading: false }));
-            }
-        };
         fetchDatas();
-
     }, []);
-    return state
+
+    return { items, error }
 }
+
+
