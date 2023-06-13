@@ -78,7 +78,7 @@
             top:-100%;
             left: 0%;
             z-index: 3;
-            height: 100vh;
+            height: 100dvh;
             width: 150vw;
             transition: top 0.8s ease-in-out;  
             margin-left: 0;     
@@ -295,10 +295,10 @@
         color: variables.$dark-contrast-color;   
 
         .list{
-            @media screen and (max-width: variables.$breakpoint-tablette) {
+            @media screen and (max-width: variables.$breakpoint-mobile) {
                 background: url("../../assets/img/banner_bg_dark.webp");
                 background-repeat: no-repeat;
-                background-size: 270px 100%;
+                background-size: cover;
             }
 
             &__item{
