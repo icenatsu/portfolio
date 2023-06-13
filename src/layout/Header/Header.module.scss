@@ -63,7 +63,6 @@
         font-size: 20px;
         z-index: 2;
        
-        
         @media screen and (max-width: variables.$breakpoint-tablette) {
             justify-content: left;
             margin-left: 7px;
@@ -117,30 +116,6 @@
         @media screen and (max-width: variables.$breakpoint-mobile) {
             display: flex;
             top:0%;
-        }
-    }
-
-    .background__action{
-        &__left{
-            
-            @media screen and (max-width: variables.$breakpoint-mobile) {
-                left : 0% !important;  
-            }
-        }
-        
-        &__right{
-
-            @media screen and (max-width: variables.$breakpoint-mobile) {
-                left: 50% !important; 
-            }
-           
-        }
-    }
-
-    .visible{
-        
-        @media screen and (max-width: variables.$breakpoint-mobile) {
-            display: block!important; 
         }
     }
     
@@ -235,9 +210,9 @@
 
         .list{
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                background: url("../../assets/img/banner_bg_light.webp");
+                background: url("../../assets/img/navbar_bg_light.webp");
                 background-repeat: no-repeat;
-                background-size: 270px 100%;
+                background-size: cover;
             }
 
             &__item{
@@ -296,7 +271,7 @@
 
         .list{
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                background: url("../../assets/img/banner_bg_dark.webp");
+                background: url("../../assets/img/navbar_bg_dark.webp");
                 background-repeat: no-repeat;
                 background-size: cover;
             }
