@@ -32,24 +32,24 @@ const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
 
     const list = useRef<HTMLUListElement>(null)
 
-    function darkLightMode<T,>(
-        arg: T | null
+    function darkLightMode<T extends HTMLElement>(
+        current: T | null,
+        element: string | null
     ) {
 
-        console.log(arg);
-        if (arg !== undefined && arg !== null) {
+        if (current !== undefined && current !== null) {
             if (themeContext?.isDarkMode) {
-                arg.classList.add(styles[`${arg}--dark`])
-                arg.classList.remove(styles[`${arg}--light`])
+                current.classList.add(styles[`${element}--dark`])
+                current.classList.remove(styles[`${element}--light`])
             } else {
-                arg.classList.add(styles[`${arg}--light`])
-                arg.classList.remove(styles[`${arg}--dark`])
+                current.classList.add(styles[`${element}--light`])
+                current.classList.remove(styles[`${element}--dark`])
             }
         }
     }
 
     useEffect(() => {
-        darkLightMode<HTMLUListElement>(list.current)
+        darkLightMode(list.current, 'list')
     }, [themeContext?.isDarkMode])
 
     return (
