@@ -80,24 +80,6 @@
             background-color: transparent;
             animation: change-text 10s forwards;
         }
-
-        &--light{
-            color: rgb(8, 92, 8);
-            font-weight: 600;
-    
-            @media screen and (max-width: variables.$breakpoint-tablette) {
-                color: rgb(184, 236, 186);
-            }
-        }
-    
-        &--dark{    
-            color: rgb(126, 79, 126);
-            font-weight: 500; 
-    
-            @media screen and (max-width: variables.$breakpoint-tablette) {
-                color: rgb(233, 129, 233);
-            } 
-        }
     }
 
     .switch{
@@ -124,21 +106,33 @@
         }    
     }
 
+    // Gestion du mode light et dark mode
+    /************************************/
     &--light{
         background-image: url(../../assets/img/bg_light_header.webp);
-        color: variables.$light-contrast-color;    
-
-        .mobile{
-            color: red;
-        }
+        color: variables.$light-contrast-color;   
+        
+        #autotext{
+            color: rgb(8, 92, 8);
+            font-weight: 600;
+    
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                color: rgb(184, 236, 186);
+            }
+        }        
     }
     
     &--dark{
         background-image: url(../../assets/img/bg_dark_header.webp);
-        color: variables.$dark-contrast-color;   
+        color: variables.$dark-contrast-color;  
 
-        .mobile{
-            color: red;
+        #autotext{   
+            color: rgb(126, 79, 126);
+            font-weight: 500; 
+    
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                color: rgb(233, 129, 233);
+            } 
         }
     }
 }

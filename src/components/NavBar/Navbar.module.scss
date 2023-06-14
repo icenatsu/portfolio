@@ -1,9 +1,5 @@
 @use "../../sass/utils/variables";
 
-#list{
-    color: green;
-}
-
 .list{
     display: flex;
     flex: 1.3;
@@ -96,7 +92,6 @@
     }
 
     &--light{
-
         @media screen and (max-width: variables.$breakpoint-mobile) {
             background: url("../../assets/img/navbar_bg_light.webp");
             background-repeat: no-repeat;
@@ -104,7 +99,6 @@
         }
 
         .list{
-
             &__item{
                 @media screen and (max-width: variables.$breakpoint-mobile) {
                     background-color: variables.$dark-contrast-color;

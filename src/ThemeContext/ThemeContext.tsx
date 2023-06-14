@@ -29,6 +29,18 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
         }
     }, [isDarkMode])
 
+    // function darkLightMode() {
+    //     if (list.current !== null) {
+    //         if (themeContext?.isDarkMode) {
+    //             list.current.classList.add(styles['list--dark'])
+    //             list.current.classList.remove(styles['list--light'])
+    //         } else {
+    //             list.current.classList.add(styles['list--light'])
+    //             list.current.classList.remove(styles['list--dark'])
+    //         }
+    //     }
+    // }
+
     const switchTheme = () => {
         setIsDarkMode((curr) => curr = !curr)
     }
