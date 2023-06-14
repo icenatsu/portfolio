@@ -1,33 +1,30 @@
 import styles from "./Header.module.scss"
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.webp"
 import Switch from "../../components/Switch/Switch";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
+import NavBar from "../../components/NavBar/NavBar"
+import stylesNavBar from "../../components/NavBar/Navbar.module.scss"
 
 const Header = (): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
-    const list = useRef<HTMLUListElement>(null)
-
     function handleClick() {
-        if (window.innerWidth < 768 && list.current !== null) {
-            list.current?.classList.contains(styles.mobile) ? list.current?.classList.remove(styles.mobile) : list.current?.classList.add(styles.mobile)
+        const list = document.getElementById(stylesNavBar.list)
+        console.log('coucou');
+
+        if (window.innerWidth < 768) {
+            list?.classList.contains(stylesNavBar.mobile) ? list?.classList.remove(stylesNavBar.mobile) : list?.classList.add(stylesNavBar.mobile)
         }
     }
 
     return (
         <header className={[styles.header, !themeContext?.isDarkMode ? styles['header--light'] : styles['header--dark']].join(' ')}>
             <div className={styles.logo}><img src={Logo} alt="Dessin d'une cruche inclinée" /></div>
-
-            <ul ref={list} className={styles.list} >
-                <li className={styles.list__item} onClick={handleClick}><NavLink to="/">Accueil </NavLink></li>
-                <li className={styles.list__item} onClick={handleClick}><NavLink to="/projets">Projets</NavLink></li>
-                <li className={styles.list__item} onClick={handleClick}><NavLink to="/experience">Expérience</NavLink></li>
-                <li className={styles.list__item} onClick={handleClick}><NavLink to="/contact">Contact</NavLink></li>
-            </ul>
-            <div id={styles.autotext}></div>
+            <NavBar inHandleClick={handleClick} />
+            <div id={[styles.autotext, !themeContext?.isDarkMode ? styles['autotext--light'] : styles['autotext--dark']].join(' ')}></div>
             <div className={styles.switch}>
                 <Switch />
             </div>

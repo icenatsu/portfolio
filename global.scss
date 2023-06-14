@@ -34,9 +34,9 @@
     position: relative;
 }
 
-@media(prefers-color-scheme: ligth){
+@media(prefers-color-scheme: light){
     body {
-        background-color: #fff;
+        background-color: variables.$dark-contrast-color;
     }
 }
 
