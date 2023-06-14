@@ -12,14 +12,16 @@ const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
     const themeContext = useContext(ThemeContext);
 
     const list = useRef<HTMLUListElement>(null)
+    const testsup = useRef<HTMLLIElement>(null)
 
     useEffect(() => {
         themeContext?.darkLightMode(list.current, 'list', styles)
+        themeContext?.darkLightMode(testsup.current, 'testsup', styles)
     }, [themeContext?.isDarkMode])
 
     return (
         <ul ref={list} id={styles.list} className={styles.list}>
-            <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/">Accueil </NavLink></li>
+            <li ref={testsup} className={styles.list__item} onClick={inHandleClick}><NavLink to="/">Accueil </NavLink></li>
             <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/projets">Projets</NavLink></li>
             <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/experience">Expérience</NavLink></li>
             <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/contact">Contact</NavLink></li>

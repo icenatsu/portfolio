@@ -37,7 +37,7 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
 
     ) {
 
-        console.log(styles[`${element}--dark`]);
+
 
         if (current !== undefined && current !== null) {
             if (isDarkMode) {
