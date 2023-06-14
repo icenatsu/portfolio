@@ -1,9 +1,14 @@
 import { createContext, useState, useEffect, PropsWithChildren } from "react";
 
+interface IClasseDarkLightMode {
+    current: HTMLElement | null;
+    element: string | null,
+    scss: CSSModuleClasses,
+}
 export interface IThemeContext {
     isDarkMode: boolean,
-    switchTheme: () => void
-    darkLightMode: <T extends HTMLElement>(current: T | null, element: string | null, style: CSSModuleClasses) => void
+    switchTheme: () => void,
+    darkLightMode: <T extends IClasseDarkLightMode[]> (dark: T) => void
 }
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -30,24 +35,22 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
         }
     }, [isDarkMode])
 
-    function darkLightMode<T extends HTMLElement>(
-        current: T | null,
-        element: string | null,
-        styles: CSSModuleClasses,
-
+    function darkLightMode<T extends IClasseDarkLightMode[]>(
+        dark: T
     ) {
 
-        console.log(styles[`${element}--dark`]);
+        dark.forEach(a => {
+            if (a.current !== null) {
 
-        if (current !== undefined && current !== null) {
-            if (isDarkMode) {
-                current.classList.add(styles[`${element}--dark`])
-                current.classList.remove(styles[`${element}--light`])
-            } else {
-                current.classList.add(styles[`${element}--light`])
-                current.classList.remove(styles[`${element}--dark`])
+                if (isDarkMode) {
+                    a.current.classList.add(a.scss[`${a.element}--dark`])
+                    a.current.classList.remove(a.scss[`${a.element}--light`])
+                } else {
+                    a.current.classList.add(a.scss[`${a.element}--light`])
+                    a.current.classList.remove(a.scss[`${a.element}--dark`])
+                }
             }
-        }
+        })
     }
 
     const switchTheme = () => {
