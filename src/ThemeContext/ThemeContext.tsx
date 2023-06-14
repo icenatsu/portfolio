@@ -3,6 +3,7 @@ import { createContext, useState, useEffect, PropsWithChildren } from "react";
 export interface IThemeContext {
     isDarkMode: boolean,
     switchTheme: () => void
+    darkLightMode: <T extends HTMLElement>(current: T | null, element: string | null) => void
 }
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -29,24 +30,29 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
         }
     }, [isDarkMode])
 
-    // function darkLightMode() {
-    //     if (list.current !== null) {
-    //         if (themeContext?.isDarkMode) {
-    //             list.current.classList.add(styles['list--dark'])
-    //             list.current.classList.remove(styles['list--light'])
-    //         } else {
-    //             list.current.classList.add(styles['list--light'])
-    //             list.current.classList.remove(styles['list--dark'])
-    //         }
-    //     }
-    // }
+    function darkLightMode<T extends HTMLElement>(
+        current: T | null,
+        element: string | null,
+
+    ) {
+
+        if (current !== undefined && current !== null) {
+            if (isDarkMode) {
+                current.classList.add(`styles[${element}--dark]`)
+                current.classList.remove(`styles[${element}--light]`)
+            } else {
+                current.classList.add(`styles[${element}--light]`)
+                current.classList.remove(`styles[${element}--dark]`)
+            }
+        }
+    }
 
     const switchTheme = () => {
         setIsDarkMode((curr) => curr = !curr)
     }
 
     return (
-        < ThemeContext.Provider value={{ isDarkMode, switchTheme }}>
+        < ThemeContext.Provider value={{ isDarkMode, switchTheme, darkLightMode }}>
             {children}</ ThemeContext.Provider >
     );
 };
