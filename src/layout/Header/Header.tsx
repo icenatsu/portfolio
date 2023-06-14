@@ -21,23 +21,18 @@ const Header = (): JSX.Element => {
 
     const header = useRef<HTMLElement>(null)
 
-    function darkLightMode() {
-        if (header.current !== null) {
-            if (themeContext?.isDarkMode) {
-                header.current.classList.add(styles['header--dark'])
-                header.current.classList.remove(styles['header--light'])
-            } else {
-                header.current.classList.add(styles['header--light'])
-                header.current.classList.remove(styles['header--dark'])
-            }
-        }
-    }
-
     useEffect(() => {
-        darkLightMode()
+        if (header.current !== null) {
+            const classeDarkLightMode = [
+                {
+                    current: header.current,
+                    name: 'header',
+                    scss: styles
+                },
+            ]
+            themeContext?.darkLightMode(classeDarkLightMode)
+        }
     }, [themeContext?.isDarkMode])
-
-
 
     return (
         <header ref={header} className={styles.header}>

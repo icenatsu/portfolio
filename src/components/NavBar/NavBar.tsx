@@ -10,11 +10,19 @@ interface NavBarProps {
 const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
-
     const list = useRef<HTMLUListElement>(null)
 
     useEffect(() => {
-        themeContext?.darkLightMode(list.current, 'list', styles)
+        if (list.current !== null) {
+            const classeDarkLightMode = [
+                {
+                    current: list.current,
+                    name: 'list',
+                    scss: styles
+                },
+            ]
+            themeContext?.darkLightMode(classeDarkLightMode)
+        }
     }, [themeContext?.isDarkMode])
 
     return (
