@@ -3,7 +3,7 @@ import { createContext, useState, useEffect, PropsWithChildren } from "react";
 export interface IThemeContext {
     isDarkMode: boolean,
     switchTheme: () => void
-    darkLightMode: <T extends HTMLElement>(current: T | null, element: string | null) => void
+    darkLightMode: <T extends HTMLElement>(current: T | null, element: string | null, style: CSSModuleClasses) => void
 }
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -33,16 +33,19 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     function darkLightMode<T extends HTMLElement>(
         current: T | null,
         element: string | null,
+        styles: CSSModuleClasses,
 
     ) {
 
+        console.log(styles[`${element}--dark`]);
+
         if (current !== undefined && current !== null) {
             if (isDarkMode) {
-                current.classList.add(`styles[${element}--dark]`)
-                current.classList.remove(`styles[${element}--light]`)
+                current.classList.add(styles[`${element}--dark`])
+                current.classList.remove(styles[`${element}--light`])
             } else {
-                current.classList.add(`styles[${element}--light]`)
-                current.classList.remove(`styles[${element}--dark]`)
+                current.classList.add(styles[`${element}--light`])
+                current.classList.remove(styles[`${element}--dark`])
             }
         }
     }

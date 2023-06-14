@@ -11,49 +11,10 @@ const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
 
-
-
-    // const list = useRef<HTMLUListElement>(null)
-
-    // function darkLightMode() {
-
-    //     if (list.current !== null) {
-    //         if (themeContext?.isDarkMode) {
-    //             list.current.classList.add(styles['list--dark'])
-    //             list.current.classList.remove(styles['list--light'])
-    //         } else {
-    //             list.current.classList.add(styles['list--light'])
-    //             list.current.classList.remove(styles['list--dark'])
-    //         }
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     darkLightMode()
-    // }, [themeContext?.isDarkMode])
-
-
     const list = useRef<HTMLUListElement>(null)
 
-    // function darkLightMode<T extends HTMLElement>(
-    //     current: T | null,
-    //     element: string | null,
-
-    // ) {
-
-    //     if (current !== undefined && current !== null && styles !== undefined) {
-    //         if (themeContext?.isDarkMode) {
-    //             current.classList.add(styles[`${element}--dark`])
-    //             current.classList.remove(styles[`${element}--light`])
-    //         } else {
-    //             current.classList.add(styles[`${element}--light`])
-    //             current.classList.remove(styles[`${element}--dark`])
-    //         }
-    //     }
-    // }
-
     useEffect(() => {
-        themeContext?.darkLightMode(list.current, 'list')
+        themeContext?.darkLightMode(list.current, 'list', styles)
     }, [themeContext?.isDarkMode])
 
     return (
