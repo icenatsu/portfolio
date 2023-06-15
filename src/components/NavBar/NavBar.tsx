@@ -14,14 +14,14 @@ const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
 
     useEffect(() => {
         if (list.current !== null) {
-            const classeDarkLightMode = [
+            const componentForCssChange = [
                 {
                     current: list.current,
                     name: 'list',
                     scss: styles
                 },
             ]
-            themeContext?.darkLightMode(classeDarkLightMode)
+            themeContext?.changeDarkLightMode(componentForCssChange)
         }
     }, [themeContext?.isDarkMode])
 

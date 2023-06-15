@@ -1,14 +1,14 @@
 import { createContext, useState, useEffect, PropsWithChildren } from "react";
 
-interface IClasseDarkLightMode {
-    current: HTMLElement | null;
+interface ChangeDarkLightModeArg {
+    current: HTMLElement | HTMLLIElement | HTMLUListElement | null;
     name: string | null,
     scss: CSSModuleClasses,
 }
 export interface IThemeContext {
     isDarkMode: boolean,
     switchTheme: () => void,
-    darkLightMode: <T extends IClasseDarkLightMode[]> (dark: T) => void
+    changeDarkLightMode: (componentForCssChange: ChangeDarkLightModeArg[]) => void
 }
 
 export const ThemeContext = createContext<IThemeContext | null>(null);
@@ -35,11 +35,11 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
         }
     }, [isDarkMode])
 
-    function darkLightMode<T extends IClasseDarkLightMode[]>(
-        classList: T
+    function changeDarkLightMode(
+        componentForCssChange: ChangeDarkLightModeArg[]
     ) {
 
-        classList.forEach(el => {
+        componentForCssChange.forEach(el => {
             if (el.current !== null) {
                 if (isDarkMode) {
                     el.current.classList.add(el.scss[`${el.name}--dark`])
@@ -57,7 +57,7 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     }
 
     return (
-        < ThemeContext.Provider value={{ isDarkMode, switchTheme, darkLightMode }}>
+        < ThemeContext.Provider value={{ isDarkMode, switchTheme, changeDarkLightMode }}>
             {children}</ ThemeContext.Provider >
     );
 };
