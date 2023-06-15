@@ -23,14 +23,14 @@ const Header = (): JSX.Element => {
 
     useEffect(() => {
         if (header.current !== null) {
-            const classeDarkLightMode = [
+            const componentForCssChange = [
                 {
                     current: header.current,
                     name: 'header',
                     scss: styles
                 },
             ]
-            themeContext?.darkLightMode(classeDarkLightMode)
+            themeContext?.changeDarkLightMode(componentForCssChange)
         }
     }, [themeContext?.isDarkMode])
 
