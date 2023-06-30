@@ -37,14 +37,15 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     function detectMediaQueriesAndApplyCadre() {
         if (window.matchMedia('(max-width: 768px)').matches) {
-            setCadre("../../../public/projects_img/covers/cadre_mobile.webp")
+            setCadre("./projects_img/covers/cadre_mobile.webp")
         }
 
+
         if (window.matchMedia('(min-width: 768px) and (max-width: 992px)').matches) {
-            setCadre("../../../public/projects_img/covers/cadre_tablette.webp")
+            setCadre("./projects_img/covers/cadre_tablette.webp")
         }
         if (window.matchMedia('(min-width: 992px) ').matches) {
-            setCadre("../../../public/projects_img/covers/cadre.webp")
+            setCadre("./projects_img/covers/cadre.webp")
         }
     }
 
