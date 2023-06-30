@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 30px;
-    height: 10vh;
-   
+    border-radius: 20px;
+    background-size: cover;
+    width: 96%;
+  
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         @include mixins.mediumScreen;
@@ -101,8 +102,7 @@
             position: absolute;
             padding-right: 10px;
             z-index: 5;
-            top:25px;
-            left:10px;
+            left:15px;
         }    
     }
 
@@ -113,7 +113,7 @@
         color: variables.$light-contrast-color;   
         
         #autotext{
-            color: rgb(8, 92, 8);
+            color: rgb(8, 77, 92);
             font-weight: 600;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
@@ -124,11 +124,13 @@
     
     &--dark{
         background-image: url(../../assets/img/bg_dark_header.webp);
-        color: variables.$dark-contrast-color;  
+        color: variables.$dark-contrast-color; 
+        // box-shadow: 0px 10px 10px 0px inset rgba(25, 155, 79, 0.3); 
+    
 
         #autotext{   
-            color: rgb(126, 79, 126);
-            font-weight: 500; 
+            color: rgb(49, 38, 79);
+            font-weight: 800; 
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
                 color: rgb(233, 129, 233);

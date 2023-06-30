@@ -16,6 +16,7 @@
 
 main{
     @include mixins.largeScreen;
+    width: 95%;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         @include mixins.mediumScreen;

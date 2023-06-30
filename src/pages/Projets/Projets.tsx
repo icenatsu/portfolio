@@ -72,7 +72,7 @@ const Projets = (): JSX.Element => {
             const timer1 = setTimeout(() => {
                 setNextIdx(() => {
                     if (currentIdx + 1 > nbProject - 1) {
-                        return nbProject - 1
+                        return 0
                     }
                     return currentIdx + 1
                 })

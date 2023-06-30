@@ -18,26 +18,23 @@
         position: absolute;
         top: 370px;
         z-index: -9999;
+        border-radius: 10px;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
             top: 335px;
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            top: 260px;
+            top: 460px;
         }
     }
 
     .boxinfos{
         margin-top: 50px;
         width: 100%;
-        color: variables.$primary-color;
+        color: variables.$terciary-color;
         padding: 0px;
-    
-        #container{
-            color: variables.$primary-color;;
-        }
-           
+             
         .container{
     
             &__title{
@@ -67,7 +64,6 @@
                     border-radius: variables.$small-radius;
                     flex-basis: 100%;
      
-                
                     &__name{
                         padding: 10px;
                     }
@@ -92,7 +88,6 @@
                 padding: 5px;
     
                 button{
-                    border : 1px solid variables.$primary-color;
                     border-radius: variables.$medium-radius;
                     padding: 5px;    
                 }
@@ -101,11 +96,18 @@
     }
 
     &--dark{
+
         .background__title{
             background: url('../../assets/img/bg_dark_title.webp');
+            box-shadow: 0px 10px 10px 0px rgba(25, 155, 79, 0.2);
+            background-size: cover;
         }
 
         .container{
+
+            &__title{
+                color:  rgba(62, 231, 40, 0.773);
+            }
 
             &__technologies{
      
@@ -118,10 +120,9 @@
 
         
             &__sources{
-    
                 button{
                     background-color: variables.$primary-color;
-
+                    border : 1px solid variables.$primary-color;
                     & a{
                         color: variables.$dark-contrast-color;
                     }
@@ -135,15 +136,18 @@
         .background__title{
             background: url('../../assets/img/bg_light_header.webp');
             background-size: cover;
+            box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1);
         }
 
         .container{
+            
             &__sources{
     
                 button{
-               
+                    border : 1px solid variables.$terciary-color;
+                    background-color: variables.$terciary-color;
                     & a{
-                        color: variables.$primary-color;
+                        color: variables.$dark-contrast-color;
                     }
                 }
             }

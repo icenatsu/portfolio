@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, PropsWithChildren } from "react";
 
 interface ChangeDarkLightModeArg {
-    current: HTMLElement | HTMLLIElement | HTMLUListElement | null;
+    htmlElement: HTMLElement | HTMLLIElement | HTMLUListElement | null;
     name: string | null,
     scss: CSSModuleClasses,
 }
@@ -27,10 +27,10 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
 
     useEffect(() => {
         if (isDarkMode) {
-            document.body.classList.add('dark')
+            document.body.classList.add('dark');
             document.body.classList.remove("light");
         } else {
-            document.body.classList.add('light')
+            document.body.classList.add('light');
             document.body.classList.remove("dark");
         }
     }, [isDarkMode])
@@ -40,13 +40,13 @@ const ThemeContextProvider = ({ children }: PropsWithChildren): JSX.Element => {
     ) {
 
         componentForCssChange.forEach(el => {
-            if (el.current !== null) {
+            if (el.htmlElement !== null) {
                 if (isDarkMode) {
-                    el.current.classList.add(el.scss[`${el.name}--dark`])
-                    el.current.classList.remove(el.scss[`${el.name}--light`])
+                    el.htmlElement.classList.add(el.scss[`${el.name}--dark`])
+                    el.htmlElement.classList.remove(el.scss[`${el.name}--light`])
                 } else {
-                    el.current.classList.add(el.scss[`${el.name}--light`])
-                    el.current.classList.remove(el.scss[`${el.name}--dark`])
+                    el.htmlElement.classList.add(el.scss[`${el.name}--light`])
+                    el.htmlElement.classList.remove(el.scss[`${el.name}--dark`])
                 }
             }
         })

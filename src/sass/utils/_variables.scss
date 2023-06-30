@@ -1,10 +1,11 @@
-$primary-color: #13589f;
+$primary-color: #388439; //#13589f
 $secondary-color: violet;
+$terciary-color: #13589f;
 $fourth-color: #F6F6F6;
 $footer-color: #000000;
 
-$dark-contrast-color: white;
-$light-contrast-color: black;
+$dark-contrast-color: #dddddd;
+$light-contrast-color: #242424;
 
 $text-font: 'Saira Semi Condensed';
 
@@ -12,11 +13,9 @@ $small-radius: 5px;
 $medium-radius: 10px;
 $big-radius: 20px;
 
-
-
 $breakpoint-tablette: 992px;
 $breakpoint-mobile: 768px;
 
-$maxWidth : 1350px;
+$maxWidth : 1600px;
 $mediumWidth : 992px;
 $minWidth : 768px;

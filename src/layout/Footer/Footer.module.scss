@@ -58,13 +58,13 @@
         justify-content: right;
         font-size: 50px;
         background-color: transparent;
-    
         &__item{
             margin-right: 10px;
-
+            
             & a{
                 & i{
                     background-image: none;
+                    color: white;
                 }
             }
         }
@@ -73,10 +73,33 @@
 
 .dark{
     color: variables.$light-contrast-color;
-    background-color: rgb(169, 163, 163);
+    background-color: variables.$dark-contrast-color;
+
+    .reseaux{
+        &__item{
+            & a{
+                & i{
+                    background-image: none;
+                    color: variables.$light-contrast-color;
+                }
+            }
+        }
+    }
 }
 
 .light{
-    background-image: url(../../assets/img/bg_light_footer.webp);
-    color: variables.$light-contrast-color;
+    // background-image: url(../../assets/img/bg_light_footer.webp);
+    color: variables.$dark-contrast-color;
+    background-color: variables.$light-contrast-color;
+
+    .reseaux{
+        &__item{
+            & a{
+                & i{
+                    background-image: none;
+                    color: variables.$dark-contrast-color;
+                }
+            }
+        }
+    }
 }

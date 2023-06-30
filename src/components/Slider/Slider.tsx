@@ -1,8 +1,8 @@
 import styles from './Slider.module.scss';
 import next from "../../assets/img/next.webp";
 import prev from "../../assets/img/prev.webp"
-import cadre from "../../../public/projects_img/covers/cadre.webp"
-
+// import cadre from "../../../public/projects_img/covers/cadre.webp"
+import { useEffect, useState } from "react";
 interface ISlider {
     cover: string;
     title: string;
@@ -18,7 +18,39 @@ interface SliderProps {
     inNextCursor: () => void,
 }
 
+
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
+
+
+    const [cadre, setCadre] = useState<string>('')
+    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
+    function detectMediaQueriesAndApplyCadre() {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            setCadre("../../../public/projects_img/covers/cadre_mobile.webp")
+        }
+
+        if (window.matchMedia('(min-width: 768px) and (max-width: 992px)').matches) {
+            setCadre("../../../public/projects_img/covers/cadre_tablette.webp")
+        }
+        if (window.matchMedia('(min-width: 992px) ').matches) {
+            setCadre("../../../public/projects_img/covers/cadre.webp")
+        }
+    }
+
+    useEffect(() => {
+        detectMediaQueriesAndApplyCadre();
+    }, [windowWidth]);
 
     return (
         <div className={styles.slider}>

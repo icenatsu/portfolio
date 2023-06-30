@@ -10,14 +10,14 @@ interface NavBarProps {
 const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
 
     const themeContext = useContext(ThemeContext);
-    const list = useRef<HTMLUListElement>(null)
+    const navBar = useRef<HTMLUListElement>(null)
 
     useEffect(() => {
-        if (list.current !== null) {
+        if (navBar.current !== null) {
             const componentForCssChange = [
                 {
-                    current: list.current,
-                    name: 'list',
+                    htmlElement: navBar.current,
+                    name: 'navBar',
                     scss: styles
                 },
             ]
@@ -26,11 +26,11 @@ const NavBar = ({ inHandleClick }: NavBarProps): JSX.Element => {
     }, [themeContext?.isDarkMode])
 
     return (
-        <ul ref={list} id={styles.list} className={styles.list}>
-            <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/">Accueil </NavLink></li>
-            <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/projets">Projets</NavLink></li>
-            <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/experience">Expérience</NavLink></li>
-            <li className={styles.list__item} onClick={inHandleClick}><NavLink to="/contact">Contact</NavLink></li>
+        <ul ref={navBar} id='navBar' className={styles.navBar}>
+            <li className={styles.navBar__item} onClick={inHandleClick}><NavLink to="/">Accueil </NavLink></li>
+            <li className={styles.navBar__item} onClick={inHandleClick}><NavLink to="/projets">Projets</NavLink></li>
+            <li className={styles.navBar__item} onClick={inHandleClick}><NavLink to="/experience">Expérience</NavLink></li>
+            <li className={styles.navBar__item} onClick={inHandleClick}><NavLink to="/contact">Contact</NavLink></li>
         </ul>
     );
 };

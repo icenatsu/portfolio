@@ -1,5 +1,4 @@
 import styles from "./Header.module.scss"
-// import { NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.webp"
 import Switch from "../../components/Switch/Switch";
 import { useContext, useEffect, useRef } from "react";
@@ -12,10 +11,10 @@ const Header = (): JSX.Element => {
     const themeContext = useContext(ThemeContext);
 
     function handleClick() {
-        const list = document.getElementById(stylesNavBar.list)
+        const navBar = document.getElementById('navBar')
 
         if (window.innerWidth < 768) {
-            list?.classList.contains(stylesNavBar.mobile) ? list?.classList.remove(stylesNavBar.mobile) : list?.classList.add(stylesNavBar.mobile)
+            navBar?.classList.contains(stylesNavBar.mobile) ? navBar?.classList.remove(stylesNavBar.mobile) : navBar?.classList.add(stylesNavBar.mobile)
         }
     }
 
@@ -25,7 +24,7 @@ const Header = (): JSX.Element => {
         if (header.current !== null) {
             const componentForCssChange = [
                 {
-                    current: header.current,
+                    htmlElement: header.current,
                     name: 'header',
                     scss: styles
                 },
