@@ -1,7 +1,6 @@
 import styles from './Slider.module.scss';
 import next from "../../assets/img/next.webp";
 import prev from "../../assets/img/prev.webp"
-// import cadre from "../../../public/projects_img/covers/cadre.webp"
 import { useEffect, useState } from "react";
 interface ISlider {
     title: string;
@@ -47,21 +46,21 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     function detectMediaQueriesAndApplyCadre() {
         if (window.matchMedia('(max-width: 768px)').matches) {
-            setCadre("./projects_img/covers/cadre_mobile.webp")
+            setCadre("./projects_img/covers/mobile/cadre_mobile.webp")
             setAltCadre("Dessin d'un téléphone mobile")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.mobile)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.mobile)
             setSrcFormatImgNextIdx(inData[inNextIdx].cover.mobile)
         }
         if (window.matchMedia('(min-width: 768px) and (max-width: 992px)').matches) {
-            setCadre("./projects_img/covers/cadre_tablette.webp")
+            setCadre("./projects_img/covers/tablette/cadre_tablette.webp")
             setAltCadre("Dessin d'une tablette")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.tablette)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.tablette)
             setSrcFormatImgNextIdx(inData[inNextIdx].cover.tablette)
         }
         if (window.matchMedia('(min-width: 992px) ').matches) {
-            setCadre("./projects_img/covers/cadre.webp")
+            setCadre("./projects_img/covers/desktop/cadre.webp")
             setAltCadre("Dessin d'un ordinateur")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.desktop)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.desktop)

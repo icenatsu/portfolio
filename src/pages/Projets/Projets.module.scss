@@ -25,7 +25,7 @@
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            top: 528px;
+            top: 498px;
         }
     }
 
@@ -34,6 +34,10 @@
         width: 100%;
         color: variables.$terciary-color;
         padding: 0px;
+
+        @media screen and (max-width: variables.$breakpoint-mobile) {
+            margin-top: 20px;
+        }
              
         .container{
     
