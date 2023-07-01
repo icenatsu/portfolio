@@ -21,11 +21,11 @@
         border-radius: 10px;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            top: 335px;
+            top: 365px;
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            top: 498px;
+            top: 460px;
         }
     }
 
@@ -34,10 +34,6 @@
         width: 100%;
         color: variables.$terciary-color;
         padding: 0px;
-
-        @media screen and (max-width: variables.$breakpoint-mobile) {
-            margin-top: 20px;
-        }
              
         .container{
     
