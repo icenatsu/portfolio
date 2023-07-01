@@ -1,25 +1,23 @@
 @use "../../sass/utils/variables";
 
-
 .slider{
     margin-top: 30px;
-    width: 450px;
-    height: 235px;
+    width: variables.$width_img_cover_slider_desktop;
+    height: variables.$height_img_cover_slider_desktop;
     position: relative;
     margin-bottom: 55px;
     z-index: 1;
     
- 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         margin-top: 45px;
-        width: 400px;
-        height: 199px;
+        width: variables.$width_img_cover_slider_tablette;
+        height: variables.$height_img_cover_slider_tablette;
         margin-bottom: 40px;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 235px;
-        height: 417px;
+        width: variables.$width_img_cover_slider_mobile;
+        height: variables.$height_img_cover_slider_mobile;
         margin-bottom: 15px;
     }
 
@@ -63,42 +61,42 @@
     &__images{
         display: flex;
         justify-content: center;
-        width: 1350px;
-        height: 235px;
-        transform: translateX(-450px);
+        width:  variables.$width_img_cover_slider_desktop * 3;
+        height: variables.$height_img_cover_slider_desktop;
+        transform: translateX(- variables.$width_img_cover_slider_desktop);
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            width: 1200px;
-            height: 250px;
-            transform: translateX(-400px);
+            width: variables.$width_img_cover_slider_tablette * 3;
+            height: variables.$height_img_cover_slider_tablette;
+            transform: translateX(- variables.$width_img_cover_slider_tablette);
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            width: 705px;
-            height: 350px;
-            transform: translateX(-235px);
+            width: variables.$width_img_cover_slider_mobile * 3;
+            height: variables.$height_img_cover_slider_mobile;
+            transform: translateX(- variables.$width_img_cover_slider_mobile);
         }
 
         &__item{
             margin: 0;
-            width: 531px;
+            width: variables.$width_img_cover_slider_desktop;
             height: 100%;
 
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                width: 431px;
+                width: variables.$width_img_cover_slider_tablette;
             }
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                width: 235px;
+                width: variables.$width_img_cover_slider_mobile;
 
             }
             
             &__img{
                 width: 100%;
                 height: 100%;
-
+        
                 @media screen and (max-width: variables.$breakpoint-mobile) {
-                    // object-fit: cover;
+                    object-fit: cover;
     
                 }
             
@@ -111,18 +109,16 @@
     color: variables.$light-contrast-color;
 }
 
-
-
 .overflow{
     overflow: hidden; 
   
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        width: 400px;
-        height: 250px;
+        width: variables.$width_img_cover_slider_tablette;
+        height: variables.$height_img_cover_slider_tablette;
     }
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 235px;
-        height: 417px;
+        width: variables.$width_img_cover_slider_mobile;
+        height: variables.$height_img_cover_slider_mobile;
     }
 
 }
@@ -133,11 +129,6 @@
     height: 370px;
     top: -15px;
     left: -18px;
-
-    & img{
-        width: 100%;
-        height: 100%;
-    }
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
         width: 425px;
@@ -152,6 +143,11 @@
         top:-30px;
         left: -15px;
     }
+
+    & img{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .translateprev{       
@@ -159,15 +155,15 @@
   transition: all 0.5s ease-in-out;
 }
 .translatenext{       
-    transform: translateX(-900px);
+    transform: translateX(- variables.$width_img_cover_slider_desktop * 2);
     transition: all 0.5s ease-in-out;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        transform: translateX(-800px);
+        transform: translateX(- variables.$width_img_cover_slider_tablette * 2);
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        transform: translateX(-470px);
+        transform: translateX(- variables.$width_img_cover_slider_mobile * 2);
     }
 }
   
