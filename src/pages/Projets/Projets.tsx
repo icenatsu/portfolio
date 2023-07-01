@@ -12,7 +12,11 @@ interface IntItems {
     id: number,
     title: string,
     description: string,
-    cover: string,
+    cover: {
+        mobile?: string;
+        tablette?: string;
+        desktop?: string;
+    },
     technologies: {
         html?: string;
         css?: string;

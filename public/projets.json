@@ -3,7 +3,11 @@
         "id": "1",
         "title": "Booki",
         "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
-        "cover": "./projects_img/covers/booki.webp",
+        "cover": {
+            "mobile" :"./projects_img/covers/booki_mob.webp",
+            "tablette" :"./projects_img/covers/booki_tab.webp",
+            "desktop" :"./projects_img/covers/booki.webp"
+        },
         "technologies": {
             "HTML": "./projects_img/techno_icones/html5.webp",
             "CSS": "./projects_img/techno_icones/css3.webp"
@@ -15,7 +19,11 @@
         "id": "2",
         "title": "Oh my Food",
         "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS. Cela a également été l'occasion d'apprendre le préprocesseur SASS.",
-        "cover": "./projects_img/covers/ohmyfood.webp",
+        "cover": {
+            "mobile" :"./projects_img/covers/ohmyfood_mob.webp",
+            "tablette" :"./projects_img/covers/ohmyfood_tab.webp",
+            "desktop" :"./projects_img/covers/ohmyfood.webp"
+        },
         "technologies": {
             "HTML": "./projects_img/techno_icones/html5.webp",
             "CSS": "./projects_img/techno_icones/css3.webp",
@@ -28,7 +36,11 @@
         "id": "3",
         "title": "Piiquante",
         "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB",
-        "cover": "./projects_img/covers/piquante.webp",
+        "cover": {
+            "mobile" :"./projects_img/covers/piquante.webp",
+            "tablette" :"./projects_img/covers/piquante.webp",
+            "desktop" :"./projects_img/covers/piquante.webp"
+        },
         "technologies":{ 
             "NODEJS": "./projects_img/techno_icones/nodejs.webp",
             "MongoDB": "./projects_img/techno_icones/mongodb.webp"
@@ -39,7 +51,11 @@
         "id": "4",
         "title": "Kasa",
         "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React",
-        "cover": "./projects_img/covers/kasa.webp",
+        "cover": {
+            "mobile" :"./projects_img/covers/kasa_mob.webp",
+            "tablette" :"./projects_img/covers/kasa_tab.webp",
+            "desktop" :"./projects_img/covers/kasa.webp"
+        },
         "technologies": {
             "REACT": "./projects_img/techno_icones/react.webp",
             "SASS":"./projects_img/techno_icones/sass.webp"

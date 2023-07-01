@@ -18,8 +18,8 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 240px;
-        height: 350px;
+        width: 235px;
+        height: 417px;
         margin-bottom: 15px;
     }
 
@@ -74,9 +74,9 @@
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            width: 720px;
+            width: 705px;
             height: 350px;
-            transform: translateX(-240px);
+            transform: translateX(-235px);
         }
 
         &__item{
@@ -89,13 +89,18 @@
             }
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                width: 240px;
+                width: 235px;
 
             }
             
             &__img{
                 width: 100%;
                 height: 100%;
+
+                @media screen and (max-width: variables.$breakpoint-mobile) {
+                    // object-fit: cover;
+    
+                }
             
             }
         }
@@ -116,8 +121,8 @@
         height: 250px;
     }
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 240px;
-        height: 350px;
+        width: 235px;
+        height: 417px;
     }
 
 }
@@ -142,10 +147,10 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 255px;
-        height: 400px;
-        top:-9px;
-        left: -10px;
+        width: 266px;
+        height: 430px;
+        top:-30px;
+        left: -15px;
     }
 }
 
@@ -162,7 +167,7 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        transform: translateX(-480px);
+        transform: translateX(-470px);
     }
 }
   
