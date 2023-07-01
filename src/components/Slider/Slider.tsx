@@ -91,7 +91,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                 />
             </div>
             <div className={styles.overflow}>
-                <div id={styles.slider__pictures} className={styles.slider__images}>
+                <div id="slider__pictures" className={styles.slider__images}>
                     <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgPrevIdx} alt={inData[inPrevIdx].title} /></figure>
                     <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgCurrentIdx} alt={inData[inCurrentIdx].title} /></figure>
                     <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgNextIdx} alt={inData[inNextIdx].title} /> </figure>
