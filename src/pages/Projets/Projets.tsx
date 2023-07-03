@@ -12,18 +12,8 @@ interface IntItems {
     id: number,
     title: string,
     description: string,
-    cover: {
-        mobile?: string;
-        tablette?: string;
-        desktop?: string;
-    },
-    technologies: {
-        html?: string;
-        css?: string;
-        sass?: string;
-        react?: string;
-        nodejs?: string;
-    },
+    cover: { [key: string]: string },
+    technologies: { [key: string]: string },
     site: string,
     code: string
 }
