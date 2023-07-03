@@ -18,12 +18,10 @@ interface SliderProps {
 
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
-    const [device, setDevice] = useState<string>('');
+    const [srcImgdevice, setSrcImgDevice] = useState<string>('');
     const [altDevice, setAltDevice] = useState<string>('');
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-    const [srcFormatImgPrevIdx, setSrcFormatImgPrevIdx] = useState<string | undefined>('');
-    const [srcFormatImgNextIdx, setSrcFormatImgNextIdx] = useState<string | undefined>('');
-    const [srcFormatImgCurrentIdx, setSrcFormatImgCurrentIdx] = useState<string | undefined>('');
+    const [device, setDevice] = useState<string>('');
 
     useEffect(() => {
         function handleResize() {
@@ -35,11 +33,9 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
     }, []);
 
     function ImageDetails(device: string) {
-        setDevice(`./projects_img/covers/${device}/device_${device}.webp`)
+        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
         setAltDevice(`Dessin d'un téléphone ${device}`)
-        setSrcFormatImgPrevIdx(inData[inPrevIdx].cover[device])
-        setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover[device])
-        setSrcFormatImgNextIdx(inData[inNextIdx].cover[device])
+        setDevice(device)
     }
 
     function detectMediaQueriesAndApplyImagesDetails() {
@@ -79,42 +75,15 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
             </div>
             <div className={styles.overflow}>
                 <div id="slider__pictures" className={styles.slider__images}>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgPrevIdx} alt={inData[inPrevIdx].title} /></figure>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgCurrentIdx} alt={inData[inCurrentIdx].title} /></figure>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgNextIdx} alt={inData[inNextIdx].title} /> </figure>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inPrevIdx].cover[device]} alt={inData[inPrevIdx].title} /></figure>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inCurrentIdx].cover[device]} alt={inData[inCurrentIdx].title} /></figure>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inNextIdx].cover[device]} alt={inData[inNextIdx].title} /> </figure>
                 </div>
             </div>
             <div className={styles.device}>
-                <img src={device} alt={altDevice} />
+                <img src={srcImgdevice} alt={altDevice} />
             </div>
         </div>
     );
 }
 export default Slider;
-
-// function detectMediaQueriesAndApplyImagesDetails() {
-//     const mobileDevice = window.matchMedia('(max-width: 768px)').matches
-//     const tabletteDevice = window.matchMedia('(max-width: 992px)').matches
-//     if (mobileDevice) {
-//         ImageDetails('mobile')
-//         setDevice("./projects_img/covers/mobile/cadre_mobile.webp")
-//         setAltDevice("Dessin d'un téléphone mobile")
-//         setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.mobile)
-//         setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.mobile)
-//         setSrcFormatImgNextIdx(inData[inNextIdx].cover.mobile)
-//     }
-//     else if (tabletteDevice) {
-//         setDevice("./projects_img/covers/tablette/cadre_tablette.webp")
-//         setAltDevice("Dessin d'une tablette")
-//         setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.tablette)
-//         setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.tablette)
-//         setSrcFormatImgNextIdx(inData[inNextIdx].cover.tablette)
-//     }
-//     else {
-//         setDevice("./projects_img/covers/desktop/cadre.webp")
-//         setAltDevice("Dessin d'un ordinateur")
-//         setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.desktop)
-//         setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.desktop)
-//         setSrcFormatImgNextIdx(inData[inNextIdx].cover.desktop)
-//     }
-// }
