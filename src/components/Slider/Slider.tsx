@@ -18,10 +18,10 @@ interface SliderProps {
 
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
-    const [srcImgDevice, setSrcImgDevice] = useState<string>('');
-    const [altImgDevice, setAltImgDevice] = useState<string>('');
+    const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.webp`);
+    const [altImgDevice, setAltImgDevice] = useState<string>("Image desktop");
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-    const [device, setDevice] = useState<string>('');
+    const [device, setDevice] = useState<"mobile" | "tablette" | "desktop">("desktop");
 
     useEffect(() => {
         function handleResize() {
@@ -34,14 +34,14 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     function detectMediaQueriesAndApplyImagesDetails() {
 
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            setDevice('mobile')
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            setDevice("mobile")
         }
-        else if (window.matchMedia('(max-width: 992px)').matches) {
-            setDevice('tablette')
+        else if (window.matchMedia("(max-width: 992px").matches) {
+            setDevice("tablette")
         }
         else {
-            setDevice('desktop')
+            setDevice("desktop")
         }
     }
 
@@ -51,7 +51,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     useEffect(() => {
         setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
-        setAltImgDevice(`Dessin d'un ${device}`)
+        setAltImgDevice(`Image ${device}`)
     }, [device])
 
     return (
