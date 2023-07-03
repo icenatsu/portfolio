@@ -55,7 +55,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     useEffect(() => {
         detectMediaQueriesAndApplyImagesDetails();
-    }, [windowWidth, inData[inPrevIdx], inData[inCurrentIdx], inData[inNextIdx]]);
+    }, [windowWidth, inData]);
 
     return (
         <div className={styles.slider}>
