@@ -32,30 +32,27 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    function imagesDetails(device: string) {
-        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
-        setAltImgDevice(`Dessin d'un téléphone ${device}`)
-        setDevice(device)
-    }
-
     function detectMediaQueriesAndApplyImagesDetails() {
-        const mobileDevice = window.matchMedia('(max-width: 768px)').matches
-        const tabletteDevice = window.matchMedia('(max-width: 992px)').matches
 
-        if (mobileDevice) {
-            imagesDetails('mobile')
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            setDevice('mobile')
         }
-        else if (tabletteDevice) {
-            imagesDetails('tablette')
+        else if (window.matchMedia('(max-width: 992px)').matches) {
+            setDevice('tablette')
         }
         else {
-            imagesDetails('desktop')
+            setDevice('desktop')
         }
     }
 
     useEffect(() => {
         detectMediaQueriesAndApplyImagesDetails();
     }, [windowWidth, inData]);
+
+    useEffect(() => {
+        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
+        setAltImgDevice(`Dessin d'un ${device}`)
+    }, [device])
 
     return (
         <div className={styles.slider}>
