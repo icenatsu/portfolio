@@ -32,7 +32,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    function imageDetails(device: string) {
+    function imagesDetails(device: string) {
         setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
         setAltImgDevice(`Dessin d'un téléphone ${device}`)
         setDevice(device)
@@ -43,13 +43,13 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         const tabletteDevice = window.matchMedia('(max-width: 992px)').matches
 
         if (mobileDevice) {
-            imageDetails('mobile')
+            imagesDetails('mobile')
         }
         else if (tabletteDevice) {
-            imageDetails('tablette')
+            imagesDetails('tablette')
         }
         else {
-            imageDetails('desktop')
+            imagesDetails('desktop')
         }
     }
 
