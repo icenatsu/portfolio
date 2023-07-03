@@ -34,7 +34,7 @@
         @media screen and (max-width: variables.$breakpoint-tablette) {
             background-size: variables.$breakpoint-tablette 200px;
             @include mixins.mediumScreen;
-            font-size: variables.$navbar-fontSize-desktop--navbar;
+            font-size: variables.$infos-fontSize-tablette--footer;
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
