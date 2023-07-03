@@ -46,7 +46,7 @@
             transform: translateY(-50%);
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                left: -80px;
+                left: -60px;
             }
 
             &:hover{
@@ -63,7 +63,7 @@
  
       
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                right: -80px;
+                right: -60px;
             }
 
             &:hover{
