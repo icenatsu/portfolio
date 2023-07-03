@@ -19,7 +19,7 @@ interface SliderProps {
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
     const [srcImgdevice, setSrcImgDevice] = useState<string>('');
-    const [altDevice, setAltDevice] = useState<string>('');
+    const [altImgDevice, setAltImgDevice] = useState<string>('');
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
     const [device, setDevice] = useState<string>('');
 
@@ -32,9 +32,9 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    function ImageDetails(device: string) {
+    function imageDetails(device: string) {
         setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
-        setAltDevice(`Dessin d'un téléphone ${device}`)
+        setAltImgDevice(`Dessin d'un téléphone ${device}`)
         setDevice(device)
     }
 
@@ -43,13 +43,13 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         const tabletteDevice = window.matchMedia('(max-width: 992px)').matches
 
         if (mobileDevice) {
-            ImageDetails('mobile')
+            imageDetails('mobile')
         }
         else if (tabletteDevice) {
-            ImageDetails('tablette')
+            imageDetails('tablette')
         }
         else {
-            ImageDetails('desktop')
+            imageDetails('desktop')
         }
     }
 
@@ -81,7 +81,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                 </div>
             </div>
             <div className={styles.device}>
-                <img src={srcImgdevice} alt={altDevice} />
+                <img src={srcImgdevice} alt={altImgDevice} />
             </div>
         </div>
     );
