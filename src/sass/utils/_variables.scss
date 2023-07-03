@@ -21,7 +21,6 @@ $slider-before-background-desktop--switch:rgb(7, 33, 110);
 
 // dark Mode
 /************/
-
 // -- global.scss
 $background-desktop--projets--dark: $dark-color;
 // -- Layout header
@@ -48,7 +47,6 @@ $slider-background-desktop--switch--dark: $light-color;
 
 // light Mode
 /************/
-
 // -- global.scss
 $background-desktop--projets--light: $light-color;
 $links-desktop--projets--light: $dark-color;
@@ -106,9 +104,11 @@ $slider-icone-fontSize-mobile--switch: 9px;
 $text-font: 'Saira Semi Condensed';
 
 // Radius
-$small-radius: 5px;
-$medium-radius: 10px;
-$big-radius: 20px;
+$radius--5: 5px;
+$radius--10: 10px;
+$radius--15: 15px;
+$radius--20: 20px;
+$radius--circle: 50%;
 
 // Breackpoints
 $breakpoint-tablette: 992px;

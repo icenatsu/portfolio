@@ -41,7 +41,7 @@
             background-size: variables.$breakpoint-tablette 200px;
             @include mixins.smallScreen;
             height: 80px;
-            border-radius: variables.$big-radius;
+            border-radius: variables.$radius--20;
             font-size: variables.$infos-fontSize-mobile--footer;
             padding: 10px 0px;
         }

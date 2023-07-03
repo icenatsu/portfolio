@@ -67,7 +67,7 @@
             &__item{
                 @media screen and (max-width: variables.$breakpoint-mobile) {
                     background-color: variables.$navBar__item-background-mobile--navbar--dark;
-                    border-radius: 15px;
+                    border-radius: variables.$radius--15;
                     border: 2px solid variables.$navBar__item-border-mobile--navbar--dark;
                     padding: 10px;
                     transition: 1s;
@@ -102,7 +102,7 @@
             &__item{
                 @media screen and (max-width: variables.$breakpoint-mobile) {
                     background-color: variables.$navBar__item-background-mobile--navbar--light;
-                    border-radius: 15px;
+                    border-radius: variables.$radius--15;
                     border: 2px solid variables.$navBar__item-border-mobile--navbar--light;
                     padding: 10px;
                     transition: 1s;

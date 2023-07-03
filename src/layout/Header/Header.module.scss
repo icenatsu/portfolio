@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
+    border-radius: variables.$radius--20;
     background-size: cover;
     width: 96%;
   
@@ -22,7 +22,7 @@
         display: flex;
         align-items: center;
         height: 60px;
-        border-radius: variables.$medium-radius;
+        border-radius: variables.$radius--10;
         justify-content: end;
     }
     
@@ -39,7 +39,7 @@
         }
             
         & img{
-            border-radius: 50%;
+            border-radius: variables.$radius--circle;
             width: 70px;
             height: 70px;
             margin-left: 0px;

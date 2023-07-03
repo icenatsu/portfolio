@@ -52,7 +52,7 @@
     left:0;
     right:0;
     bottom: 0;
-    border-radius: variables.$big-radius;
+    border-radius: variables.$radius--20;
     
     & i{
         color: variables.$slider-icone-desktop--slider--light;
@@ -86,7 +86,7 @@
         width: calc(50% - 6px);
         left: 3px;
         bottom: 3px;
-        border-radius: variables.$big-radius;
+        border-radius: variables.$radius--20;
         background-color: variables.$slider-before-background-desktop--switch;
         transition: 0.4s;
         z-index: 2;
