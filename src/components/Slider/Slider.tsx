@@ -35,7 +35,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
     }, []);
 
     function ImageDetails(device: string) {
-        setDevice(`./projects_img/covers/${device}/cadre_${device}.webp`)
+        setDevice(`./projects_img/covers/${device}/device_${device}.webp`)
         setAltDevice(`Dessin d'un téléphone ${device}`)
         setSrcFormatImgPrevIdx(inData[inPrevIdx].cover[device])
         setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover[device])
