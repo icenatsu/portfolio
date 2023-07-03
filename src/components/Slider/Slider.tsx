@@ -1,14 +1,12 @@
 import styles from './Slider.module.scss';
 import next from "../../assets/img/next.webp";
 import prev from "../../assets/img/prev.webp"
-// import cadre from "../../../public/projects_img/covers/cadre.webp"
 import { useEffect, useState } from "react";
 interface ISlider {
-    cover: string;
     title: string;
+    cover: { [key: string]: string },
     [propName: string]: any,
 }
-
 interface SliderProps {
     inData: ISlider[]
     inCurrentIdx: number,
@@ -18,12 +16,12 @@ interface SliderProps {
     inNextCursor: () => void,
 }
 
-
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
-
-    const [cadre, setCadre] = useState<string>('')
+    const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.webp`);
+    const [altImgDevice, setAltImgDevice] = useState<string>("Image desktop");
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+    const [device, setDevice] = useState<"mobile" | "tablette" | "desktop">("desktop");
 
     useEffect(() => {
         function handleResize() {
@@ -34,24 +32,27 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    function detectMediaQueriesAndApplyImagesDetails() {
 
-    function detectMediaQueriesAndApplyCadre() {
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            setCadre("./projects_img/covers/cadre_mobile.webp")
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            setDevice("mobile")
         }
-
-
-        if (window.matchMedia('(min-width: 768px) and (max-width: 992px)').matches) {
-            setCadre("./projects_img/covers/cadre_tablette.webp")
+        else if (window.matchMedia("(max-width: 992px").matches) {
+            setDevice("tablette")
         }
-        if (window.matchMedia('(min-width: 992px) ').matches) {
-            setCadre("./projects_img/covers/cadre.webp")
+        else {
+            setDevice("desktop")
         }
     }
 
     useEffect(() => {
-        detectMediaQueriesAndApplyCadre();
-    }, [windowWidth]);
+        detectMediaQueriesAndApplyImagesDetails();
+    }, [windowWidth, inData]);
+
+    useEffect(() => {
+        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
+        setAltImgDevice(`Image ${device}`)
+    }, [device])
 
     return (
         <div className={styles.slider}>
@@ -70,17 +71,16 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                 />
             </div>
             <div className={styles.overflow}>
-                <div id={styles.slider__pictures} className={styles.slider__images}>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inPrevIdx].cover} alt={inData[inPrevIdx].title} /></figure>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inCurrentIdx].cover} alt={inData[inCurrentIdx].title} /></figure>
-                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inNextIdx].cover} alt={inData[inNextIdx].title} /> </figure>
+                <div id="slider__pictures" className={styles.slider__images}>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inPrevIdx].cover[device]} alt={inData[inPrevIdx].title} /></figure>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inCurrentIdx].cover[device]} alt={inData[inCurrentIdx].title} /></figure>
+                    <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={inData[inNextIdx].cover[device]} alt={inData[inNextIdx].title} /> </figure>
                 </div>
             </div>
-            <div className={styles.cadre}>
-                <img src={cadre} alt="Dessin d'un ordinateur entourant le caroussel des images de projets" />
+            <div className={styles.device}>
+                <img src={srcImgDevice} alt={altImgDevice} />
             </div>
         </div>
     );
 }
-
 export default Slider;

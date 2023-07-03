@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
+    border-radius: variables.$radius--20;
     background-size: cover;
     width: 96%;
   
@@ -22,7 +22,7 @@
         display: flex;
         align-items: center;
         height: 60px;
-        border-radius: variables.$medium-radius;
+        border-radius: variables.$radius--10;
         justify-content: end;
     }
     
@@ -39,7 +39,7 @@
         }
             
         & img{
-            border-radius: 50%;
+            border-radius: variables.$radius--circle;
             width: 70px;
             height: 70px;
             margin-left: 0px;
@@ -61,15 +61,13 @@
         display: flex;
         flex: 0.7;
         justify-content: right;
-        border-right: 0.15em solid variables.$primary-color;
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
-        font-size: 17px;
+        font-size: variables.$autotext-fontSize-desktop--header;
         background-color: transparent;   
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            font-size: 14px;
-            color: variables.$dark-contrast-color;
+            font-size: variables.$autotext-fontSize-tablette--header;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -110,30 +108,30 @@
     /************************************/
     &--light{
         background-image: url(../../assets/img/bg_light_header.webp);
-        color: variables.$light-contrast-color;   
+        color: variables.$header-desktop--header--light;   
         
         #autotext{
-            color: rgb(8, 77, 92);
+            color: variables.$autotext-fontSize-desktop--header--light;
             font-weight: 600;
+            border-right: 0.15em solid variables.$autotext-fontSize-desktop--header--light;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                color: rgb(184, 236, 186);
+                color: variables.$autotext-fontSize-tablette--header--light;
             }
         }        
     }
     
     &--dark{
         background-image: url(../../assets/img/bg_dark_header.webp);
-        color: variables.$dark-contrast-color; 
-        // box-shadow: 0px 10px 10px 0px inset rgba(25, 155, 79, 0.3); 
-    
+        color: variables.$header-desktop--header--dark; 
 
         #autotext{   
-            color: rgb(49, 38, 79);
+            color: variables.$autotext-fontSize-desktop--header--dark;
             font-weight: 800; 
+            border-right: 0.15em solid variables.$autotext-fontSize-desktop--header--dark;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                color: rgb(233, 129, 233);
+                color: variables.$autotext-tablette-header--dark;
             } 
         }
     }
@@ -174,7 +172,7 @@
        border-color: transparent; 
     }
     50% {
-        border-color: variables.$primary-color;
+        border-color: variables.$autotext-blink-desktop--header;
     }
 }
 

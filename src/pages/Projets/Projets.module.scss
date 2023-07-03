@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: variables.$big-radius;
+        border-radius: variables.$radius--20;
         position: relative;
     }
 
@@ -18,10 +18,10 @@
         position: absolute;
         top: 370px;
         z-index: -9999;
-        border-radius: 10px;
+        border-radius: variables.$radius--10;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            top: 335px;
+            top: 365px;
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -32,7 +32,7 @@
     .boxinfos{
         margin-top: 50px;
         width: 100%;
-        color: variables.$terciary-color;
+        color: variables.$boxinfos-desktop--projets;
         padding: 0px;
              
         .container{
@@ -44,13 +44,9 @@
     
             &__description{
                 padding: 10px;   
-                
-                @media screen and (max-width: variables.$breakpoint-tablette) {
-                    
-                }
-            
+                            
                 @media screen and (max-width: variables.$breakpoint-mobile) {
-                    font-size: 14px;
+                    font-size: variables.$container__description-fontSize-mobile--projets;
                 }
             }
     
@@ -61,7 +57,7 @@
                 .technologies{
                     display: flex;
                     align-items: center;
-                    border-radius: variables.$small-radius;
+                    border-radius: variables.$radius--5;
                     flex-basis: 100%;
      
                     &__name{
@@ -88,7 +84,7 @@
                 padding: 5px;
     
                 button{
-                    border-radius: variables.$medium-radius;
+                    border-radius: variables.$radius--10;
                     padding: 5px;    
                 }
             }   
@@ -106,25 +102,25 @@
         .container{
 
             &__title{
-                color:  rgba(62, 231, 40, 0.773);
+                color: variables.$container__title-desktop--projets--dark;
             }
 
             &__technologies{
      
-                color: variables.$dark-contrast-color;
+                color: variables.$container__technologies-desktop--projets--dark;
             }
 
             &__description{
-                color: variables.$dark-contrast-color;          
+                color: variables.$container__description-desktop--projets--dark;          
             }
 
         
             &__sources{
                 button{
-                    background-color: variables.$primary-color;
-                    border : 1px solid variables.$primary-color;
+                    background-color: variables.$container__sources-button-background-desktop--project--dark;
+                    border : 1px solid variables.$container__sources-button-border-desktop--project--dark;
                     & a{
-                        color: variables.$dark-contrast-color;
+                        color: variables.$container__sources-links-button-border-desktop--project--dark;
                     }
                 }
             }
@@ -140,14 +136,18 @@
         }
 
         .container{
+
+            &__title{
+                color: variables.$container__title-desktop--projets--light;
+            }
             
             &__sources{
     
                 button{
-                    border : 1px solid variables.$terciary-color;
-                    background-color: variables.$terciary-color;
+                    border : 1px solid variables.$container__sources-button-border-desktop--project--light;
+                    background-color: variables.$container__sources-button-background-desktop--project--light;
                     & a{
-                        color: variables.$dark-contrast-color;
+                        color: variables.$container__sources-links-button-border-desktop--project--light;
                     }
                 }
             }

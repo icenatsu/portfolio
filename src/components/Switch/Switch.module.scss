@@ -52,16 +52,16 @@
     left:0;
     right:0;
     bottom: 0;
-    border-radius: variables.$big-radius;
+    border-radius: variables.$radius--20;
     
     & i{
-        color: variables.$light-contrast-color;
+        color: variables.$slider-icone-desktop--slider--light;
         position: absolute;
         top: 7px;
         z-index: 1;
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            font-size: 9px;
+            font-size: variables.$slider-icone-fontSize-mobile--switch;
             top: 4.5px
         }
 
@@ -86,27 +86,27 @@
         width: calc(50% - 6px);
         left: 3px;
         bottom: 3px;
-        border-radius: variables.$big-radius;
-        background-color: rgb(7, 33, 110);
+        border-radius: variables.$radius--20;
+        background-color: variables.$slider-before-background-desktop--switch;
         transition: 0.4s;
         z-index: 2;
         transform: translateX(0px);
     }
 
     &--light{
-        background-color: #1c76d3;
+        background-color: variables.$slider-background-desktop--switch--light;
 
         &::before{
-            background-color: #fff;
+            background-color: variables.$slider-before-background-desktop--switch--light;
         }
 
         & i{
-            color: rgb(8, 8, 154);
+            color: variables.$slider-icone-desktop--switch--light;
         }
     }
 
     &--dark{
-        background-color: variables.$dark-contrast-color;
+        background-color: variables.$slider-background-desktop--switch--dark;
         border: 1px outset black;        
     }
 }

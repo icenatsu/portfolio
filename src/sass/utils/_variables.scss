@@ -1,21 +1,133 @@
-$primary-color: #388439; //#13589f
-$secondary-color: violet;
-$terciary-color: #13589f;
-$fourth-color: #F6F6F6;
-$footer-color: #000000;
 
-$dark-contrast-color: #dddddd;
-$light-contrast-color: #242424;
+// -- Colors -- //
+/****************/
 
+// Repeat Color
+/**************/
+$primary-color: #13589f;
+$light-color: #dddddd;
+$dark-color:#242424;
+
+// All mode
+/**********/
+// -- Component navBar
+$links-hover-desktop--navbar:  violet;
+// --page projets
+$boxinfos-desktop--projets: $primary-color;
+// -- Layout header
+$autotext-blink-desktop--header:  rgb(243, 7, 255);
+// -- Component Switch
+$slider-before-background-desktop--switch:rgb(7, 33, 110);
+
+// dark Mode
+/************/
+// -- global.scss
+$background-desktop--projets--dark: $dark-color;
+// -- Layout header
+$header-desktop--header--dark: $light-color;
+$autotext-fontSize-desktop--header--dark:  rgb(49, 38, 79);
+$autotext-tablette-header--dark: rgb(233, 129, 233);
+// -- Layout footer
+$footer-desktop--footer--dark: $dark-color;
+$footer-background-desktop--footer--dark: $light-color;
+$reseaux__item-links-icone-desktop--footer--dark: $dark-color;
+// --page projets
+$container__title-desktop--projets--dark: rgba(62, 231, 40, 0.773);
+$container__technologies-desktop--projets--dark:  $light-color;
+$container__description-desktop--projets--dark:  $light-color;
+$container__sources-button-background-desktop--project--dark:  #388439; 
+$container__sources-button-border-desktop--project--dark: #388439;
+$container__sources-links-button-border-desktop--project--dark: $light-color;
+// -- Component navBar
+$navBar__item-background-mobile--navbar--dark: $primary-color; 
+$navBar__item-border-mobile--navbar--dark: $dark-color; 
+$navBar__item-active-border-mobile--navbar--dark:  rgb(61, 120, 145);
+// -- Component Switch
+$slider-background-desktop--switch--dark: $light-color;
+
+// light Mode
+/************/
+// -- global.scss
+$background-desktop--projets--light: $light-color;
+$links-desktop--projets--light: $dark-color;
+$links-tablette--projets--light: $dark-color;
+$links-mobile--projets--light: $dark-color;
+$links-desktop--projets--light: $dark-color;
+$icone-desktop--projets--light: $dark-color;
+// -- Layout header
+$header-desktop--header--light: $light-color;
+$autotext-fontSize-desktop--header--light: rgb(8, 77, 92);
+$autotext-fontSize-tablette--header--light: rgb(184, 236, 186);
+// -- Layout footer
+$footer-desktop--footer--light: $light-color;
+$footer-background-desktop--footer--light: $dark-color;
+$reseaux__item-links-icone-desktop--footer--light: $light-color;
+// -- page projets
+$container__title-desktop--projets--light: $primary-color;
+$container__technologies-desktop--projets--light: $dark-color;
+$container__sources-button-background-desktop--project--light: $primary-color; 
+$container__sources-button-border-desktop--project--light: $primary-color;
+$container__sources-links-button-border-desktop--project--light: $light-color;
+// -- Component navBar
+$navBar__item-background-mobile--navbar--light: $dark-color;
+$navBar__item-border-mobile--navbar--light: $primary-color; 
+$navBar__item-active-background-mobile--navbar--light: rgb(155, 216, 243);
+$navBar__item-active-border-mobile--navbar--light: #388439;
+$links-mobile--navbar--light:  $light-color;
+// -- Component Switch
+$slider-background-desktop--switch--light:   #1c76d3;
+$slider-before-background-desktop--switch--light:  #fff; 
+$slider-icone-desktop--switch--light: rgb(8, 8, 154); 
+// -- Component Slider
+$slider-icone-desktop--slider--light: $dark-color;
+
+// -- Font Sizes -- //
+/********************/
+// -- Layout header
+$autotext-fontSize-desktop--header: 17px;
+$autotext-fontSize-tablette--header: 14px;
+// -- Layout footer
+$infos-fontSize-tablette--footer: 15px;
+$infos-fontSize-mobile--footer: 13px;
+$reseaux-fontSize-desktop--footer: 50px;
+// -- page projets
+$container__description-fontSize-mobile--projets: 15px;
+// -- Component navBar
+$navbar-fontSize-desktop--navbar: 20px;
+$navbar__item-fontSize-tablette--navbar: 18px;
+$navbar__item-fontSize-mobile--navbar: 18px;
+// -- Component Switch
+$slider-icone-fontSize-mobile--switch: 9px;
+
+// -- Fonts -- //
+/***************/
 $text-font: 'Saira Semi Condensed';
 
-$small-radius: 5px;
-$medium-radius: 10px;
-$big-radius: 20px;
+// -- Radius -- //
+/****************/
+$radius--5: 5px;
+$radius--10: 10px;
+$radius--15: 15px;
+$radius--20: 20px;
+$radius--circle: 50%;
 
+// -- Breackpoints -- //
+/**********************/
 $breakpoint-tablette: 992px;
 $breakpoint-mobile: 768px;
 
+// -- Screens Width Size -- //
+/****************************/
 $maxWidth : 1600px;
 $mediumWidth : 992px;
 $minWidth : 768px;
+
+// -- Image Size -- //
+/********************/
+// -- Component Slider images projets
+$width_img_cover_slider_mobile: 235px;
+$height_img_cover_slider_mobile: 350px;
+$width_img_cover_slider_tablette: 400px;
+$height_img_cover_slider_tablette: 228px;
+$width_img_cover_slider_desktop: 450px;
+$height_img_cover_slider_desktop: 235px;
