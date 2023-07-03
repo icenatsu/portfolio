@@ -103,23 +103,27 @@ $slider-icone-fontSize-mobile--switch: 9px;
 /***************/
 $text-font: 'Saira Semi Condensed';
 
-// Radius
+// -- Radius -- //
+/****************/
 $radius--5: 5px;
 $radius--10: 10px;
 $radius--15: 15px;
 $radius--20: 20px;
 $radius--circle: 50%;
 
-// Breackpoints
+// -- Breackpoints -- //
+/**********************/
 $breakpoint-tablette: 992px;
 $breakpoint-mobile: 768px;
 
-// Screens Width Size
+// -- Screens Width Size -- //
+/****************************/
 $maxWidth : 1600px;
 $mediumWidth : 992px;
 $minWidth : 768px;
 
-// Image Size
+// -- Image Size -- //
+/********************/
 // -- Component Slider images projets
 $width_img_cover_slider_mobile: 235px;
 $height_img_cover_slider_mobile: 350px;
