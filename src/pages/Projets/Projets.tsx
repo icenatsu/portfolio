@@ -30,7 +30,6 @@ interface IntItems {
 
 const Projets = (): JSX.Element => {
 
-
     const { items, error } = useFetch<IntItems[]>();
 
     const themeContext = useContext(ThemeContext);
@@ -40,20 +39,19 @@ const Projets = (): JSX.Element => {
     const [prevIdx, setPrevIdx] = useState(0);
     const [nbProject, setNbProject] = useState(0);
 
-    const cursorAnimation = (cursor: 'prev' | 'next') => {
+    const pictures = document.getElementById("slider__pictures")
+    const boxinfo = document.getElementById("container")
 
-        const pictures = document.getElementById("slider__pictures")
-        const boxinfo = document.getElementById("container")
-
-        cursor === 'prev' ? pictures?.classList.add(styleSlider.translateprev) : pictures?.classList.add(styleSlider.translatenext)
+    function prevCursor() {
+        pictures?.classList.add(styleSlider.translateprev)
 
         setTimeout(() => {
-            cursor === "prev" ? setCurrentIdx(curr => curr === 0 ? nbProject - 1 : curr - 1) : setCurrentIdx(curr => curr === nbProject - 1 ? 0 : curr + 1)
+            setCurrentIdx(curr => curr === 0 ? nbProject - 1 : curr - 1)
             boxinfo?.classList.add(styles.animOpacity)
         }, 500)
 
         setTimeout(() => {
-            cursor === "prev" ? pictures?.classList.remove(styleSlider.translateprev) : pictures?.classList.remove(styleSlider.translatenext)
+            pictures?.classList.remove(styleSlider.translateprev)
         }, 550)
 
         setTimeout(() => {
@@ -61,12 +59,21 @@ const Projets = (): JSX.Element => {
         }, 1500)
     }
 
-    function prevCursor() {
-        cursorAnimation('prev');
-    }
-
     function nextCursor() {
-        cursorAnimation('next');
+        pictures?.classList.add(styleSlider.translatenext)
+
+        setTimeout(() => {
+            setCurrentIdx(curr => curr === nbProject - 1 ? 0 : curr + 1)
+            boxinfo?.classList.add(styles.animOpacity)
+        }, 500)
+
+        setTimeout(() => {
+            pictures?.classList.remove(styleSlider.translatenext)
+        }, 550)
+
+        setTimeout(() => {
+            boxinfo?.classList.remove(styles.animOpacity)
+        }, 1500)
     }
 
 
