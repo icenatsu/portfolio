@@ -27,8 +27,13 @@
             width: 50px;
             height: 40px;
 
+            @media screen and (max-width: variables.$breakpoint-tablette) {
+                width: 35px;
+                height: 35px;
+            }
+
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                width: 40px;
+                width: 30px;
                 height: 30px;
             }
         }
