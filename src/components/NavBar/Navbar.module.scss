@@ -4,7 +4,7 @@
     display: flex;
     flex: 1.3;
     justify-content: right;
-    font-size: 20px;
+    font-size: variables.$navbar-fontSize-desktop--navbar;
     z-index: 2;
    
     @media screen and (max-width: variables.$breakpoint-tablette) {
@@ -32,11 +32,11 @@
         margin-left: 5px;
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            font-size: 18px
+            font-size: variables.$navbar__item-fontSize-tablette--navbar
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            font-size: 25px;
+            font-size: variables.$navbar__item-fontSize-mobile--navbar;
             padding: 5px;
             margin-bottom: 20px;
         }

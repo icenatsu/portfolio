@@ -34,7 +34,7 @@
         @media screen and (max-width: variables.$breakpoint-tablette) {
             background-size: variables.$breakpoint-tablette 200px;
             @include mixins.mediumScreen;
-            font-size: 15px;
+            font-size: variables.$navbar-fontSize-desktop--navbar;
         }
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -42,7 +42,7 @@
             @include mixins.smallScreen;
             height: 80px;
             border-radius: variables.$big-radius;
-            font-size: 13px;
+            font-size: variables.$infos-fontSize-mobile--footer;
             padding: 10px 0px;
         }
            
@@ -56,7 +56,7 @@
         display: flex;
         align-items: center;
         justify-content: right;
-        font-size: 50px;
+        font-size: variables.$reseaux-fontSize-desktop--footer;
         background-color: transparent;
         &__item{
             margin-right: 10px;

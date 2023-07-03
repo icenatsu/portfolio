@@ -61,7 +61,7 @@
         z-index: 1;
     
         @media screen and (max-width: variables.$breakpoint-mobile) {
-            font-size: 9px;
+            font-size: variables.$slider-icone-fontSize-mobile--switch;
             top: 4.5px
         }
 

@@ -63,11 +63,11 @@
         justify-content: right;
         letter-spacing: 0.10em;
         animation: blink 0.75s step-end infinite;
-        font-size: 17px;
+        font-size: variables.$autotext-fontSize-desktop--header;
         background-color: transparent;   
 
         @media screen and (max-width: variables.$breakpoint-tablette) {
-            font-size: 14px;
+            font-size: variables.$autotext-fontSize-tablette--header;
         }
 
         @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -111,12 +111,12 @@
         color: variables.$header-desktop--header--light;   
         
         #autotext{
-            color: variables.$autotext-desktop--header--light;
+            color: variables.$autotext-fontSize-desktop--header--light;
             font-weight: 600;
-            border-right: 0.15em solid variables.$autotext-desktop--header--light;
+            border-right: 0.15em solid variables.$autotext-fontSize-desktop--header--light;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                color: variables.$autotext-tablette--header--light;
+                color: variables.$autotext-fontSize-tablette--header--light;
             }
         }        
     }
@@ -126,9 +126,9 @@
         color: variables.$header-desktop--header--dark; 
 
         #autotext{   
-            color: variables.$autotext-desktop--header--dark;
+            color: variables.$autotext-fontSize-desktop--header--dark;
             font-weight: 800; 
-            border-right: 0.15em solid variables.$autotext-desktop--header--dark;
+            border-right: 0.15em solid variables.$autotext-fontSize-desktop--header--dark;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
                 color: variables.$autotext-tablette-header--dark;
