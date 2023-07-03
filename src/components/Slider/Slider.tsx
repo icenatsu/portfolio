@@ -8,11 +8,9 @@ interface ISlider {
         mobile?: string;
         tablette?: string;
         desktop?: string;
-
     },
     [propName: string]: any,
 }
-
 interface SliderProps {
     inData: ISlider[]
     inCurrentIdx: number,
@@ -22,17 +20,14 @@ interface SliderProps {
     inNextCursor: () => void,
 }
 
-
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
-
-    const [cadre, setCadre] = useState<string>('')
-    const [altCadre, setAltCadre] = useState<string>('')
+    const [device, setDevice] = useState<string>('');
+    const [altDevice, setAltDevice] = useState<string>('');
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-    const [srcFormatImgPrevIdx, setSrcFormatImgPrevIdx] = useState<string | undefined>('')
-    const [srcFormatImgNextIdx, setSrcFormatImgNextIdx] = useState<string | undefined>('')
-    const [srcFormatImgCurrentIdx, setSrcFormatImgCurrentIdx] = useState<string | undefined>('')
-
+    const [srcFormatImgPrevIdx, setSrcFormatImgPrevIdx] = useState<string | undefined>('');
+    const [srcFormatImgNextIdx, setSrcFormatImgNextIdx] = useState<string | undefined>('');
+    const [srcFormatImgCurrentIdx, setSrcFormatImgCurrentIdx] = useState<string | undefined>('');
 
     useEffect(() => {
         function handleResize() {
@@ -43,35 +38,36 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const mobileDevice = window.matchMedia('(max-width: 768px)').matches
+    const tabletteDevice = window.matchMedia('(max-width: 992px)').matches
 
-    function detectMediaQueriesAndApplyCadre() {
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            setCadre("./projects_img/covers/mobile/cadre_mobile.webp")
-            setAltCadre("Dessin d'un téléphone mobile")
+    function detectMediaQueriesAndApplyImagesDetails() {
+        if (mobileDevice) {
+            setDevice("./projects_img/covers/mobile/cadre_mobile.webp")
+            setAltDevice("Dessin d'un téléphone mobile")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.mobile)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.mobile)
             setSrcFormatImgNextIdx(inData[inNextIdx].cover.mobile)
         }
-        if (window.matchMedia('(min-width: 768px) and (max-width: 992px)').matches) {
-            setCadre("./projects_img/covers/tablette/cadre_tablette.webp")
-            setAltCadre("Dessin d'une tablette")
+        else if (tabletteDevice) {
+            setDevice("./projects_img/covers/tablette/cadre_tablette.webp")
+            setAltDevice("Dessin d'une tablette")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.tablette)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.tablette)
             setSrcFormatImgNextIdx(inData[inNextIdx].cover.tablette)
         }
-        if (window.matchMedia('(min-width: 992px) ').matches) {
-            setCadre("./projects_img/covers/desktop/cadre.webp")
-            setAltCadre("Dessin d'un ordinateur")
+        else {
+            setDevice("./projects_img/covers/desktop/cadre.webp")
+            setAltDevice("Dessin d'un ordinateur")
             setSrcFormatImgPrevIdx(inData[inPrevIdx].cover.desktop)
             setSrcFormatImgCurrentIdx(inData[inCurrentIdx].cover.desktop)
             setSrcFormatImgNextIdx(inData[inNextIdx].cover.desktop)
         }
     }
 
-
     useEffect(() => {
-        detectMediaQueriesAndApplyCadre();
-    }, [windowWidth, inData[inPrevIdx], inData[inCurrentIdx], inData[inNextIdx]]);
+        detectMediaQueriesAndApplyImagesDetails();
+    }, [window.innerWidth, inData[inPrevIdx], inData[inCurrentIdx], inData[inNextIdx]]);
 
     return (
         <div className={styles.slider}>
@@ -96,11 +92,59 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                     <figure className={styles.slider__images__item}><img className={styles.slider__images__item__img} src={srcFormatImgNextIdx} alt={inData[inNextIdx].title} /> </figure>
                 </div>
             </div>
-            <div className={styles.cadre}>
-                <img src={cadre} alt={altCadre} />
+            <div className={styles.device}>
+                <img src={device} alt={altDevice} />
             </div>
         </div>
     );
 }
 
 export default Slider;
+
+    // function detectMediaQueriesAndApplyImagesDetails() {
+    //     setDevice(() => {
+    //         if (mobileDevice) {
+    //             return "./projects_img/covers/mobile/cadre_mobile.webp"
+    //         } else if (tabletteDevice) {
+    //             return "./projects_img/covers/tablette/cadre_tablette.webp"
+    //         } else {
+    //             return "./projects_img/covers/desktop/cadre.webp"
+    //         }
+    //     })
+    //     setAltDevice(() => {
+    //         if (mobileDevice) {
+    //             return "Dessin d'un téléphone mobile"
+    //         } else if (tabletteDevice) {
+    //             return "Dessin d'une tablette"
+    //         } else {
+    //             return "Dessin d'un ordinateur"
+    //         }
+    //     })
+    //     setSrcFormatImgPrevIdx(() => {
+    //         if (mobileDevice) {
+    //             return inData[inPrevIdx].cover.mobile
+    //         } else if (tabletteDevice) {
+    //             return inData[inPrevIdx].cover.tablette
+    //         } else {
+    //             return inData[inPrevIdx].cover.desktop
+    //         }
+    //     })
+    //     setSrcFormatImgCurrentIdx(() => {
+    //         if (mobileDevice) {
+    //             return inData[inCurrentIdx].cover.mobile
+    //         } else if (tabletteDevice) {
+    //             return inData[inCurrentIdx].cover.tablette
+    //         } else {
+    //             return inData[inCurrentIdx].cover.desktop
+    //         }
+    //     })
+    //     setSrcFormatImgNextIdx(() => {
+    //         if (mobileDevice) {
+    //             return inData[inNextIdx].cover.mobile
+    //         } else if (tabletteDevice) {
+    //             return inData[inNextIdx].cover.tablette
+    //         } else {
+    //             return inData[inNextIdx].cover.desktop
+    //         }
+    //     })
+    // }
