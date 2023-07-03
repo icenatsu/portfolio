@@ -51,7 +51,7 @@
     
         a:hover{
             padding-bottom: 4px;
-            border-bottom: 2px solid variables.$secondary-color;
+            border-bottom: 2px solid variables.$links-hover-desktop--navbar;
         }
 
     }
@@ -66,9 +66,9 @@
         .navBar{
             &__item{
                 @media screen and (max-width: variables.$breakpoint-mobile) {
-                    background-color: variables.$terciary-color;
+                    background-color: variables.$navBar__item-background-mobile--navbar--dark;
                     border-radius: 15px;
-                    border: 2px solid variables.$dark-contrast-color;
+                    border: 2px solid variables.$navBar__item-border-mobile--navbar--dark;
                     padding: 10px;
                     transition: 1s;
                 }
@@ -76,7 +76,7 @@
                 &:active{
                     @media screen and (max-width: variables.$breakpoint-mobile) {
                         border-bottom: none;
-                        border: 2px solid rgb(61, 120, 145);
+                        border: 2px solid variables.$navBar__item-active-border-mobile--navbar--dark;
                     }
                 }
     
@@ -101,9 +101,9 @@
         .navBar{
             &__item{
                 @media screen and (max-width: variables.$breakpoint-mobile) {
-                    background-color: variables.$dark-contrast-color;
+                    background-color: variables.$navBar__item-background-mobile--navbar--light;
                     border-radius: 15px;
-                    border: 2px solid variables.$terciary-color;;
+                    border: 2px solid variables.$navBar__item-border-mobile--navbar--light;
                     padding: 10px;
                     transition: 1s;
                 }
@@ -111,14 +111,14 @@
                 &:active{
                     @media screen and (max-width: variables.$breakpoint-mobile) {
                         border-bottom: none;
-                        background-color: rgb(155, 216, 243);
-                        border: 2px solid variables.$primary-color;
+                        background-color: variables.$navBar__item-active-background-mobile--navbar--light;
+                        border: 2px solid variables.$navBar__item-active-border-mobile--navbar--light;
                     }
                 }
     
                 & a{
                     @media screen and (max-width: variables.$breakpoint-mobile) {
-                        color: variables.$terciary-color;
+                        color: variables.$links-mobile--navbar--light;
                     }
                     &:hover{
                         @media screen and (max-width: variables.$breakpoint-mobile) {

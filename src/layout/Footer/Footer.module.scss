@@ -72,15 +72,15 @@
 }
 
 .dark{
-    color: variables.$light-contrast-color;
-    background-color: variables.$dark-contrast-color;
+    color: variables.$footer-desktop--footer--dark;
+    background-color: variables.$footer-background-desktop--footer--dark;
 
     .reseaux{
         &__item{
             & a{
                 & i{
                     background-image: none;
-                    color: variables.$light-contrast-color;
+                    color: variables.$reseaux__item-links-icone-desktop--footer--dark;
                 }
             }
         }
@@ -88,16 +88,15 @@
 }
 
 .light{
-    // background-image: url(../../assets/img/bg_light_footer.webp);
-    color: variables.$dark-contrast-color;
-    background-color: variables.$light-contrast-color;
+    color: variables.$footer-desktop--footer--light;
+    background-color: variables.$footer-background-desktop--footer--light;
 
     .reseaux{
         &__item{
             & a{
                 & i{
                     background-image: none;
-                    color: variables.$dark-contrast-color;
+                    color: variables.$reseaux__item-links-icone-desktop--footer--light;
                 }
             }
         }
