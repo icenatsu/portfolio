@@ -18,7 +18,7 @@ interface SliderProps {
 
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
 
-    const [srcImgdevice, setSrcImgDevice] = useState<string>('');
+    const [srcImgDevice, setSrcImgDevice] = useState<string>('');
     const [altImgDevice, setAltImgDevice] = useState<string>('');
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
     const [device, setDevice] = useState<string>('');
@@ -81,7 +81,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                 </div>
             </div>
             <div className={styles.device}>
-                <img src={srcImgdevice} alt={altImgDevice} />
+                <img src={srcImgDevice} alt={altImgDevice} />
             </div>
         </div>
     );
