@@ -110,14 +110,16 @@ const Projets = (): JSX.Element => {
             <div className={[styles.projects, themeContext?.isDarkMode ? styles['projects--dark'] : styles['projects--light']].join(' ')}>
                 <Banner />
                 <div className={styles.projects__content}>
-                    <Slider
-                        inData={items}
-                        inCurrentIdx={currentIdx}
-                        inPrevIdx={prevIdx}
-                        inNextIdx={nextIdx}
-                        inPrevCursor={prevCursor}
-                        inNextCursor={nextCursor}
-                    />
+                    <a href="#title">
+                        <Slider
+                            inData={items}
+                            inCurrentIdx={currentIdx}
+                            inPrevIdx={prevIdx}
+                            inNextIdx={nextIdx}
+                            inPrevCursor={prevCursor}
+                            inNextCursor={nextCursor}
+                        />
+                    </a>
                     <div id='title' className={styles.background__title}></div>
                     <div className={styles.boxinfos}>
                         <div id="container" className={styles.container}>
