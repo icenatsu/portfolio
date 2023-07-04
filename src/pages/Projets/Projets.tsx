@@ -118,7 +118,7 @@ const Projets = (): JSX.Element => {
                         inPrevCursor={prevCursor}
                         inNextCursor={nextCursor}
                     />
-                    <div className={styles.background__title}></div>
+                    <div id='title' className={styles.background__title}></div>
                     <div className={styles.boxinfos}>
                         <div id="container" className={styles.container}>
                             <h2 className={styles.container__title}>{items[currentIdx].title}</h2>
