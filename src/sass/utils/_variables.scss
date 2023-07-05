@@ -24,7 +24,7 @@ $slider-before-background-desktop--switch:rgb(7, 33, 110);
 // dark Mode
 /************/
 // -- global.scss
-$background-desktop--projets--dark: $dark-color;
+$background-desktop--global--dark: $dark-color;
 // -- Layout header
 $header-desktop--header--dark: $light-color;
 $autotext-fontSize-desktop--header--dark:  rgb(49, 38, 79);
@@ -54,14 +54,14 @@ $slider__chevron-boxShadow-desktop--slider--dark:  rgba(14, 102, 140, 0.5);
 // light Mode
 /************/
 // -- global.scss
-$background-desktop--projets--light: $light-color;
+$background-desktop--global--light: $light-color;
 $links-desktop--projets--light: $dark-color;
 $links-tablette--projets--light: $dark-color;
 $links-mobile--projets--light: $dark-color;
 $links-desktop--projets--light: $dark-color;
 $icone-desktop--projets--light: $dark-color;
 // -- Layout header
-$header-desktop--header--light: $light-color;
+$header-desktop--header--light: $dark-color;
 $autotext-fontSize-desktop--header--light: rgb(8, 77, 92);
 $autotext-fontSize-tablette--header--light: rgb(184, 236, 186);
 // -- Layout footer
@@ -73,7 +73,7 @@ $container__title-desktop--projets--light: $primary-color;
 $container__technologies-desktop--projets--light: $dark-color;
 $container__sources-button-background-desktop--project--light: $primary-color; 
 $container__sources-button-border-desktop--project--light: $primary-color;
-$container__sources-links-button-border-desktop--project--light: $light-color;
+$container__sources-links-button-border-desktop--project--light: white;
 // -- Component navBar
 $navBar__item-background-mobile--navbar--light: #13589f;
 $navBar__item-border-mobile--navbar--light: $primary-color; 

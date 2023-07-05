@@ -2,40 +2,23 @@
 @use "./src/sass/utils/mixins";
 
 .light {
-    background-color: variables.$background-desktop--projets--light;
+    background-color: variables.$background-desktop--global--light;
     font-weight: 500;
-
-    & a{
-        color: variables.$links-desktop--projets--light;
-
-        @media screen and (max-width: variables.$breakpoint-tablette) {
-            color: variables.$links-tablette--projets--light;
-            font-weight: 600;
-        }
-        @media screen and (max-width: variables.$breakpoint-mobile) {
-            color: variables.$links-mobile--projets--light;
-        }
-    }
-
-    & i{
-        color: variables.$icone-desktop--projets--light;
-    }
-
 }
 
 .dark {
-    background-color: variables.$background-desktop--projets--dark;
+    background-color: variables.$background-desktop--global--dark;
     position: relative;
 }
 
 @media(prefers-color-scheme: light){
     body {
-        background-color: variables.$background-desktop--projets--light;
+        background-color: variables.$background-desktop--global--light;
     }
 }
 
 @media(prefers-color-scheme: dark){
     body {
-        background-color: variables.$background-desktop--projets--dark;
+        background-color: variables.$background-desktop--global--dark;
     }
 }
