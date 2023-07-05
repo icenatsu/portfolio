@@ -70,7 +70,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                     className={[styles["slider__chevron__next"], "fa-solid fa-arrow-rotate-right"].join(' ')}
                     onClick={inNextCursor}
                 ></i>
-                <a href='#title'>
+                <a href='#title' aria-label="Descendre au niveau de la description du projet">
                     <i className={[styles.scroll, "fa-regular fa-circle-down"].join(' ')}></i>
                 </a>
             </div>
