@@ -2,7 +2,9 @@
 // -- Colors -- //
 /****************/
 
-// Repeat Color
+// Syntaxe ==> élément-pseudoClasse-propriétée-device--fichier--mode
+
+// Repeated Color
 /**************/
 $primary-color: #13589f;
 $light-color: #dddddd;
@@ -42,8 +44,12 @@ $container__sources-links-button-border-desktop--project--dark: $light-color;
 $navBar__item-background-mobile--navbar--dark: $primary-color; 
 $navBar__item-border-mobile--navbar--dark: $dark-color; 
 $navBar__item-active-border-mobile--navbar--dark:  rgb(61, 120, 145);
-// -- Component Switch
 $slider-background-desktop--switch--dark: $light-color;
+// -- Component Switch
+$slider__chevron-color-desktop--slider--dark: #13589f ;
+$slider__chevron-border-desktop--slider--dark: white;
+$slider__chevron-background-desktop--slider--dark: white;
+$slider__chevron-boxShadow-desktop--slider--dark:  rgba(14, 102, 140, 0.5);
 
 // light Mode
 /************/
@@ -78,8 +84,12 @@ $links-mobile--navbar--light:  $light-color;
 $slider-background-desktop--switch--light:   #1c76d3;
 $slider-before-background-desktop--switch--light:  #fff; 
 $slider-icone-desktop--switch--light: rgb(8, 8, 154); 
+$slider-icone-desktop--switch--light: $dark-color;
 // -- Component Slider
-$slider-icone-desktop--slider--light: $dark-color;
+$slider__chevron-color-desktop--slider--light: #13589f;
+$slider__chevron-border-desktop--slider--light:  #135dca;
+$slider__chevron-background-desktop--slider--light: white;
+$slider__chevron-boxShadow-desktop--slider--light:  rgba(14, 102, 140, 0.5);
 
 // -- Font Sizes -- //
 /********************/
@@ -98,6 +108,10 @@ $navbar__item-fontSize-tablette--navbar: 18px;
 $navbar__item-fontSize-mobile--navbar: 25px;
 // -- Component Switch
 $slider-icone-fontSize-mobile--switch: 9px;
+// -- Component Slider
+$slider__chevron-icone-fontSize-desktop--slider: 30px;
+$slider__chevron-icone-fontSize-tablette--slider: 25px;
+$slider__chevron-icone-fontSize-mobile--slider: 20px;
 
 // -- Fonts -- //
 /***************/

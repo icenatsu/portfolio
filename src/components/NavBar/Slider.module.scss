@@ -7,13 +7,12 @@
     position: relative;
     margin-bottom: 55px;
     z-index: 1;
-
     
     @media screen and (max-width: variables.$breakpoint-tablette) {
         margin-top: 45px;
         width: variables.$width_img_cover_slider_tablette;
         height: variables.$height_img_cover_slider_tablette;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -26,7 +25,7 @@
         cursor: pointer;
 
         & i{ 
-            border-radius: variables.$radius--circle; 
+            border-radius: 50%; 
             padding: 6px;
             font-size: variables.$slider__chevron-icone-fontSize-desktop--slider;
 
@@ -92,10 +91,8 @@
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 position: absolute;
                 display: block;
-                top: 350px;
-                left: 98px;
-                z-index: 1;
-                font-size: 24px;
+                top:355px;
+                left: 99px;
             }
         }
     }
@@ -106,7 +103,7 @@
         width:  variables.$width_img_cover_slider_desktop * 3;
         height: variables.$height_img_cover_slider_desktop;
         transform: translateX(- variables.$width_img_cover_slider_desktop);
- 
+
         @media screen and (max-width: variables.$breakpoint-tablette) {
             width: variables.$width_img_cover_slider_tablette * 3;
             height: variables.$height_img_cover_slider_tablette;
@@ -130,7 +127,6 @@
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 width: variables.$width_img_cover_slider_mobile;
-
             }
             
             &__img{
@@ -148,7 +144,7 @@
         .slider__chevron{
             & i{
                 color: variables.$slider__chevron-color-desktop--slider--dark;
-                border: 2px solid variables.$slider__chevron-border-desktop--slider--dark;
+                border: 10px solid variables.$slider__chevron-border-desktop--slider--dark;
                 background-color: variables.$slider__chevron-background-desktop--slider--dark;
                 box-shadow: 0px 10px 10px inset variables.$slider__chevron-boxShadow-desktop--slider--dark;
 
@@ -201,23 +197,22 @@
 .device{
     position: absolute;
     width: 484px;
-    height: 360px;
-    top: -14px;
-    left: -17px;
-
+    height: 370px;
+    top: -15px;
+    left: -18px;
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        width: 428px;
-        height: 265px;
-        top: -13px;
-        left: -15px;
+        width: 425px;
+        height: 270px;
+        top: -14px;
+        left: -10px;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 262px;
-        height: 426px;
+        width: 266px;
+        height: 430px;
         top:-30px;
-        left: -13px;
+        left: -15px;
     }
 
     & img{

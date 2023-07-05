@@ -1,7 +1,7 @@
 import styles from './Slider.module.scss';
-import next from "../../assets/img/next.webp";
-import prev from "../../assets/img/prev.webp"
 import { useEffect, useState } from "react";
+import { ThemeContext } from "../../ThemeContext/ThemeContext";
+import { useContext } from "react";
 interface ISlider {
     title: string;
     cover: { [key: string]: string },
@@ -17,6 +17,9 @@ interface SliderProps {
 }
 
 const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNextCursor }: SliderProps): JSX.Element => {
+
+    const themeContext = useContext(ThemeContext);
+
 
     const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.webp`);
     const [altImgDevice, setAltImgDevice] = useState<string>("Image desktop");
@@ -54,21 +57,22 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
         setAltImgDevice(`Image ${device}`)
     }, [device])
 
+
     return (
-        <div className={styles.slider}>
+        <div className={[styles.slider, themeContext?.isDarkMode ? styles['slider--dark'] : styles['slider--light']].join(' ')}>
             <div className={styles["slider__chevron"]}>
-                <img
-                    className={styles["slider__chevron__prev"]}
-                    src={prev}
+                <i
+                    className={[styles["slider__chevron__prev"], 'fa-solid fa-arrow-rotate-left'].join(' ')}
                     onClick={inPrevCursor}
-                    alt="Chevron précédent"
-                />
-                <img
-                    className={styles["slider__chevron__next"]}
-                    src={next}
+                >
+                </i>
+                <i
+                    className={[styles["slider__chevron__next"], "fa-solid fa-arrow-rotate-right"].join(' ')}
                     onClick={inNextCursor}
-                    alt="Chevron suivant"
-                />
+                ></i>
+                <a href='#title'>
+                    <i className={[styles.scroll, "fa-regular fa-circle-down"].join(' ')}></i>
+                </a>
             </div>
             <div className={styles.overflow}>
                 <div id="slider__pictures" className={styles.slider__images}>
