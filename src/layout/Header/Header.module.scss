@@ -127,7 +127,7 @@
 
         #autotext{   
             color: variables.$autotext-fontSize-desktop--header--dark;
-            font-weight: 800; 
+            font-weight: 600; 
             border-right: 0.15em solid variables.$autotext-fontSize-desktop--header--dark;
     
             @media screen and (max-width: variables.$breakpoint-tablette) {
