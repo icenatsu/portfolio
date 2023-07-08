@@ -86,7 +86,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
                 link.as = 'image';
                 link.media = '(min-width: 993px)';
                 document.head.appendChild(link);
-                document.head.remove()
+
             }
         }
     }, [device, location.pathname])
