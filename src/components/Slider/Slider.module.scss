@@ -92,8 +92,8 @@
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 position: absolute;
                 display: block;
-                top: 350px;
-                left: 98px;
+                top: 382px;
+                left: 90px;
                 z-index: 1;
                 font-size: 24px;
             }
@@ -214,10 +214,10 @@
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 260px;
-        height: 424px;
+        width: 250px;
+        height: 461px;
         top:-30px;
-        left: -13px;
+        left: -15px;
     }
 
     & img{

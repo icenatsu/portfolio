@@ -21,7 +21,6 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     const themeContext = useContext(ThemeContext);
 
-
     const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.webp`);
     const [altImgDevice, setAltImgDevice] = useState<string>("Image desktop");
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
@@ -61,35 +60,13 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
     useEffect(() => {
         setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
         setAltImgDevice(`Image ${device}`)
+    }, [device])
 
+    useEffect(() => {
+        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
+        setAltImgDevice(`Image ${device}`)
 
-        if (location.pathname === "/projets") {
-            if (device === "mobile") {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = './projects_img/covers/mobile/device_mobile.webp';
-                link.as = 'image';
-                link.media = '(max-width: 768px)';
-                document.head.appendChild(link);
-
-            } else if (device === "tablette") {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = './projects_img/covers/tablette/device_tablette.webp';
-                link.as = 'image';
-                link.media = "(min-width: 769px) and (max-width: 992px)";
-                document.head.appendChild(link);
-            } else {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = './projects_img/covers/desktop/device_desktop.webp';
-                link.as = 'image';
-                link.media = '(min-width: 993px)';
-                document.head.appendChild(link);
-
-            }
-        }
-    }, [device, location.pathname])
+    }, [device])
 
 
     return (
