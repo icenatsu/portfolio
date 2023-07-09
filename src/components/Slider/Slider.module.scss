@@ -92,10 +92,10 @@
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 position: absolute;
                 display: block;
-                top: 382px;
-                left: 90px;
+                top: 338px;
+                left: 77px;
                 z-index: 1;
-                font-size: 24px;
+                font-size: 15px;
             }
         }
     }
@@ -216,8 +216,8 @@
     @media screen and (max-width: variables.$breakpoint-mobile) {
         width: 209px;
         height: 430px;
-        top:-30px;
-        left: -15px;
+        top: -50px;
+        left: -12px;
     }
 
     & img{
