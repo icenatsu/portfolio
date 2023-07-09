@@ -58,15 +58,10 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
     }, [windowWidth, inData, location.pathname]);
 
     useEffect(() => {
-        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
+        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.svg`)
         setAltImgDevice(`Image ${device}`)
     }, [device])
 
-    useEffect(() => {
-        setSrcImgDevice(`./projects_img/covers/${device}/device_${device}.webp`)
-        setAltImgDevice(`Image ${device}`)
-
-    }, [device])
 
 
     return (
