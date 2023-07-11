@@ -21,7 +21,7 @@ const Slider = ({ inData, inCurrentIdx, inPrevIdx, inNextIdx, inPrevCursor, inNe
 
     const themeContext = useContext(ThemeContext);
 
-    const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.webp`);
+    const [srcImgDevice, setSrcImgDevice] = useState<string>(`./projects_img/covers/desktop/device_desktop.svg`);
     const [altImgDevice, setAltImgDevice] = useState<string>("Image desktop");
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
     const [device, setDevice] = useState<"mobile" | "tablette" | "desktop">("desktop");

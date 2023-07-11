@@ -4,9 +4,9 @@
         "title": "Booki",
         "description": "Pendant la formation j'ai pu découvrir le langage HTML et CSS au travers d'une mise en oeuvre d'un site Web à partir de maquettes graphiques aux formats desktop et mobile.",
         "cover": {
-            "mobile" :"./projects_img/covers/mobile/booki_mob.webp",
-            "tablette" :"./projects_img/covers/tablette/booki_tab.webp",
-            "desktop" :"./projects_img/covers/desktop/booki.webp"
+            "mobile" :"./projects_img/covers/mobile/booki_mob.svg",
+            "tablette" :"./projects_img/covers/tablette/booki_tab.svg",
+            "desktop" :"./projects_img/covers/desktop/booki.svg"
         },
         "technologies": {
             "HTML": "./projects_img/techno_icones/html5.webp",
@@ -20,9 +20,9 @@
         "title": "Oh my Food",
         "description": "En formation nous avons eu à réaliser un site Web à partir de maquettes graphiques ciblé principalement pour l'utilisation mobile en y intégrant des animations CSS. Cela a également été l'occasion d'apprendre le préprocesseur SASS.",
         "cover": {
-            "mobile" :"./projects_img/covers/mobile/ohmyfood_mob.webp",
-            "tablette" :"./projects_img/covers/tablette/ohmyfood_tab.webp",
-            "desktop" :"./projects_img/covers/desktop/ohmyfood.webp"
+            "mobile" :"./projects_img/covers/mobile/ohmyfood_mob.svg",
+            "tablette" :"./projects_img/covers/tablette/ohmyfood_tab.svg",
+            "desktop" :"./projects_img/covers/desktop/ohmyfood.svg"
         },
         "technologies": {
             "HTML": "./projects_img/techno_icones/html5.webp",
@@ -52,9 +52,9 @@
         "title": "Kasa",
         "description": "Le dernier projet de la formation consistait à créer une application web de location immobilière en utilisant la bibliothèque React",
         "cover": {
-            "mobile" :"./projects_img/covers/mobile/kasa_mob.webp",
-            "tablette" :"./projects_img/covers/tablette/kasa_tab.webp",
-            "desktop" :"./projects_img/covers/desktop/kasa.webp"
+            "mobile" :"./projects_img/covers/mobile/kasa_mob.svg",
+            "tablette" :"./projects_img/covers/tablette/kasa_tab.svg",
+            "desktop" :"./projects_img/covers/desktop/kasa.svg"
         },
         "technologies": {
             "REACT": "./projects_img/techno_icones/react.webp",

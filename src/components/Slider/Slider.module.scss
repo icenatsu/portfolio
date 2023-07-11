@@ -13,7 +13,7 @@
         margin-top: 45px;
         width: variables.$width_img_cover_slider_tablette;
         height: variables.$height_img_cover_slider_tablette;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
@@ -42,16 +42,16 @@
         &__prev{
             z-index: 4;
             position: absolute;
-            left: -85px;
+            left: variables.$slider__chevron__prevANDnext-leftANDright--desktop;
             top: 50%;
             transform: translateY(-50%);
 
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                left: -70px;
+                left: variables.$slider__chevron__prevANDnext-leftANDright--tablette;
             }
 
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                left: -60px;
+                left: variables.$slider__chevron__prevANDnext-leftANDright--mobile;
             }
 
             &:hover{
@@ -62,16 +62,16 @@
         &__next{
             z-index: 4;
             position: absolute;
-            right: -85px;
+            right: variables.$slider__chevron__prevANDnext-leftANDright--desktop;
             top: 50%;
             transform: translateY(-50%);
  
             @media screen and (max-width: variables.$breakpoint-tablette) {
-                right: -70px;
+                right: variables.$slider__chevron__prevANDnext-leftANDright--tablette;
             }
       
             @media screen and (max-width: variables.$breakpoint-mobile) {
-                right: -60px;
+                right: variables.$slider__chevron__prevANDnext-leftANDright--mobile;
             }
 
             &:hover{
@@ -92,10 +92,9 @@
             @media screen and (max-width: variables.$breakpoint-mobile) {
                 position: absolute;
                 display: block;
-                top: 335.7px;
-                left: 75px;
+                top: variables.$scroll-top--mobile;
+                left: variables.$scroll-left--mobile;
                 z-index: 1;
-                // font-size: 22px;
             }
         }
     }
@@ -203,24 +202,24 @@
 
 .device{
     position: absolute;
-    width: 484px;
-    height: 360px;
-    top: -14px;
-    left: -17px;
+    width: variables.$device-width--desktop;
+    height: variables.$device-height--desktop;
+    top: variables.$device-top--desktop;
+    left: variables.$device-left--desktop;
 
 
     @media screen and (max-width: variables.$breakpoint-tablette) {
-        width: 428px;
-        height: 265px;
-        top: -13px;
-        left: -15px;
+        width: variables.$device-width--tablette;
+        height: variables.$device-height--tablette;
+        top: variables.$device-top--tablette;
+        left: variables.$device-left--tablette;
     }
 
     @media screen and (max-width: variables.$breakpoint-mobile) {
-        width: 209px;
-        height: 430px;
-        top: -50px;
-        left: -12px;
+        width: variables.$device-width--mobile;
+        height: variables.$device-height--mobile;
+        top: variables.$device-top--mobile;
+        left: variables.$device-left--mobile;
     }
 
     & img{

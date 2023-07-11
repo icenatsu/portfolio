@@ -109,8 +109,8 @@ $navbar__item-fontSize-mobile--navbar: 25px;
 // -- Component Switch
 $slider-icone-fontSize-mobile--switch: 9px;
 // -- Component Slider
-$slider__chevron-icone-fontSize-desktop--slider: 30px;
-$slider__chevron-icone-fontSize-tablette--slider: 25px;
+$slider__chevron-icone-fontSize-desktop--slider: 25px;
+$slider__chevron-icone-fontSize-tablette--slider: 20px;
 $slider__chevron-icone-fontSize-mobile--slider: 15px;
 
 // -- Fonts -- //
@@ -137,12 +137,35 @@ $maxWidth : 1600px;
 $mediumWidth : 992px;
 $minWidth : 768px;
 
+// -- Position absolute --
+/*************************/
+// -- Component Slider
+$slider__chevron__prevANDnext-leftANDright--desktop: -85px;
+$slider__chevron__prevANDnext-leftANDright--tablette:-85px;
+$slider__chevron__prevANDnext-leftANDright--mobile:-40px;
+$scroll-top--mobile: 338px;
+$scroll-left--mobile: 85px;
+$device-top--desktop: -14px;
+$device-left--desktop: -17px;
+$device-top--tablette:-10px;
+$device-left--tablette:-33px;
+$device-top--mobile: -50px;
+$device-left--mobile: -5px;
+
 // -- Image Size -- //
 /********************/
+
 // -- Component Slider images projets
-$width_img_cover_slider_mobile: 185px;
-$height_img_cover_slider_mobile: 330px;
-$width_img_cover_slider_tablette: 400px;
-$height_img_cover_slider_tablette: 228px;
 $width_img_cover_slider_desktop: 450px;
 $height_img_cover_slider_desktop: 235px;
+$width_img_cover_slider_tablette: 400px;
+$height_img_cover_slider_tablette: 290px;
+$width_img_cover_slider_mobile: 200px;
+$height_img_cover_slider_mobile: 332px;
+
+$device-width--desktop: 484px;
+$device-height--desktop: 360px;
+$device-width--tablette: 465px;
+$device-height--tablette: 305px;
+$device-width--mobile: 209px;
+$device-height--mobile: 430px;
