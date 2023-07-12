@@ -37,9 +37,9 @@
         "title": "Piiquante",
         "description": "Lors de la formation il a fallut construire une API sécurisée pour une application d'avis gastronomiques. J'ai pu découvrir NodeJS associé à la base de données noSQL MongoDB",
         "cover": {
-            "mobile" :"./projects_img/covers/mobile/piquante_mob.webp",
-            "tablette" :"./projects_img/covers/tablette/piquante_tab.webp",
-            "desktop" :"./projects_img/covers/desktop/piquante.webp"
+            "mobile" :"./projects_img/covers/mobile/piquante_mob.svg",
+            "tablette" :"./projects_img/covers/tablette/piquante_tab.svg",
+            "desktop" :"./projects_img/covers/desktop/piquante.svg"
         },
         "technologies":{ 
             "NODEJS": "./projects_img/techno_icones/nodejs.webp",

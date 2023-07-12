@@ -1,5 +1,5 @@
 import styles from "./Header.module.scss"
-import Logo from "../../assets/img/logo.webp"
+import Logo from "../../assets/img/logo.svg"
 import Switch from "../../components/Switch/Switch";
 import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../../ThemeContext/ThemeContext";
